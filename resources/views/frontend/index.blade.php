@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - {{ config('app.name') }}</title>
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css')}}">
     <!-- Google Fonts (you can choose similar to the design) -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">    
 </head>
 
 <body>
@@ -19,7 +19,7 @@
             <div class="content">
                 <h1>Lets Do <span>Business</span></h1>
                 <p>Discover our adventurers us</p>
-                <a href="#" class="button">Take a safari</a>
+                <a href="{{ route('safari') }}" class="button">Take a safari</a>
             </div>
             <img src="{{ asset('img/corporate.png') }}" alt="Mango Image" class="product-image">
         </div>
@@ -29,11 +29,11 @@
                 <p>Find out about our products</p>
                 <a href="#" class="button">Explore</a>
             </div>
-            <img src="{{ asset('img/Mango-image-website-1-768x489.png') }}" alt="Product Image" class="product-image">
+            <img src="{{ asset('img/frontend.png') }}" alt="Product Image" class="product-image">
         </div>
         <div class="logo">
             <a href="" class="custom-logo-link">
-                <img src="{{ asset('img/logo/y-logo.png') }}" alt="Blue Skies Logo">
+                <img src="{{ asset('img/logo/goshen-logo.png') }}" alt="Blue Skies Logo">
             </a>
         </div>
     </div>

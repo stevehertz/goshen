@@ -1,0 +1,104 @@
+/*! 
+modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize 
+*/
+
+@import 'frontend/general';
+
+@import 'frontend/fonts';
+    
+@import 'frontend/common';
+
+/*!
+ * Bootstrap Grid v5.1.0 (https://getbootstrap.com/)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+
+@import 'frontend/bootstrap';
+
+
+/*! Flickity v2.2.2
+https://flickity.metafizzy.co
+---------------------------------------------- */
+@import 'frontend/flickity';
+
+@import 'frontend/cookies';
+
+
+.page-template-template-landing-page .site-logo {
+    background-color: #0077c8;
+    display         : block;
+    max-height      : 7.5rem;
+    padding         : 1rem
+}
+
+.page-template-template-landing-page .site-logo .custom-logo-link {
+    display  : block;
+    margin   : 0 auto;
+    max-width: 4rem
+}
+
+.page-template-template-landing-page .site-logo .custom-logo-link:focus {
+    box-shadow: 0 0 0 .25rem hsla(0, 0%, 100%, .5)
+}
+
+@media (min-width:768px) {
+    .page-template-template-landing-page .site-logo {
+        background-color: transparent;
+        left            : 50%;
+        max-height      : none;
+        padding         : 0;
+        position        : absolute;
+        top             : 2rem;
+        transform       : translateX(-50%);
+        width           : auto;
+        z-index         : 10
+    }
+
+    .page-template-template-landing-page .site-logo .custom-logo-link {
+        background-color: #0077c8;
+        border-radius   : 999em;
+        max-width       : 6rem;
+        padding         : 1.5rem 1rem
+    }
+}
+
+@media (min-width:992px) {
+    .page-template-template-landing-page .site-logo {
+        top: 4rem
+    }
+
+    .page-template-template-landing-page .site-logo .custom-logo-link {
+        max-width: 8rem
+    }
+}
+
+.products-loop {
+    display              : grid;
+    gap                  : 2rem 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    list-style           : none;
+    margin               : 2rem 0 4rem;
+    padding              : 0;
+    width                : 100%
+}
+
+@media (min-width:576px) {
+    .products-loop {
+        gap   : 4rem;
+        margin: 4rem 0 8rem
+    }
+}
+
+@media (min-width:768px) {
+    .products-loop {
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+    }
+}
+
+.page.type-page,
+.post-type-archive,
+.product.type-product {
+    overflow-x: hidden
+}

@@ -1,0 +1,54 @@
+.cookie-policy {
+    background-color: #0077c8;
+    bottom          : 0;
+    color           : #fff;
+    display         : block;
+    left            : 0;
+    opacity         : 1;
+    padding         : .75rem 0;
+    position        : fixed;
+    transform       : translateY(0);
+    transition      : all .2s ease;
+    width           : 100%;
+    z-index         : 50;
+    p {
+        font-family   : Block Berthold;
+        font-size     : 1.125rem;
+        letter-spacing: .05em;
+        margin        : 0
+    }
+}
+
+.cookie-policy.is-hidden {
+    opacity  : 0;
+    transform: translateY(100%)
+}
+
+.social-icons {
+    display        : flex;
+    flex-wrap      : wrap;
+    gap            : 1rem;
+    justify-content: center;
+    list-style     : none;
+    padding-left   : 0
+}
+
+.social-icons a {
+    color     : #fff;
+    display   : block;
+    transform : scale(1);
+    transition: transform .2s ease;
+    width     : 2.5rem
+}
+
+.social-icons a:hover {
+    transform: scale(1.5)
+}
+
+.social-icons a:focus {
+    box-shadow: 0 0 0 .25rem hsla(0, 0%, 100%, .5)
+}
+
+.social-icons svg {
+    display: block
+}

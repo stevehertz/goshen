@@ -1,0 +1,157 @@
+body {
+    -webkit-font-smoothing : antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color                  : #1b1b1b;
+    font-family            : Century Gothic, sans-serif;
+    font-size              : 16px;
+    line-height            : 1.5
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Block Berthold;
+    font-size  : inherit;
+    font-weight: 400;
+    line-height: 1.1;
+    margin     : 0 0 1rem
+}
+
+h1 {
+    font-size: calc(1.5rem + 3vw)
+}
+
+@media (min-width:1200px) {
+    h1 {
+        font-size: 3.75rem
+    }
+}
+
+h2 {
+    font-size: calc(1.425rem + 2.1vw)
+}
+
+@media (min-width:1200px) {
+    h2 {
+        font-size: 3rem
+    }
+}
+
+h3 {
+    font-size: calc(1.3375rem + 1.05vw)
+}
+
+@media (min-width:1200px) {
+    h3 {
+        font-size: 2.125rem
+    }
+}
+
+h4 {
+    font-size: calc(1.275rem + .3vw)
+}
+
+@media (min-width:1200px) {
+    h4 {
+        font-size: 1.5rem
+    }
+}
+
+h5 {
+    font-size: 1.25rem
+}
+
+h6 {
+    font-size: 1rem
+}
+
+p {
+    margin: 0 0 1rem
+}
+
+p a:not(.btn) {
+    color          : inherit;
+    text-decoration: underline
+}
+
+ul {
+    margin: 0 0 1rem
+}
+
+img {
+    display       : inline-block;
+    height        : auto;
+    max-width     : 100%;
+    vertical-align: top
+}
+
+button {
+    -webkit-appearance: none;
+    -moz-appearance   : none;
+    appearance        : none;
+    background        : none;
+    border            : 0;
+    border-radius     : 0;
+    box-shadow        : none;
+    cursor            : pointer;
+    font-size         : inherit;
+    line-height       : normal;
+    margin            : 0;
+    padding           : 0;
+    text-align        : left
+}
+
+a:focus,
+button:focus {
+    outline   : 0;
+    transition: box-shadow .15s ease-in-out
+}
+
+.contact-email,
+.contact-telephone {
+    font-size  : 1.25rem;
+    font-weight: 700;
+    line-height: 1;
+    padding    : .75rem 0 .75rem 4rem;
+    position   : relative
+}
+
+.contact-email:before,
+.contact-telephone:before {
+    background     : 50% no-repeat;
+    background-size: contain;
+    content        : "";
+    display        : block;
+    height         : 2.5rem;
+    left           : 0;
+    position       : absolute;
+    top            : 0;
+    width          : 3.25rem
+}
+
+.contact-email a:not(.btn),
+.contact-telephone a:not(.btn) {
+    text-decoration: none
+}
+
+.contact-email a:not(.btn):focus,
+.contact-email a:not(.btn):hover,
+.contact-telephone a:not(.btn):focus,
+.contact-telephone a:not(.btn):hover {
+    text-decoration: underline
+}
+
+.contact-email:before {
+    background-image: url(/img/icons/email.svg)
+}
+
+.contact-telephone:before {
+    background-image: url(/img/icons/telephone.svg)
+}
+
+.max-w-sm {
+    max-width: 576px
+}

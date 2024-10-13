@@ -12,4 +12,9 @@ class PagesController extends Controller
     {
         return view('frontend.index');
     }
+
+    public function safari()  
+    {
+        return view('frontend.safari.index');
+    }
 }
