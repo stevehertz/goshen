@@ -1,6 +1,11 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/main.js": "/js/main.js",
+    "/js/plugin.js": "/js/plugin.js",
+    "/js/shop.js": "/js/shop.js",
     "/css/app.css": "/css/app.css",
-    "/css/site.css": "/css/site.css",
+    "/css/shop.css": "/css/shop.css",
+    "/css/vendor.css": "/css/vendor.css",
+    "/css/styles.css": "/css/styles.css",
     "/css/main.css": "/css/main.css"
 }

@@ -18,8 +18,10 @@
         <div class="left-side">
             <div class="content">
                 <h1>Lets Do <span>Business</span></h1>
-                <p>Discover our adventurers us</p>
-                <a href="{{ route('safari') }}" class="button">Take a safari</a>
+                <p>Take an adventure</p>
+                <a href="{{ route('safari') }}" class="button">
+                    Safari Time
+                </a>
             </div>
             <img src="{{ asset('img/corporate.png') }}" alt="Mango Image" class="product-image">
         </div>
@@ -27,13 +29,15 @@
             <div class="content">
                 <h1>Visit Our<span> Market place</span></h1>
                 <p>Find out about our products</p>
-                <a href="#" class="button">Explore</a>
+                <a href="{{ route('shop') }}" class="button">
+                    Shop
+                </a>
             </div>
             <img src="{{ asset('img/frontend.png') }}" alt="Product Image" class="product-image">
         </div>
         <div class="logo">
-            <a href="" class="custom-logo-link">
-                <img src="{{ asset('img/logo/goshen-logo.png') }}" alt="Blue Skies Logo">
+            <a href="" class="custom-logo   -link">
+                <img src="{{ asset(config('app.logo')) }}" alt="Blue Skies Logo">
             </a>
         </div>
     </div>

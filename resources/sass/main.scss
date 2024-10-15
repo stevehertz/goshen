@@ -54,7 +54,7 @@ body {
     }
 
     .product-image {
-        transform: translateX(55%); /* Move image to the center of the column */
+        transform: translateX(62%); /* Move image to the center of the column */
     }
 
     .content{
@@ -218,16 +218,17 @@ footer {
     align-items     : center;
     width           : 100%;
     padding         : 10px;
-    background-color: #f1f1f1;
+    background-color: #898989;
 }
 
 .social-icons a {
     margin         : 0 10px;
-    color          : #333;
+    color          : #fff;
     font-size      : 1.5rem;
     text-decoration: none;
 }
 
-.captcha {
+.captcha { 
     font-size: 0.8rem;
+    color: #fff;
 }

@@ -17,4 +17,9 @@ class PagesController extends Controller
     {
         return view('frontend.safari.index');
     }
+
+    public function shop()  
+    {
+        return view('frontend.shop.index');
+    }
 }

@@ -51,7 +51,7 @@ body {
   border-radius: 50px; /* Fully rounded corners on hover */
 }
 .left-side .product-image {
-  transform: translateX(55%); /* Move image to the center of the column */
+  transform: translateX(62%); /* Move image to the center of the column */
 }
 .left-side .content h1 {
   font-size: 2.5rem;
@@ -180,16 +180,17 @@ footer {
   align-items: center;
   width: 100%;
   padding: 10px;
-  background-color: #f1f1f1;
+  background-color: #898989;
 }
 
 .social-icons a {
   margin: 0 10px;
-  color: #333;
+  color: #fff;
   font-size: 1.5rem;
   text-decoration: none;
 }
 
 .captcha {
   font-size: 0.8rem;
+  color: #fff;
 }

@@ -1,268 +1,1128 @@
-@extends('frontend.layouts.safari-app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-    <article id="post-2" class="post-2 page type-page status-publish has-post-thumbnail hentry">
-        <div class="container">
+<head>
+    <meta charset="utf-8">
+    <title>Home - {{ config('app.name') }}</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-            <section id="large-hero-block_192e48fcc616c71b2205c57ea013b383" class="large-hero alignfull has-background-image"
-                style=" background-image: url({{ asset('img/hero/hero-dairy-free.jpg') }});">
-                <div class="container-xl inner">
-                    <div class="content">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-                        <h1 class="wp-block-heading">
-                            <strong>DAIRY FREE</strong>
-                            <em>&amp;</em> Oh so creamy
-                        </h1>
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-                        <p class="has-blueskies-orange-background-color has-background">We
-                            only use FRESH coconut milk, giving our ice cream that
-                            creamy texture without any cow juice.</p>
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="{{ asset('lib/animate/animate.min.css')}}" />
+    <link href="{{ asset('lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
 
-                        <div class="wp-block-button previous-link"><a class="wp-block-button__link wp-element-button"
-                                href="../fair-scoop/index.html">a <strong>FAIR
-                                    SCOOP</strong><br>for farmers</a></div>
 
-                        <div class="wp-block-button next-link"><a class="wp-block-button__link wp-element-button"
-                                href="../tree-to-tub/index.html"><strong>TREE</strong><br>to
-                                <strong>TUB</strong><br>journey</a></div>
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
-                    </div>
-                </div>
+    <!-- Template Stylesheet -->
+    <link href="{{ asset('css/styles.css')}}" rel="stylesheet">
+</head>
 
-                <a class="anchor-link" href="#content" target="_self">DIG
-                    IN</a>
-            </section>
+<body>
 
-            <p></p>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
 
-            <h2 class="has-text-align-center wp-block-heading"><mark style="background-color:rgba(0, 0, 0, 0)"
-                    class="has-inline-color has-blueskies-blue-color">WELCOME TO THE
-                    WORLD OF BLUE SKIES</mark></h2>
-
-            <p class="has-text-align-center">We&#8217;re coconuts about ice
-                cream and go above and beyond when it comes to products and
-                people.</p>
-
-            <p class="has-text-align-center">We&#8217;ve taken on the impossible
-                and made an ice cream factory in the heat of the tropics to lock
-                in the fresh flavour from tree, to tub, to you.</p>
-
-            <p class="has-text-align-center">We work in partnership with grower
-                communities to support a wide range of local projects and to train
-                the next generation of farmers.</p>
-
-            <p class="has-text-align-center">Read on to start the journey and
-                enjoy a scoop, or two, knowing that our ice cream tastes good and
-                does good.</p>
-
-            <p></p>
-
-            <p></p>
-
-            <p></p>
-
-            <section id="products-cta-block_a71ebe9e5e5f55a8e7fe68206895c920"
-                class="products-cta alignfull has-blueskies-orange-background-color has-white-color right" style>
-                <div class="container-xl content">
-
-                    <h2 class="has-text-align-center wp-block-heading">WHAT&#8217;S
-                        YOUR FLAVOUR?</h2>
-
-                    <section id="products-list-block_90240fb81836c3e9930e4c6a8f24a718" class="products-list alignwide"
-                        style>
-                        <ul>
-                            <li>
-                                <div id="product-87"
-                                    class="product-tile post-87 product type-product status-publish format-standard has-post-thumbnail hentry">
-                                    <a href="../products/caffe-latte/index.html" rel="bookmark">
-                                        <div class="post-thumbnail"><img fetchpriority="high" decoding="async"
-                                                width="300" height="370"
-                                                src="{{ asset('img/hero/ice-cream-caffe-latte.png') }}"
-                                                class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
-                                                alt="Caffe Latte"
-                                                srcset="https://blueskies.com/wp-content/uploads/sites/24/2021/09/ice-cream-caffe-latte.png 300w, https://blueskies.com/wp-content/uploads/sites/24/2021/09/ice-cream-caffe-latte-243x300.png 243w"
-                                                sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                    </a>
-                                </div><!-- #product-87 -->
-                            </li>
-                            <li>
-                                <div id="product-91"
-                                    class="product-tile post-91 product type-product status-publish format-standard has-post-thumbnail hentry">
-                                    <a href="../products/chocolate-orange/index.html" rel="bookmark">
-                                        <div class="post-thumbnail"><img decoding="async" width="300" height="370"
-                                                src="{{ asset('img/hero/ice-cream-chocolate.png') }}"
-                                                class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
-                                                alt="Chocolate &#038; Orange"
-                                                srcset="https://blueskies.com/wp-content/uploads/sites/24/2021/09/ice-cream-chocolate.png 300w, https://blueskies.com/wp-content/uploads/sites/24/2021/09/ice-cream-chocolate-243x300.png 243w"
-                                                sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                    </a>
-                                </div><!-- #product-91 -->
-                            </li>
-                            <li>
-                                <div id="product-89"
-                                    class="product-tile post-89 product type-product status-publish format-standard has-post-thumbnail hentry">
-                                    <a href="../products/mango-passionfruit/index.html" rel="bookmark">
-                                        <div class="post-thumbnail"><img decoding="async" width="300" height="370"
-                                                src="{{ asset('img/hero/ice-cream-mango.png') }}"
-                                                class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
-                                                alt="Mango &#038; Passionfruit"
-                                                srcset="https://blueskies.com/wp-content/uploads/sites/24/2021/09/ice-cream-mango.png 300w, https://blueskies.com/wp-content/uploads/sites/24/2021/09/ice-cream-mango-243x300.png 243w"
-                                                sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                    </a>
-                                </div><!-- #product-89 -->
-                            </li>
-                            <li>
-                                <div id="product-81"
-                                    class="product-tile post-81 product type-product status-publish format-standard has-post-thumbnail hentry">
-                                    <a href="../products/salted-caramel/index.html" rel="bookmark">
-                                        <div class="post-thumbnail"><img loading="lazy" decoding="async" width="300"
-                                                height="370" src="{{ asset('img/hero/ice-cream-salted-caramel.png') }}"
-                                                class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
-                                                alt="Salted Caramel"
-                                                srcset="https://blueskies.com/wp-content/uploads/sites/24/2021/09/ice-cream-salted-caramel.png 300w, https://blueskies.com/wp-content/uploads/sites/24/2021/09/ice-cream-salted-caramel-243x300.png 243w"
-                                                sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                    </a>
-                                </div><!-- #product-81 -->
-                            </li>
-                            <li>
-                                <div id="product-85"
-                                    class="product-tile post-85 product type-product status-publish format-standard has-post-thumbnail hentry">
-                                    <a href="../products/simply-coconut/index.html" rel="bookmark">
-                                        <div class="post-thumbnail"><img loading="lazy" decoding="async" width="300"
-                                                height="370"
-                                                src="../wp-content/uploads/sites/24/2021/09/ice-cream-coconut.png"
-                                                class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
-                                                alt="Simply Coconut"
-                                                srcset="https://blueskies.com/wp-content/uploads/sites/24/2021/09/ice-cream-coconut.png 300w, https://blueskies.com/wp-content/uploads/sites/24/2021/09/ice-cream-coconut-243x300.png 243w"
-                                                sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                    </a>
-                                </div><!-- #product-85 -->
-                            </li>
-                            <li>
-                                <div id="product-93"
-                                    class="product-tile post-93 product type-product status-publish format-standard has-post-thumbnail hentry">
-                                    <a href="../products/vanilla-bean/index.html" rel="bookmark">
-                                        <div class="post-thumbnail"><img loading="lazy" decoding="async" width="300"
-                                                height="370"
-                                                src="../wp-content/uploads/sites/24/2021/09/ice-cream-vanilla.png"
-                                                class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
-                                                alt="Vanilla Bean"
-                                                srcset="https://blueskies.com/wp-content/uploads/sites/24/2021/09/ice-cream-vanilla.png 300w, https://blueskies.com/wp-content/uploads/sites/24/2021/09/ice-cream-vanilla-243x300.png 243w"
-                                                sizes="(max-width: 300px) 100vw, 300px" /></div>
-                                    </a>
-                                </div><!-- #product-93 -->
-                            </li>
-                        </ul>
-                    </section>
-
-                </div>
-            </section>
-
-            <div
-                class="wp-block-columns are-vertically-aligned-center py-8 is-layout-flex wp-container-core-columns-layout-1 wp-block-columns-is-layout-flex">
-                <div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow"
-                    style="flex-basis:50%">
-                    <div class="wp-block-group max-w-sm mx-auto is-layout-flow wp-block-group-is-layout-flow">
-                        <div class="wp-block-group__inner-container">
-                            <h2 class="wp-block-heading"><mark style="background-color:rgba(0, 0, 0, 0)"
-                                    class="has-inline-color has-blueskies-blue-color">THE
-                                    TREE TO TUB STORY</mark></h2>
-
-                            <p>The tree to tub story is at the heart of what make Blue
-                                Skies ice cream so special.</p>
-
-                            <p>The speed with which the fresh coconut milk travels from
-                                the leafy groves to your tub results in the &#8216;oh so
-                                creamy&#8217; texture for which Blue Skies&#8217; ice
-                                cream is famous.</p>
-
-                            <p>Making our ice cream in Ghana allows us access to local
-                                experts, who have been working with coconuts their entire
-                                life. It also means as much as 75% of the product&#8217;s
-                                value stays where the fruit is grown, compared to as
-                                little as 15% if the coconuts were exported whole. This
-                                enables farmer communities to flourish and inspires the
-                                next generation of coconut experts!</p>
-
-                            <div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
-                                <div class="wp-block-button"><a class="wp-block-button__link wp-element-button"
-                                        href="../tree-to-tub/index.html">Start the
-                                        journey</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow"
-                    style="flex-basis:50%">
-                    <figure class="wp-block-image size-full max-w-sm mx-auto"><img loading="lazy" decoding="async"
-                            width="1000" height="962" src="../wp-content/uploads/2021/09/tree-to-tub.jpg" alt
-                            class="wp-image-127"
-                            srcset="https://blueskies.com/wp-content/uploads/sites/24/2021/09/tree-to-tub.jpg 1000w, https://blueskies.com/wp-content/uploads/sites/24/2021/09/tree-to-tub-300x289.jpg 300w, https://blueskies.com/wp-content/uploads/sites/24/2021/09/tree-to-tub-768x739.jpg 768w"
-                            sizes="(max-width: 1000px) 100vw, 1000px" /></figure>
+    <!-- Topbar Start -->
+    <div class="container-fluid topbar bg-light px-5 d-none d-lg-block">
+        <div class="row gx-0 align-items-center">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-flex flex-wrap">
+                    <a href="#" class="text-muted small me-4"><i
+                            class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
+                    <a href="tel:+01234567890" class="text-muted small me-4"><i
+                            class="fas fa-phone-alt text-primary me-2"></i>+01234567890</a>
+                    <a href="mailto:example@gmail.com" class="text-muted small me-0"><i
+                            class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
                 </div>
             </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    {{-- <a href="#">
+                        <small class="me-3 text-dark">
+                            <i class="fa fa-user text-primary me-2"></i>Register
+                        </small>
+                    </a>
+                    <a href="#">
+                        <small class="me-3 text-dark">
+                            <i class="fa fa-sign-in-alt text-primary me-2"></i>Login
+                        </small>
+                    </a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle text-dark" data-bs-toggle="dropdown"><small><i
+                                    class="fa fa-home text-primary me-2"></i> My Dashboard</small></a>
+                        <div class="dropdown-menu rounded">
+                            <a href="#" class="dropdown-item"><i class="fas fa-user-alt me-2"></i> My Profile</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-comment-alt me-2"></i> Inbox</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-bell me-2"></i> Notifications</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-cog me-2"></i> Account Settings</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-power-off me-2"></i> Log Out</a>
+                        </div>
+                    </div> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
 
-            <div class="wp-block-cover alignfull is-light"><span aria-hidden="true"
-                    class="wp-block-cover__background has-blueskies-green-background-color has-background-dim-0 has-background-dim"></span><img
-                    loading="lazy" decoding="async" width="2000" height="791"
-                    class="wp-block-cover__image-background wp-image-137" alt
-                    src="../wp-content/uploads/2021/09/fair-scoop-bg.jpg" data-object-fit="cover"
-                    srcset="https://blueskies.com/wp-content/uploads/sites/24/2021/09/fair-scoop-bg.jpg 2000w, https://blueskies.com/wp-content/uploads/sites/24/2021/09/fair-scoop-bg-300x119.jpg 300w, https://blueskies.com/wp-content/uploads/sites/24/2021/09/fair-scoop-bg-1024x405.jpg 1024w, https://blueskies.com/wp-content/uploads/sites/24/2021/09/fair-scoop-bg-768x304.jpg 768w, https://blueskies.com/wp-content/uploads/sites/24/2021/09/fair-scoop-bg-1536x607.jpg 1536w"
-                    sizes="(max-width: 2000px) 100vw, 2000px" />
-                <div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow">
-                    <div
-                        class="wp-block-columns are-vertically-aligned-center is-layout-flex wp-container-core-columns-layout-2 wp-block-columns-is-layout-flex">
-                        <div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow"
-                            style="flex-basis:50%"></div>
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="{{ route('home') }}" class="navbar-brand p-0">
+                {{-- <h1 class="text-primary"><i class="fas fa-search-dollar me-3"></i>Stocker</h1> --}}
+                <img src="{{ asset(config('app.logo')) }}" alt="{{ config('app.name') }}">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="{{ route('safari') }}" class="nav-item nav-link active">Home</a>
+                    <a href="#" class="nav-item nav-link">About</a>
+                    <a href="#" class="nav-item nav-link">Our Story</a>
+                    <a href="#" class="nav-item nav-link">Our Products</a>
+                    <a href="#" class="nav-item nav-link">Sustainability</a>
+                    <a href="#" class="nav-item nav-link">News</a>
+                    <a href="#" class="nav-item nav-link">Contact Us</a>
+                </div>
+            </div>
+        </nav>
 
-                        <div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow"
-                            style="flex-basis:50%">
-                            <div class="wp-block-group max-w-sm mx-auto is-layout-flow wp-block-group-is-layout-flow">
-                                <div class="wp-block-group__inner-container">
-                                    <h2 class="wp-block-heading"><mark style="background-color:rgba(0, 0, 0, 0)"
-                                            class="has-inline-color has-blueskies-blue-color">A
-                                            FAIR SCOOP </mark><br><mark style="background-color:rgba(0, 0, 0, 0)"
-                                            class="has-inline-color has-blueskies-blue-color">FOR
-                                            FARMERS</mark></h2>
-
-                                    <p class="has-main-color has-text-color">Farmers are
-                                        Blue Skies heroes, and we believe they deserve a fair
-                                        scoop. We work closely with local grower communities
-                                        to ensure we keep value at &#8216;source&#8217;,
-                                        support the future of farming and invest in local
-                                        projects through the Blue Skies Foundation.</p>
-
-                                    <p class="has-main-color has-text-color">To date we have
-                                        completed more than 120 health and education projects
-                                        which have led to increased school attendance and
-                                        academic performance, improved sanitation and greater
-                                        productivity among farming communities. Each project
-                                        is voted for locally and managed sustainably.</p>
-
-                                    <div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
-                                        <div class="wp-block-button is-style-fill"><a
-                                                class="wp-block-button__link wp-element-button"
-                                                href="../fair-scoop/index.html">WHAT&#8217;S THE
-                                                SCOOP?</a></div>
+        <!-- Carousel Start -->
+        <div class="header-carousel owl-carousel">
+            <div class="header-carousel-item">
+                <img src="{{ asset('img/slider/carousel.jpg')}}" class="img-fluid w-100" alt="Image">
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row gy-0 gx-5">
+                            <div class="col-lg-0 col-xl-5"></div>
+                            <div class="col-xl-7 animated fadeInLeft">
+                                <div class="text-sm-center text-md-end">
+                                    <h4 class="text-primary text-uppercase fw-bold mb-4">
+                                        Welcome To {{ config('app.name') }}
+                                    </h4>
+                                    <h1 class="display-4 text-uppercase text-white mb-4">
+                                        Lorem ipsum dolor consectetur.
+                                    </h1>
+                                    <p class="mb-5 fs-5">
+                                        Lorem Ipsum is simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has been the industry's standard dummy...
+                                    </p>
+                                    <div class="d-flex justify-content-center justify-content-md-end flex-shrink-0 mb-4">
+                                        <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#"><i
+                                                class="fas fa-play-circle me-2"></i> Watch Video</a>
+                                        <a class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2"
+                                            href="#">Learn More</a>
                                     </div>
+                                    {{-- <div class="d-flex align-items-center justify-content-center justify-content-md-end">
+                                        <h2 class="text-white me-2">Follow Us:</h2>
+                                        <div class="d-flex justify-content-end ms-2">
+                                            <a class="btn btn-md-square btn-light rounded-circle me-2"
+                                                href=""><i class="fab fa-facebook-f"></i></a>
+                                            <a class="btn btn-md-square btn-light rounded-circle mx-2"
+                                                href=""><i class="fab fa-twitter"></i></a>
+                                            <a class="btn btn-md-square btn-light rounded-circle mx-2"
+                                                href=""><i class="fab fa-instagram"></i></a>
+                                            <a class="btn btn-md-square btn-light rounded-circle ms-2"
+                                                href=""><i class="fab fa-linkedin-in"></i></a>
+                                        </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="addtoany_share_save_container addtoany_content addtoany_content_bottom">
-                <div class="a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url="https://blueskies.com/oh-so-creamy/"
-                    data-a2a-title="Oh So Creamy"><a class="a2a_button_facebook"
-                        href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fblueskies.com%2Foh-so-creamy%2F&amp;linkname=Oh%20So%20Creamy"
-                        title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_mastodon"
-                        href="https://www.addtoany.com/add_to/mastodon?linkurl=https%3A%2F%2Fblueskies.com%2Foh-so-creamy%2F&amp;linkname=Oh%20So%20Creamy"
-                        title="Mastodon" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email"
-                        href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fblueskies.com%2Foh-so-creamy%2F&amp;linkname=Oh%20So%20Creamy"
-                        title="Email" rel="nofollow noopener" target="_blank"></a><a
-                        class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a></div>
+            <div class="header-carousel-item">
+                <img src="{{ asset('img/slider/carousel-2.jpg')}}" class="img-fluid w-100" alt="Image">
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row g-5">
+                            <div class="col-12 animated fadeInUp">
+                                <div class="text-center">
+                                    <h4 class="text-primary text-uppercase fw-bold mb-4">
+                                        Welcome To {{ config('app.name') }}
+                                    </h4>
+                                    <h1 class="display-4 text-uppercase text-white mb-4">
+                                        Lorem ipsum dolor sit amet.
+                                    </h1>
+                                    <p class="mb-5 fs-5">
+                                        Lorem Ipsum is simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has been the industry's standard dummy...
+                                    </p>
+                                    <div class="d-flex justify-content-center flex-shrink-0 mb-4">
+                                        <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#">
+                                            <i class="fas fa-play-circle me-2"></i> Watch Video
+                                        </a>
+                                        <a class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2"
+                                            href="#">
+                                            Learn More
+                                        </a>
+                                    </div>
+                                    {{-- <div class="d-flex align-items-center justify-content-center">
+                                        <h2 class="text-white me-2">Follow Us:</h2>
+                                        <div class="d-flex justify-content-end ms-2">
+                                            <a class="btn btn-md-square btn-light rounded-circle me-2"
+                                                href=""><i class="fab fa-facebook-f"></i></a>
+                                            <a class="btn btn-md-square btn-light rounded-circle mx-2"
+                                                href=""><i class="fab fa-twitter"></i></a>
+                                            <a class="btn btn-md-square btn-light rounded-circle mx-2"
+                                                href=""><i class="fab fa-instagram"></i></a>
+                                            <a class="btn btn-md-square btn-light rounded-circle ms-2"
+                                                href=""><i class="fab fa-linkedin-in"></i></a>
+                                        </div>
+                                    </div> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </article><!-- #post-2 -->
-@endsection
+        <!-- Carousel End -->
+    </div>
+    <!-- Navbar & Hero End -->
+    
+    <!-- Abvout Start -->
+    <div class="container-fluid about py-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-xl-7 wow fadeInLeft" data-wow-delay="0.2s">
+                    <div>
+                        <h4 class="text-primary">About Us</h4>
+                        <h1 class="display-5 mb-4">
+                            Meet our company unless miss the opportunity
+                        </h1>
+                        <p class="mb-4">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum velit
+                            temporibus repudiandae ipsa, eaque perspiciatis cumque incidunt tenetur sequi reiciendis.
+                        </p>
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-6 col-xl-6">
+                                <div class="d-flex">
+                                    <div><i class="fas fa-lightbulb fa-3x text-primary"></i></div>
+                                    <div class="ms-4">
+                                        <h4>Business Consuluting</h4>
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-6">
+                                <div class="d-flex">
+                                    <div><i class="bi bi-bookmark-heart-fill fa-3x text-primary"></i></div>
+                                    <div class="ms-4">
+                                        <h4>Year Of Expertise</h4>
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="#"
+                                    class="btn btn-primary rounded-pill py-3 px-5 flex-shrink-0">Discover Now</a>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex">
+                                    <i class="fas fa-phone-alt fa-2x text-primary me-4"></i>
+                                    <div>
+                                        <h4>Call Us</h4>
+                                        <p class="mb-0 fs-5" style="letter-spacing: 1px;">+01234567890</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5 wow fadeInRight" data-wow-delay="0.2s">
+                    <div class="bg-primary rounded position-relative overflow-hidden">
+                        <img src="{{ asset('img/frontend/about-2.png')}}" class="img-fluid rounded w-100" alt="">
+
+                        <div class="" style="position: absolute; top: -15px; right: -15px;">
+                            <img src="{{ asset('img/frontend/about-3.png')}}" class="img-fluid"
+                                style="width: 150px; height: 150px; opacity: 0.7;" alt="">
+                        </div>
+                        <div class=""
+                            style="position: absolute; top: -20px; left: 10px; transform: rotate(90deg);">
+                            <img src="{{ asset('img/frontend/about-4.png')}}" class="img-fluid"
+                                style="width: 100px; height: 150px; opacity: 0.9;" alt="">
+                        </div>
+                        <div class="rounded-bottom">
+                            <img src="{{ asset('img/frontend/about-5.jpg')}}" class="img-fluid rounded-bottom w-100" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Services Start -->
+    <div class="container-fluid service pb-5">
+        <div class="container pb-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary">Our Products</h4>
+                <h1 class="display-5 mb-4">We Services provided best offer</h1>
+                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis
+                    cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt
+                    sint dolorem autem obcaecati, ipsam mollitia hic.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="{{ asset('img/frontend/service-1.jpg')}}" class="img-fluid rounded-top w-100" alt="Image">
+                        </div>
+                        <div class="rounded-bottom p-4">
+                            <a href="#" class="h4 d-inline-block mb-4"> Strategy Consulting</a>
+                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint?
+                                Excepturi facilis neque nesciunt similique officiis veritatis,
+                            </p>
+                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="{{ asset('img/frontend/service-2.jpg')}}" class="img-fluid rounded-top w-100" alt="Image">
+                        </div>
+                        <div class="rounded-bottom p-4">
+                            <a href="#" class="h4 d-inline-block mb-4">Financial Advisory</a>
+                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint?
+                                Excepturi facilis neque nesciunt similique officiis veritatis,
+                            </p>
+                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="{{ asset('img/frontend/service-3.jpg')}}" class="img-fluid rounded-top w-100" alt="Image">
+                        </div>
+                        <div class="rounded-bottom p-4">
+                            <a href="#" class="h4 d-inline-block mb-4">Managements</a>
+                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint?
+                                Excepturi facilis neque nesciunt similique officiis veritatis,
+                            </p>
+                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="{{ asset('img/frontend/service-4.jpg')}}" class="img-fluid rounded-top w-100" alt="Image">
+                        </div>
+                        <div class="rounded-bottom p-4">
+                            <a href="#" class="h4 d-inline-block mb-4">Supply Optimization</a>
+                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint?
+                                Excepturi facilis neque nesciunt similique officiis veritatis,
+                            </p>
+                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="{{ asset('img/frontend/service-5.jpg')}}" class="img-fluid rounded-top w-100" alt="Image">
+                        </div>
+                        <div class="rounded-bottom p-4">
+                            <a href="#" class="h4 d-inline-block mb-4">Hr Consulting</a>
+                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint?
+                                Excepturi facilis neque nesciunt similique officiis veritatis,
+                            </p>
+                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="{{ asset('img/frontend/service-6.jpg')}}" class="img-fluid rounded-top w-100" alt="Image">
+                        </div>
+                        <div class="rounded-bottom p-4">
+                            <a href="#" class="h4 d-inline-block mb-4">Marketing Consulting</a>
+                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint?
+                                Excepturi facilis neque nesciunt similique officiis veritatis,
+                            </p>
+                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+
+    <!-- Features Start -->
+    <div class="container-fluid feature pb-5">
+        <div class="container pb-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary">Our Features</h4>
+                <h1 class="display-5 mb-4">Connecting businesses, ideas, and people for greater impact.</h1>
+                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis
+                    cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt
+                    sint dolorem autem obcaecati, ipsam mollitia hic.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="feature-item p-4">
+                        <div class="feature-icon p-4 mb-4">
+                            <i class="fas fa-chart-line fa-4x text-primary"></i>
+                        </div>
+                        <h4>Global Management</h4>
+                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit
+                            pariatur...
+                        </p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="feature-item p-4">
+                        <div class="feature-icon p-4 mb-4">
+                            <i class="fas fa-university fa-4x text-primary"></i>
+                        </div>
+                        <h4>Corporate Banking</h4>
+                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit
+                            pariatur...
+                        </p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="feature-item p-4">
+                        <div class="feature-icon p-4 mb-4">
+                            <i class="fas fa-file-alt fa-4x text-primary"></i>
+                        </div>
+                        <h4>Asset Management</h4>
+                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit
+                            pariatur...
+                        </p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="feature-item p-4">
+                        <div class="feature-icon p-4 mb-4">
+                            <i class="fas fa-hand-holding-usd fa-4x text-primary"></i>
+                        </div>
+                        <h4>Investment Bank</h4>
+                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit
+                            pariatur...
+                        </p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features End -->
+
+
+    <!-- Offer Start -->
+    <div class="container-fluid offer-section pb-5">    
+        <div class="container pb-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary">Our Offer</h4>
+                <h1 class="display-5 mb-4">Benefits We offer</h1>
+                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis
+                    cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt
+                    sint dolorem autem obcaecati, ipsam mollitia hic.
+                </p>
+            </div>
+            <div class="row g-5 align-items-center">
+                <div class="col-xl-5 wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="nav nav-pills bg-light rounded p-5">
+                        <a class="accordion-link p-4 active mb-4" data-bs-toggle="pill" href="#collapseOne">
+                            <h5 class="mb-0">Lending money for investment of your new projects</h5>
+                        </a>
+                        <a class="accordion-link p-4 mb-4" data-bs-toggle="pill" href="#collapseTwo">
+                            <h5 class="mb-0">Lending money for investment of your new projects</h5>
+                        </a>
+                        <a class="accordion-link p-4 mb-4" data-bs-toggle="pill" href="#collapseThree">
+                            <h5 class="mb-0">Mobile payment is more flexible and easy for all investors</h5>
+                        </a>
+                        <a class="accordion-link p-4 mb-0" data-bs-toggle="pill" href="#collapseFour">
+                            <h5 class="mb-0">all transaction is kept free for the member of pro traders</h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-7 wow fadeInRight" data-wow-delay="0.4s">
+                    <div class="tab-content">
+                        <div id="collapseOne" class="tab-pane fade show p-0 active">
+                            <div class="row g-4">
+                                <div class="col-md-7">
+                                    <img src="{{ asset('img/frontend/offer-1.jpg')}}" class="img-fluid w-100 rounded" alt="">
+                                </div>
+                                <div class="col-md-5">
+                                    <h1 class="display-5 mb-4">The stock market provides a venue...</h1>
+                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+                                        amet sequi molestiae tenetur eum mollitia, blanditiis, magnam illo magni error
+                                        dolore unde perspiciatis tempore et totam corrupti dignissimos aut praesentium?
+                                    </p>
+                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="collapseTwo" class="tab-pane fade show p-0">
+                            <div class="row g-4">
+                                <div class="col-md-7">
+                                    <img src="{{ asset('img/frontend/offer-2.jpg')}}" class="img-fluid w-100 rounded" alt="">
+                                </div>
+                                <div class="col-md-5">
+                                    <h1 class="display-5 mb-4">The stock market provides a venue...</h1>
+                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+                                        amet sequi molestiae tenetur eum mollitia, blanditiis, magnam illo magni error
+                                        dolore unde perspiciatis tempore et totam corrupti dignissimos aut praesentium?
+                                    </p>
+                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="collapseThree" class="tab-pane fade show p-0">
+                            <div class="row g-4">
+                                <div class="col-md-7">
+                                    <img src="{{ asset('img/frontend/offer-3.jpg')}}" class="img-fluid w-100 rounded" alt="">
+                                </div>
+                                <div class="col-md-5">
+                                    <h1 class="display-5 mb-4">The stock market provides a venue...</h1>
+                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+                                        amet sequi molestiae tenetur eum mollitia, blanditiis, magnam illo magni error
+                                        dolore unde perspiciatis tempore et totam corrupti dignissimos aut praesentium?
+                                    </p>
+                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="collapseFour" class="tab-pane fade show p-0">
+                            <div class="row g-4">
+                                <div class="col-md-7">
+                                    <img src="{{ asset('img/frontend/offer-4.jpg')}}" class="img-fluid w-100 rounded" alt="">
+                                </div>
+                                <div class="col-md-5">
+                                    <h1 class="display-5 mb-4">The stock market provides a venue...</h1>
+                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+                                        amet sequi molestiae tenetur eum mollitia, blanditiis, magnam illo magni error
+                                        dolore unde perspiciatis tempore et totam corrupti dignissimos aut praesentium?
+                                    </p>
+                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Offer End -->
+
+    <!-- Blog Start -->
+    <div class="container-fluid blog pb-5">
+        <div class="container pb-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary">Our Blog & News</h4>
+                <h1 class="display-5 mb-4">Articles For Pro Traders</h1>
+                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis
+                    cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt
+                    sint dolorem autem obcaecati, ipsam mollitia hic.
+                </p>
+            </div>
+            <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay="0.2s">
+                <div class="blog-item p-4">
+                    <div class="blog-img mb-4">
+                        <img src="{{ asset('img/frontend/service-1.jpg')}}" class="img-fluid w-100 rounded" alt="">
+                        <div class="blog-title">
+                            <a href="#" class="btn">Dividend Stocks</a>
+                        </div>
+                    </div>
+                    <a href="#" class="h4 d-inline-block mb-3">Options Trading Business?</a>
+                    <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore aut aliquam
+                        suscipit error corporis accusamus labore....
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <img src="{{ asset('img/frontend/testimonial-1.jpg')}}" class="img-fluid rounded-circle"
+                            style="width: 60px; height: 60px;" alt="">
+                        <div class="ms-3">
+                            <h5>Admin</h5>
+                            <p class="mb-0">October 9, 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-item p-4">
+                    <div class="blog-img mb-4">
+                        <img src="{{ asset('img/frontend/service-2.jpg')}}" class="img-fluid w-100 rounded" alt="">
+                        <div class="blog-title">
+                            <a href="#" class="btn">Non-Dividend Stocks</a>
+                        </div>
+                    </div>
+                    <a href="#" class="h4 d-inline-block mb-3">Options Trading Business?</a>
+                    <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore aut aliquam
+                        suscipit error corporis accusamus labore....
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <img src="{{ asset('img/frontend/testimonial-2.jpg')}}" class="img-fluid rounded-circle"
+                            style="width: 60px; height: 60px;" alt="">
+                        <div class="ms-3">
+                            <h5>Admin</h5>
+                            <p class="mb-0">October 9, 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-item p-4">
+                    <div class="blog-img mb-4">
+                        <img src="{{ asset('img/frontend/service-3.jpg')}}" class="img-fluid w-100 rounded" alt="">
+                        <div class="blog-title">
+                            <a href="#" class="btn">Dividend Stocks</a>
+                        </div>
+                    </div>
+                    <a href="#" class="h4 d-inline-block mb-3">Options Trading Business?</a>
+                    <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore aut aliquam
+                        suscipit error corporis accusamus labore....
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <img src="{{ asset('img/frontend/testimonial-3.jpg')}}" class="img-fluid rounded-circle"
+                            style="width: 60px; height: 60px;" alt="">
+                        <div class="ms-3">
+                            <h5>Admin</h5>
+                            <p class="mb-0">October 9, 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-item p-4">
+                    <div class="blog-img mb-4">
+                        <img src="{{ asset('img/frontend/service-4.jpg')}}" class="img-fluid w-100 rounded" alt="">
+                        <div class="blog-title">
+                            <a href="#" class="btn">Non-Dividend Stocks</a>
+                        </div>
+                    </div>
+                    <a href="#" class="h4 d-inline-block mb-3">Options Trading Business?</a>
+                    <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore aut aliquam
+                        suscipit error corporis accusamus labore....
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <img src="{{ asset('img/frontend/testimonial-1.jpg')}}" class="img-fluid rounded-circle"
+                            style="width: 60px; height: 60px;" alt="">
+                        <div class="ms-3">
+                            <h5>Admin</h5>
+                            <p class="mb-0">October 9, 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+    <!-- FAQs Start -->
+    <div class="container-fluid faq-section pb-5">
+        <div class="container pb-5 overflow-hidden">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary">FAQs</h4>
+                <h1 class="display-5 mb-4">Frequently Asked Questions</h1>
+                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis
+                    cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt
+                    sint dolorem autem obcaecati, ipsam mollitia hic.
+                </p>
+            </div>
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="accordion accordion-flush bg-light rounded p-5" id="accordionFlushSection">
+                        <div class="accordion-item rounded-top">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed rounded-top" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                    aria-expanded="false" aria-controls="flush-collapseOne">
+                                    What Does This Tool Do?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushSection">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended
+                                    to demonstrate the <code>.accordion-flush</code> class. This is the first item's
+                                    accordion body.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                    aria-controls="flush-collapseTwo">
+                                    What Are The Disadvantages Of Online Trading?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushSection">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended
+                                    to demonstrate the <code>.accordion-flush</code> class. This is the second item's
+                                    accordion body. Let's imagine this being filled with some actual content.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                    aria-controls="flush-collapseThree">
+                                    Is Online Trading Safe?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushSection">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended
+                                    to demonstrate the <code>.accordion-flush</code> class. This is the second item's
+                                    accordion body. Let's imagine this being filled with some actual content.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                    aria-controls="flush-collapseFour">
+                                    What Is Online Trading, And How Dose It Work?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushSection">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended
+                                    to demonstrate the <code>.accordion-flush</code> class. This is the second item's
+                                    accordion body. Let's imagine this being filled with some actual content.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                    aria-controls="flush-collapseFive">
+                                    Which App Is Best For Online Trading?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushSection">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended
+                                    to demonstrate the <code>.accordion-flush</code> class. This is the second item's
+                                    accordion body. Let's imagine this being filled with some actual content.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item rounded-bottom">
+                            <h2 class="accordion-header" id="flush-headingSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseSix" aria-expanded="false"
+                                    aria-controls="flush-collapseSix">
+                                    How To Create A Trading Account?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseSix" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushSection">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended
+                                    to demonstrate the <code>.accordion-flush</code> class. This is the third item's
+                                    accordion body. Nothing more exciting happening here in terms of content, but just
+                                    filling up the space to make it look, at least at first glance, a bit more
+                                    representative of how this would look in a real-world application.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
+                    <div class="bg-primary rounded">
+                        <img src="{{ asset('img/frontend/about-2.png')}}" class="img-fluid w-100" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FAQs End -->
+    
+    <!-- Team Start -->
+    <div class="container-fluid team pb-5">
+        <div class="container pb-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary">Our Team</h4>
+                <h1 class="display-5 mb-4">Meet Our Advisers</h1>
+                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis
+                    cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt
+                    sint dolorem autem obcaecati, ipsam mollitia hic.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="{{ asset('img/frontend/team-1.jpg')}}" class="img-fluid" alt="">
+                        </div>
+                        <div class="team-title">
+                            <h4 class="mb-0">David James</h4>
+                            <p class="mb-0">Profession</p>
+                        </div>
+                        <div class="team-icon">
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i
+                                    class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-0" href=""><i
+                                    class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="{{ asset('img/frontend/team-2.jpg')}}" class="img-fluid" alt="">
+                        </div>
+                        <div class="team-title">
+                            <h4 class="mb-0">David James</h4>
+                            <p class="mb-0">Profession</p>
+                        </div>
+                        <div class="team-icon">
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i
+                                    class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-0" href=""><i
+                                    class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="{{ asset('img/frontend/team-3.jpg')}}" class="img-fluid" alt="">
+                        </div>
+                        <div class="team-title">
+                            <h4 class="mb-0">David James</h4>
+                            <p class="mb-0">Profession</p>
+                        </div>
+                        <div class="team-icon">
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i
+                                    class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-0" href=""><i
+                                    class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="{{ asset('img/frontend/team-4.jpg')}}" class="img-fluid" alt="">
+                        </div>
+                        <div class="team-title">
+                            <h4 class="mb-0">David James</h4>
+                            <p class="mb-0">Profession</p>
+                        </div>
+                        <div class="team-icon">
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-3" href=""><i
+                                    class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-0" href=""><i
+                                    class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid testimonial pb-5">
+        <div class="container pb-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary">Testimonial</h4>
+                <h1 class="display-5 mb-4">Our Clients Riviews</h1>
+                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis
+                    cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt
+                    sint dolorem autem obcaecati, ipsam mollitia hic.
+                </p>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.2s">
+                <div class="testimonial-item">
+                    <div class="testimonial-quote-left">
+                        <i class="fas fa-quote-left fa-2x"></i>
+                    </div>
+                    <div class="testimonial-img">
+                        <img src="{{ asset('img/frontend/testimonial-1.jpg')}}" class="img-fluid" alt="Image">
+                    </div>
+                    <div class="testimonial-text">
+                        <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis
+                            excepturi quisquam temporibus voluptatum reprehenderit culpa, quasi corrupti laborum
+                            accusamus.
+                        </p>
+                    </div>
+                    <div class="testimonial-title">
+                        <div>
+                            <h4 class="mb-0">Person Name</h4>
+                            <p class="mb-0">Profession</p>
+                        </div>
+                        <div class="d-flex text-primary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote-right">
+                        <i class="fas fa-quote-right fa-2x"></i>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-quote-left">
+                        <i class="fas fa-quote-left fa-2x"></i>
+                    </div>
+                    <div class="testimonial-img">
+                        <img src="{{ asset('img/frontend/testimonial-2.jpg')}}" class="img-fluid" alt="Image">
+                    </div>
+                    <div class="testimonial-text">
+                        <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis
+                            excepturi quisquam temporibus voluptatum reprehenderit culpa, quasi corrupti laborum
+                            accusamus.
+                        </p>
+                    </div>
+                    <div class="testimonial-title">
+                        <div>
+                            <h4 class="mb-0">Person Name</h4>
+                            <p class="mb-0">Profession</p>
+                        </div>
+                        <div class="d-flex text-primary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote-right">
+                        <i class="fas fa-quote-right fa-2x"></i>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-quote-left">
+                        <i class="fas fa-quote-left fa-2x"></i>
+                    </div>
+                    <div class="testimonial-img">
+                        <img src="{{ asset('img/frontend/testimonial-3.jpg')}}" class="img-fluid" alt="Image">
+                    </div>
+                    <div class="testimonial-text">
+                        <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis
+                            excepturi quisquam temporibus voluptatum reprehenderit culpa, quasi corrupti laborum
+                            accusamus.
+                        </p>
+                    </div>
+                    <div class="testimonial-title">
+                        <div>
+                            <h4 class="mb-0">Person Name</h4>
+                            <p class="mb-0">Profession</p>
+                        </div>
+                        <div class="d-flex text-primary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote-right">
+                        <i class="fas fa-quote-right fa-2x"></i>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-quote-left">
+                        <i class="fas fa-quote-left fa-2x"></i>
+                    </div>
+                    <div class="testimonial-img">
+                        <img src="{{ asset('img/frontend/testimonial-2.jpg')}}" class="img-fluid" alt="Image">
+                    </div>
+                    <div class="testimonial-text">
+                        <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis blanditiis
+                            excepturi quisquam temporibus voluptatum reprehenderit culpa, quasi corrupti laborum
+                            accusamus.
+                        </p>
+                    </div>
+                    <div class="testimonial-title">
+                        <div>
+                            <h4 class="mb-0">Person Name</h4>
+                            <p class="mb-0">Profession</p>
+                        </div>
+                        <div class="d-flex text-primary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-quote-right">
+                        <i class="fas fa-quote-right fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5 border-start-0 border-end-0"
+            style="border: 1px solid; border-color: rgb(255, 255, 255, 0.08);">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-4">
+                    <div class="footer-item">
+                        <a href="index.html" class="p-0">
+                            {{-- <h4 class="text-white"><i class="fas fa-search-dollar me-3"></i>Stocker</h4> --}}
+                            <img src="{{ asset('img/logo/goshen-logo.png') }}" alt="Logo" width="200">
+                        </a>
+                        <p class="mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit
+                            amet, consectetur adipiscing...</p>
+                        {{-- <div class="d-flex">
+                            <a href="#" class="bg-primary d-flex rounded align-items-center py-2 px-3 me-2">
+                                <i class="fas fa-apple-alt text-white"></i>
+                                <div class="ms-3">
+                                    <small class="text-white">Download on the</small>
+                                    <h6 class="text-white">App Store</h6>
+                                </div>
+                            </a>
+                            <a href="#" class="bg-dark d-flex rounded align-items-center py-2 px-3 ms-2">
+                                <i class="fas fa-play text-primary"></i>
+                                <div class="ms-3">
+                                    <small class="text-white">Get it on</small>
+                                    <h6 class="text-white">Google Play</h6>
+                                </div>
+                            </a>
+                        </div> --}}
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-2">
+                    <div class="footer-item">
+                        <h4 class="text-white mb-4">Quick Links</h4>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> About Us</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Feature</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Attractions</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Tickets</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Blog</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Contact us</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item">
+                        <h4 class="text-white mb-4">Support</h4>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Disclaimer</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Support</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> FAQ</a>
+                        <a href="#"><i class="fas fa-angle-right me-2"></i> Help</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item">
+                        <h4 class="text-white mb-4">Contact Info</h4>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-map-marker-alt text-primary me-3"></i>
+                            <p class="text-white mb-0">123 Street New York.USA</p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-envelope text-primary me-3"></i>
+                            <p class="text-white mb-0">info@example.com</p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fa fa-phone-alt text-primary me-3"></i>
+                            <p class="text-white mb-0">(+012) 3456 7890</p>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="fab fa-firefox-browser text-primary me-3"></i>
+                            <p class="text-white mb-0">Yoursite@ex.com</p>
+                        </div>
+                        <div class="d-flex">
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="#"><i
+                                    class="fab fa-facebook-f text-white"></i></a>
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="#"><i
+                                    class="fab fa-twitter text-white"></i></a>
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="#"><i
+                                    class="fab fa-instagram text-white"></i></a>
+                            <a class="btn btn-primary btn-sm-square rounded-circle me-0" href="#"><i
+                                    class="fab fa-linkedin-in text-white"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-body"><a href="#" class="border-bottom text-white"><i
+                                class="fas fa-copyright text-light me-2"></i>Goshen</a>, All right
+                        reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-body">
+                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                    {{-- Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>
+                    Distributed By <a class="border-bottom text-white" href="https://themewagon.com">ThemeWagon</a> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i
+            class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('lib/wow/wow.min.js')}}"></script>
+    <script src="{{ asset('lib/easing/easing.min.js')}}"></script>
+    <script src="{{ asset('lib/waypoints/waypoints.min.js')}}"></script>
+    <script src="{{ asset('lib/counterup/counterup.min.js')}}"></script>
+    <script src="{{ asset('lib/lightbox/js/lightbox.min.js')}}"></script>
+    <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+
