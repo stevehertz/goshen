@@ -17,4 +17,9 @@ class SafariController extends Controller
     {
         return view('frontend.safari.fair-scoop');
     }
+
+    public function contact()  
+    {
+        return view('frontend.safari.contact');
+    }
 }

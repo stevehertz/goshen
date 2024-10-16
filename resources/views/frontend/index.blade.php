@@ -36,7 +36,7 @@
             <img src="{{ asset('img/frontend.png') }}" alt="Product Image" class="product-image">
         </div>
         <div class="logo">
-            <a href="" class="custom-logo   -link">
+            <a href="" class="custom-logo-link">
                 <img src="{{ asset(config('app.logo')) }}" alt="Blue Skies Logo">
             </a>
         </div>

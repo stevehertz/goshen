@@ -24,4 +24,6 @@ Route::get('/our-story', [SafariController::class, 'our_story'])->name('our.stor
 
 Route::get('/fair/scoop',  [SafariController::class, 'fair_scoop'])->name('fair.scoop');
 
+Route::get('/contact',  [SafariController::class, 'contact'])->name('contact');
+
 Route::get('/shop', [PagesController::class, 'shop'])->name('shop');

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>FoodMart - Free eCommerce Grocery Store HTML Website Template</title>
+    <title>Home - {{ config('app.name') }}</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,11 +19,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jarallax@1.12.8/dist/jarallax.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/vendor.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/shop.css') }}">
-
-    
-
 </head>
 
 <body>
@@ -308,8 +306,7 @@
         </div>
     </header>
 
-    <section class="py-3"
-        style="background-image: url('{{ asset('img/shop/background-pattern.jpg') }}');background-repeat: no-repeat;background-size: cover;">
+    <section class="py-3" style="background-image: url('{{ asset('img/shop/background-pattern.jpg') }}');background-repeat: no-repeat;background-size: cover;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -368,11 +365,10 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="swiper-pagination"></div>
-
                             </div>
                         </div>
+
                         <div class="banner-ad bg-success-subtle block-2"
                             style="background:url('{{ asset('img/shop/ad-image-1.png') }}') no-repeat;background-position: right bottom">
                             <div class="row banner-content p-5">
@@ -388,6 +384,7 @@
 
                             </div>
                         </div>
+
                         <div class="banner-ad bg-danger block-3"
                             style="background:url('{{ asset('img/shop/ad-image-2.png') }}') no-repeat;background-position: right bottom">
                             <div class="row banner-content p-5">
@@ -405,7 +402,6 @@
                         </div>
                     </div>
                     <!-- / Banner Blocks -->
-
                 </div>
             </div>
         </div>
@@ -489,8 +485,7 @@
             </div>
         </div>
     </section>
-
-
+    
     <section class="py-5 overflow-hidden">
         <div class="container-fluid">
             <div class="row">
@@ -1701,7 +1696,7 @@
 
                 <div class="col-md-6">
                     <div class="banner-ad bg-danger mb-3"
-                        style="background: url('images/ad-image-3.png');background-repeat: no-repeat;background-position: right bottom;">
+                        style="background: url('{{ asset('img/shop/ad-image-3.png') }}');background-repeat: no-repeat;background-position: right bottom;">
                         <div class="banner-content p-5">
 
                             <div class="categories text-primary fs-3 fw-bold">Upto 25% Off</div>
@@ -1715,7 +1710,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="banner-ad bg-info"
-                        style="background: url('images/ad-image-4.png');background-repeat: no-repeat;background-position: right bottom;">
+                        style="background: url('{{ asset('img/shop/ad-image-4.png') }}');background-repeat: no-repeat;background-position: right bottom;">
                         <div class="banner-content p-5">
 
                             <div class="categories text-primary fs-3 fw-bold">Upto 25% Off</div>
@@ -3339,6 +3334,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/jarallax@1.12.8/dist/jarallax.min.js"></script>
     <script src="{{ asset('js/plugin.js') }}"></script>
     <script src="{{ asset('js/shop.js') }}"></script>
 </body>
