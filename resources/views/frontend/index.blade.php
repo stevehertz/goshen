@@ -10,7 +10,8 @@
     <!-- Google Fonts (you can choose similar to the design) -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">    
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="shortcut icon" href="{{ asset(config('app.favicon')) }}" type="image/x-icon">
 </head>
 
 <body>
