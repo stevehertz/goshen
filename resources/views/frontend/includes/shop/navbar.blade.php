@@ -4,8 +4,8 @@
             Home
         </a>
     </li>
-    <li>
-        <a href="#">
+    <li @if (Route::is('shop.shop')) class="active" @endif>
+        <a href="{{ route('shop.shop') }}">
             Shop
         </a>
     </li>

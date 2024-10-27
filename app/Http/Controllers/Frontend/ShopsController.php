@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class ShopsController extends Controller
 {
+
+
+    public function shop()  
+    {
+        return view('frontend.shop.shop');
+    }
+
     //
     public function contact()  
     {

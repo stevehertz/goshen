@@ -30,4 +30,6 @@ Route::get('/contact',  [SafariController::class, 'contact'])->name('contact');
 
 Route::get('/shop', [PagesController::class, 'shop'])->name('shop');
 
+Route::get('/shop/shop', [ShopsController::class, 'shop'])->name('shop.shop');
+
 Route::get('/shop/contact', [ShopsController::class, 'contact'])->name('shop.contact');
