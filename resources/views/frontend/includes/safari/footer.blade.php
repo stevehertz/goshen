@@ -60,15 +60,15 @@
                     </div>
                     <div class="d-flex align-items-center">
                         <i class="fas fa-envelope text-primary me-3"></i>
-                        <p class="text-white mb-0">info@example.com</p>
+                        <p class="text-white mb-0">{{  config('app.email')  }}</p>
                     </div>
                     <div class="d-flex align-items-center">
                         <i class="fa fa-phone-alt text-primary me-3"></i>
-                        <p class="text-white mb-0">(+012) 3456 7890</p>
+                        <p class="text-white mb-0">{{ config('app.phone') }}</p>
                     </div>
                     <div class="d-flex align-items-center mb-4">
                         <i class="fab fa-firefox-browser text-primary me-3"></i>
-                        <p class="text-white mb-0">Yoursite@ex.com</p>
+                        <p class="text-white mb-0">{{  config('app.email')  }}</p>
                     </div>
                     <div class="d-flex">
                         <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="#"><i

@@ -63,8 +63,7 @@
     </a>
     <a href="#" class="btn btn-block btn-danger">
         <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-    </a>
-</div> --}}
+    </a> </div> --}}
     <!-- /.social-auth-links -->
     @if (Route::has('password.request'))
         <p class="mb-1">
@@ -74,6 +73,5 @@
         </p>
     @endif
     {{-- <p class="mb-0">
-    <a href="register.html" class="text-center">Register a new membership</a>
-</p> --}}
+    <a href="register.html" class="text-center">Register a new membership</a></p> --}}
 @endsection

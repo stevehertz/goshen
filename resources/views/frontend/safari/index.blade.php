@@ -33,9 +33,8 @@
         <!-- Carousel End -->
     </div>
 
-   
     <!-- Navbar & Hero End -->
-    
+
     <!-- Abvout Start -->
     <div class="container-fluid about py-5">
         <div class="container py-5">
@@ -177,9 +176,8 @@
     </div>
     <!-- Features End -->
 
-
     <!-- Offer Start -->
-    <div class="container-fluid offer-section pb-5">    
+    <div class="container-fluid offer-section pb-5">
         <div class="container pb-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h4 class="text-primary">Our Offer</h4>
@@ -492,7 +490,7 @@
         </div>
     </div>
     <!-- FAQs End -->
-    
+
     <!-- Team Start -->
     <div class="container-fluid team pb-5">
         <div class="container pb-5">
@@ -734,7 +732,7 @@
     @include('frontend.includes.safari.footer')
 
     @include('frontend.components.safari.scripts')
-    
+
 </body>
 
 </html>
