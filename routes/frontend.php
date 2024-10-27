@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\Frontend\PagesController;
 use App\Http\Controllers\Frontend\SafariController;
+use App\Http\Controllers\Frontend\ShopsController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +29,5 @@ Route::get('/fair/scoop',  [SafariController::class, 'fair_scoop'])->name('fair.
 Route::get('/contact',  [SafariController::class, 'contact'])->name('contact');
 
 Route::get('/shop', [PagesController::class, 'shop'])->name('shop');
+
+Route::get('/shop/contact', [ShopsController::class, 'contact'])->name('shop.contact');

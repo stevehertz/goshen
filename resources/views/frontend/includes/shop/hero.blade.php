@@ -1,4 +1,4 @@
-<section class="hero">
+<section class="hero @if (!Route::is('shop')) hero-normal @endif">
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
@@ -39,19 +39,21 @@
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div class="hero__search__phone__text">
-                            <h5>+65 11.188.888</h5>
+                            <h5>{{ config('app.phone') }}</h5>
                             <span>support 24/7 time</span>
                         </div>
                     </div>
                 </div>
-                <div class="hero__item set-bg" data-setbg="{{ asset('img/shop/hero/banner.jpg') }}">
-                    <div class="hero__text">
-                        <span>FRUIT FRESH</span>
-                        <h2>Vegetable <br />100% Organic</h2>
-                        <p>Free Pickup and Delivery Available</p>
-                        <a href="#" class="primary-btn">SHOP NOW</a>
+                @if (Route::is('shop'))
+                    <div class="hero__item set-bg" data-setbg="{{ asset('img/shop/hero/banner.jpg') }}">
+                        <div class="hero__text">
+                            <span>FRUIT FRESH</span>
+                            <h2>Vegetable <br />100% Organic</h2>
+                            <p>Free Pickup and Delivery Available</p>
+                            <a href="#" class="primary-btn">SHOP NOW</a>
+                        </div>
                     </div>
-                </div>
+                @endif
             </div>
         </div>
     </div>

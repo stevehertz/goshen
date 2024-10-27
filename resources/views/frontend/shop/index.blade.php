@@ -1,61 +1,34 @@
-<!DOCTYPE html>
-<html lang="zxx">
+@extends('frontend.layouts.shop.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Ogani Template">
-    <meta name="keywords" content="Ogani, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ config('app.name') }} | Shop</title>
-
-    @include('frontend.components.shop.styles')
-</head>
-
-<body>
+@section('content')
     
-    @include('frontend.includes.shop.topbar')
-
-    <!-- Header Section Begin -->
-    @include('frontend.includes.shop.header')
-    <!-- Header Section End -->
-
-    <!-- Hero Section Begin -->
-    @include('frontend.includes.shop.hero')
-    <!-- Hero Section End -->
-
     <!-- Categories Section Begin -->
     <section class="categories">
         <div class="container">
             <div class="row">
                 <div class="categories__slider owl-carousel">
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg"
-                            data-setbg="{{ asset('img/shop/categories/cat-1.jpg') }}">
+                        <div class="categories__item set-bg" data-setbg="{{ asset('img/shop/categories/cat-1.jpg') }}">
                             <h5><a href="#">Fresh Fruit</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg"
-                            data-setbg="{{ asset('img/shop/categories/cat-2.jpg') }}">
+                        <div class="categories__item set-bg" data-setbg="{{ asset('img/shop/categories/cat-2.jpg') }}">
                             <h5><a href="#">Dried Fruit</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg"
-                            data-setbg="{{ asset('img/shop/categories/cat-3.jpg') }}">
+                        <div class="categories__item set-bg" data-setbg="{{ asset('img/shop/categories/cat-3.jpg') }}">
                             <h5><a href="#">Vegetables</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg"
-                            data-setbg="{{ asset('img/shop/categories/cat-4.jpg') }}">
+                        <div class="categories__item set-bg" data-setbg="{{ asset('img/shop/categories/cat-4.jpg') }}">
                             <h5><a href="#">drink fruits</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg"
-                            data-setbg="{{ asset('img/shop/categories/cat-5.jpg') }}">
+                        <div class="categories__item set-bg" data-setbg="{{ asset('img/shop/categories/cat-5.jpg') }}">
                             <h5><a href="#">drink fruits</a></h5>
                         </div>
                     </div>
@@ -162,7 +135,8 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="{{ asset('img/shop/featured/feature-6.jpg') }}">
+                        <div class="featured__item__pic set-bg"
+                            data-setbg="{{ asset('img/shop/featured/feature-6.jpg') }}">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fas fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fas fa-retweet"></i></a></li>
@@ -177,7 +151,8 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="{{ asset('img/shop/featured/feature-7.jpg') }}">
+                        <div class="featured__item__pic set-bg"
+                            data-setbg="{{ asset('img/shop/featured/feature-7.jpg') }}">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fas fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fas fa-retweet"></i></a></li>
@@ -192,7 +167,8 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="{{ asset('img/shop/featured/feature-8.jpg') }}">
+                        <div class="featured__item__pic set-bg"
+                            data-setbg="{{ asset('img/shop/featured/feature-8.jpg') }}">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fas fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fas fa-retweet"></i></a></li>
@@ -370,7 +346,7 @@
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="{{ asset('img/shop/latest-product/lp-1.jpg')}}" alt="">
+                                        <img src="{{ asset('img/shop/latest-product/lp-1.jpg') }}" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>Crab Pool Security</h6>
@@ -379,7 +355,7 @@
                                 </a>
                                 <a href="#" class="latest-product__item">
                                     <div class="latest-product__item__pic">
-                                        <img src="{{ asset('img/shop/latest-product/lp-2.jpg')}}" alt="">
+                                        <img src="{{ asset('img/shop/latest-product/lp-2.jpg') }}" alt="">
                                     </div>
                                     <div class="latest-product__item__text">
                                         <h6>Crab Pool Security</h6>
@@ -493,82 +469,4 @@
         </div>
     </section>
     <!-- Blog Section End -->
-
-    <!-- Footer Section Begin -->
-    <footer class="footer spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <div class="footer__about__logo">
-                            <a href="{{ route('home') }}"><img src="{{ asset(config('app.logo')) }}" alt=""></a>
-                        </div>
-                        <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: {{ config('app.phone') }}</li>
-                            <li>Email: {{ config('app.email') }}</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                    <div class="footer__widget">
-                        <h6>Useful Links</h6>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">About Our Shop</a></li>
-                            <li><a href="#">Secure Shopping</a></li>
-                            <li><a href="#">Delivery infomation</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Our Sitemap</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">Who We Are</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Innovation</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="footer__widget">
-                        <h6>Join Our Newsletter Now</h6>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#">
-                            <input type="text" placeholder="Enter your mail">
-                            <button type="submit" class="site-btn">Subscribe</button>
-                        </form>
-                        <div class="footer__widget__social">
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-pinterest"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer__copyright">
-                        <div class="footer__copyright__text">
-                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;
-                                <script>
-                                    document.write(new Date().getFullYear());
-                                </script> All rights reserved
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </p>
-                        </div>
-                        <div class="footer__copyright__payment"><img src="{{ asset('img/shop/payment-item.png') }}" alt=""></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
-
-    @include('frontend.components.shop.scripts')
-</body>
-
-</html>
+@endsection
