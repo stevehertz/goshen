@@ -56,7 +56,7 @@
                     <h4 class="text-white mb-4">Contact Info</h4>
                     <div class="d-flex align-items-center">
                         <i class="fas fa-map-marker-alt text-primary me-3"></i>
-                        <p class="text-white mb-0">123 Street New York.USA</p>
+                        <p class="text-white mb-0">{{ config('app.location') }}</p>
                     </div>
                     <div class="d-flex align-items-center">
                         <i class="fas fa-envelope text-primary me-3"></i>

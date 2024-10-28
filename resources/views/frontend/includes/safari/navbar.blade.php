@@ -8,17 +8,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0">
-            <a href="{{ route('safari') }}" class="nav-item nav-link @if (Route::is('safari'))
-                active
-            @endif">Home</a>
-            <a href="#" class="nav-item nav-link">About</a>
-            <a href="#" class="nav-item nav-link">Our Story</a>
-            <a href="#" class="nav-item nav-link">Our Products</a>
-            <a href="#" class="nav-item nav-link">Sustainability</a>
-            <a href="#" class="nav-item nav-link">News</a>
-            <a href="{{ route('contact') }}" class="nav-item nav-link  @if (Route::is('contact'))
-                active
-            @endif">Contact Us</a>
+            <a href="{{ route('safari') }}" class="nav-item nav-link @if (Route::is('safari')) active @endif">
+                Home
+            </a>
+            <a href="{{ route('safari.about') }}" class="nav-item nav-link @if (Route::is('safari.about')) active @endif">
+                About
+            </a>
+            <a href="{{ route('safari.our.story') }}" class="nav-item nav-link @if (Route::is('safari.our.story')) active @endif">Our Story</a>
+            <a href="{{ route('safari.our.products') }}" class="nav-item nav-link @if (Route::is('safari.our.products')) active @endif">Our Products</a>
+            <a href="{{ route('safari.sustainability') }}" class="nav-item nav-link @if (Route::is('safari.sustainability')) active @endif">Sustainability</a>
+            <a href="{{ route('safari.news') }}" class="nav-item nav-link @if (Route::is('safari.news')) active @endif">News</a>
+            <a href="{{ route('safari.contact') }}" class="nav-item nav-link  @if (Route::is('safari.contact')) active @endif">Contact Us</a>
         </div>
     </div>
 </nav>

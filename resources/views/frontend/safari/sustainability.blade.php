@@ -3,7 +3,7 @@
 @section('title', 'Our Products - ' . config('app.name'))
 
 @section('content')
-
-    @include('frontend.includes.safari.our-story')
-
+    <div class="py-5">
+        @include('frontend.includes.safari.sustainability')
+    </div>
 @endsection

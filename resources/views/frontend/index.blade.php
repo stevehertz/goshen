@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>Home - {{ config('app.name') }}</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css')}}">
@@ -38,7 +42,7 @@
         </div>
         <div class="logo">
             <a href="" class="custom-logo-link">
-                <img src="{{ asset(config('app.logo')) }}" alt="Blue Skies Logo">
+                <img src="{{ asset(config('app.logo')) }}" alt="{{ config('app.name') }}">
             </a>
         </div>
     </div>

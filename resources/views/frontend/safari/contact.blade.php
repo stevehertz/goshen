@@ -60,7 +60,9 @@
                                         </div>
                                         <div>
                                             <h4>Address</h4>
-                                            <p class="mb-0">123 Street New York.USA</p>
+                                            <p class="mb-0">
+                                                {{ config('app.location') }}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>

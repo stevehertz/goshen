@@ -3,7 +3,7 @@
 @section('title', 'Our Products - ' . config('app.name'))
 
 @section('content')
-
-    @include('frontend.includes.safari.our-story')
+    <br>
+    @include('frontend.includes.safari.products')
 
 @endsection
