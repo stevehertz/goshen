@@ -34,8 +34,9 @@
                             </div>
                         </div> --}}
                         <div class="col-sm-6">
-                            <a href="#" class="btn btn-primary rounded-pill py-3 px-5 flex-shrink-0">Discover
-                                Now</a>
+                            <a href="#" class="btn btn-primary rounded-pill py-3 px-5 flex-shrink-0">
+                                Discover Now
+                            </a>
                         </div>
                         <div class="col-sm-6">
                             <div class="d-flex">
@@ -52,7 +53,7 @@
                 </div>
             </div>
             <div class="col-xl-5 wow fadeInRight" data-wow-delay="0.2s">
-                <div class="bg-primary rounded position-relative overflow-hidden">
+                <div class="rounded position-relative overflow-hidden">
                     <img src="{{ asset('img/frontend/about-1.png') }}" class="img-fluid rounded w-100" alt="">
 
                     <div class="" style="position: absolute; top: -15px; right: -15px;">

@@ -1,48 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('frontend.layouts.safari.app')
 
-<head>
-    <meta charset="utf-8">
-    <title>Stocker - Stock Market Website Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+@section('title', 'Contact Us - '.config('app.name'))
 
-    @include('frontend.components.safari.styles')
-</head>
-
-<body>
-
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
-
-    <!-- Topbar Start -->
-    @include('frontend.includes.safari.top-bar')
-    <!-- Topbar End -->
-
-    <!-- Navbar & Hero Start -->
-    <div class="container-fluid position-relative p-0">
-        @include('frontend.includes.safari.navbar')
-
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Contact Us</h4>
-                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active text-primary">Contact</li>
-                </ol>
-            </div>
-        </div>
-        <!-- Header End -->
-    </div>
-    <!-- Navbar & Hero End -->
+@section('content')
 
     <!-- Contact Start -->
     <div class="container-fluid contact py-5">
@@ -89,7 +49,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="contact-add-item">
+                                    {{-- <div class="contact-add-item">
                                         <div class="contact-icon text-primary mb-4">
                                             <i class="fab fa-firefox-browser fa-2x"></i>
                                         </div>
@@ -97,16 +57,16 @@
                                             <h4>{{ config('app.email')  }}</h4>
                                             <p class="mb-0">{{ config('app.phone') }}</p>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
                         <div class="bg-light p-5 rounded h-100 wow fadeInUp" data-wow-delay="0.2s">
                             <h4 class="text-primary">Send Your Message</h4>
-                            <p class="mb-4">The contact form is currently inactive. Get a functional and working
+                            {{-- <p class="mb-4">The contact form is currently inactive. Get a functional and working
                                 contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a
                                 little code and you're done. <a class="text-primary fw-bold"
-                                    href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                                    href="https://htmlcodex.com/contact-form">Download Now</a>.</p> --}}
                             <form>
                                 <div class="row g-4">
                                     <div class="col-lg-12 col-xl-6">
@@ -171,11 +131,4 @@
         </div>
     </div>
     <!-- Contact End -->
-
-    @include('frontend.includes.safari.footer')
-
-
-    @include('frontend.components.safari.scripts')
-</body>
-
-</html>
+@endsection

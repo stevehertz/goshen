@@ -46,13 +46,27 @@
                     </h4>
                     <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                         <li class="breadcrumb-item">
-                            <a href="{{ route('safari')  }}">
+                            <a href="{{ route('safari') }}">
                                 Home
                             </a>
                         </li>
-                        <li class="breadcrumb-item active text-primary">
-                            About
-                        </li>
+                        @php
+                            $breadcrumbs = \App\Helper\Helper::generateBreadcrumb(request());
+                        @endphp
+                        @foreach ($breadcrumbs as $breadcrumb)
+                            @if (!$loop->last)
+                                <li class="breadcrumb-item">
+                                    <a href="{{ $breadcrumb['url'] }}">
+                                        {{ $breadcrumb['label'] }}
+                                    </a>
+                                </li>
+                            @else
+                                <li class="breadcrumb-item active text-primary">
+                                    {{ $breadcrumb['label'] }}
+                                </li>
+                            @endif
+                        @endforeach
+
                     </ol>
                 </div>
             </div>

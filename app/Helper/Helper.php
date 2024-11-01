@@ -59,6 +59,11 @@ class Helper
 
         // Iterate through the segments to build the breadcrumb hierarchy
         foreach ($segments as $segment) {
+
+            // Skip the "safari" segment
+            if ($segment === 'safari') {
+                continue;
+            }
             $urlSoFar .= '/' . $segment; // Build the URL so far
 
             // Attempt to resolve the full route by URL to check if it exists

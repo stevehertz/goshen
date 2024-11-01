@@ -12,11 +12,11 @@
     <!-- Services End -->
 
     <!-- Features Start -->
-    @include('frontend.includes.safari.feature')
+    {{-- @include('frontend.includes.safari.feature') --}}
     <!-- Features End -->
 
     <!-- Offer Start -->
-    @include('frontend.includes.safari.offer')
+    {{-- @include('frontend.includes.safari.offer') --}}
     <!-- Offer End -->
 
     <!-- Blog Start -->
@@ -24,14 +24,14 @@
     <!-- Blog End -->
 
     <!-- FAQs Start -->
-    @include('frontend.includes.safari.faqs')
+    {{-- @include('frontend.includes.safari.faqs') --}}
     <!-- FAQs End -->
 
     <!-- Team Start -->
-    @include('frontend.includes.safari.team')
+    {{-- @include('frontend.includes.safari.team') --}}
     <!-- Team End -->
 
     <!-- Testimonial Start -->
-    @include('frontend.includes.safari.testimonial')
+    {{-- @include('frontend.includes.safari.testimonial') --}}
     <!-- Testimonial End -->
 @endsection

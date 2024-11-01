@@ -9,8 +9,8 @@
                         {{-- <h4 class="text-white"><i class="fas fa-search-dollar me-3"></i>Stocker</h4> --}}
                         <img src="{{ asset('img/logo/goshen-logo.png') }}" alt="Logo" width="200">
                     </a>
-                    <p class="mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit
-                        amet, consectetur adipiscing...</p>
+                    {{-- <p class="mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit
+                        amet, consectetur adipiscing...</p> --}}
                     {{-- <div class="d-flex">
                         <a href="#" class="bg-primary d-flex rounded align-items-center py-2 px-3 me-2">
                             <i class="fas fa-apple-alt text-white"></i>
@@ -32,12 +32,12 @@
             <div class="col-md-6 col-lg-6 col-xl-2">
                 <div class="footer-item">
                     <h4 class="text-white mb-4">Quick Links</h4>
-                    <a href="#"><i class="fas fa-angle-right me-2"></i> About Us</a>
-                    <a href="#"><i class="fas fa-angle-right me-2"></i> Feature</a>
-                    <a href="#"><i class="fas fa-angle-right me-2"></i> Attractions</a>
-                    <a href="#"><i class="fas fa-angle-right me-2"></i> Tickets</a>
-                    <a href="#"><i class="fas fa-angle-right me-2"></i> Blog</a>
-                    <a href="#"><i class="fas fa-angle-right me-2"></i> Contact us</a>
+                    <a href="{{ route('safari.about') }}"><i class="fas fa-angle-right me-2"></i> About Us</a>
+                    <a href="{{ route('safari.our.story') }}"><i class="fas fa-angle-right me-2"></i> Our Story</a>
+                    <a href="{{ route('safari.our.products') }}"><i class="fas fa-angle-right me-2"></i> Our Products</a>
+                    <a href="{{ route('safari.sustainability') }}"><i class="fas fa-angle-right me-2"></i> Sustainability</a>
+                    <a href="{{ route('safari.news') }}"><i class="fas fa-angle-right me-2"></i> News</a>
+                    <a href="{{ route('safari.contact') }}"><i class="fas fa-angle-right me-2"></i> Contact us</a>
                 </div>
             </div>
             <div class="col-md-6 col-lg-6 col-xl-3">
@@ -66,10 +66,10 @@
                         <i class="fa fa-phone-alt text-primary me-3"></i>
                         <p class="text-white mb-0">{{ config('app.phone') }}</p>
                     </div>
-                    <div class="d-flex align-items-center mb-4">
+                    {{-- <div class="d-flex align-items-center mb-4">
                         <i class="fab fa-firefox-browser text-primary me-3"></i>
                         <p class="text-white mb-0">{{  config('app.email')  }}</p>
-                    </div>
+                    </div> --}}
                     <div class="d-flex">
                         <a class="btn btn-primary btn-sm-square rounded-circle me-3" href="#"><i
                                 class="fab fa-facebook-f text-white"></i></a>

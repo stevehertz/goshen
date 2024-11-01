@@ -14,6 +14,16 @@
                         farmer incomes while managing environmental impacts. Goshen is here for good to contribute to
                         building a more sustainable and dignified food system.
                     </p>
+                    <h4 class="mb-4">Vision</h4>
+                    <p class="mb-4">
+                        To be Africa's leading tropical fruit processor and exporter of quality fruits and vegetables by
+                        2035
+                    </p>
+                    <h4 class="mb-4">Mission</h4>
+                    <p class="mb-4">
+                        To sustainably grow into Africa's leading food processor meeting expectations of our
+                        stakeholder’s; customer, staff, and shareholders.
+                    </p>
                     <div class="row g-4">
                         {{-- <div class="col-md-6 col-lg-6 col-xl-6">
                             <div class="d-flex">
@@ -34,8 +44,9 @@
                             </div>
                         </div> --}}
                         <div class="col-sm-6">
-                            <a href="#" class="btn btn-primary rounded-pill py-3 px-5 flex-shrink-0">Discover
-                                Now</a>
+                            <a href="#" class="btn btn-primary rounded-pill py-3 px-5 flex-shrink-0">
+                                Watch out Video
+                            </a>
                         </div>
                         <div class="col-sm-6">
                             <div class="d-flex">
@@ -52,7 +63,7 @@
                 </div>
             </div>
             <div class="col-xl-5 wow fadeInRight" data-wow-delay="0.2s">
-                <div class="bg-primary rounded position-relative overflow-hidden">
+                <div class="rounded position-relative overflow-hidden">
                     <img src="{{ asset('img/frontend/about-1.png') }}" class="img-fluid rounded w-100" alt="">
 
                     <div class="" style="position: absolute; top: -15px; right: -15px;">

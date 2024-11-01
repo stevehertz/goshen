@@ -12,11 +12,11 @@
         <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay="0.2s">
             <div class="blog-item p-4">
                 <div class="blog-img mb-4">
-                    <img src="{{ asset('img/frontend/service-1.jpg') }}" class="img-fluid w-100 rounded"
+                    <img src="{{ asset('img/frontend/services-1.png') }}" class="img-fluid w-100 rounded"
                         alt="">
-                    <div class="blog-title">
+                    {{-- <div class="blog-title">
                         <a href="#" class="btn">Dividend Stocks</a>
-                    </div>
+                    </div> --}}
                 </div>
                 <a href="#" class="h4 d-inline-block mb-3">
                     Market Expansion
@@ -25,22 +25,22 @@
                     We are increasing our presence in the local and premium markets to provide our premium products to more customers.
                 </p>
                 <div class="d-flex align-items-center">
-                    <img src="{{ asset('img/frontend/testimonial-1.jpg') }}" class="img-fluid rounded-circle"
+                    {{-- <img src="{{ asset('img/frontend/testimonial-1.jpg') }}" class="img-fluid rounded-circle"
                         style="width: 60px; height: 60px;" alt="">
                     <div class="ms-3">
                         <h5>Admin</h5>
                         <p class="mb-0">October 9, 2025</p>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 
             <div class="blog-item p-4">
                 <div class="blog-img mb-4">
-                    <img src="{{ asset('img/frontend/service-2.jpg') }}" class="img-fluid w-100 rounded"
+                    <img src="{{ asset('img/frontend/services-2.png') }}" class="img-fluid w-100 rounded"
                         alt="">
-                    <div class="blog-title">
+                    {{-- <div class="blog-title">
                         <a href="#" class="btn">Non-Dividend Stocks</a>
-                    </div>
+                    </div> --}}
                 </div>
                 <a href="#" class="h4 d-inline-block mb-3">
                     New Partnerships
@@ -49,22 +49,22 @@
                     We’re collaborating with more local farmers to expand our sourcing network, ensuring our supply chain remains sustainable and scalable.
                 </p>
                 <div class="d-flex align-items-center">
-                    <img src="{{ asset('img/frontend/testimonial-2.jpg') }}" class="img-fluid rounded-circle"
+                    {{-- <img src="{{ asset('img/frontend/testimonial-2.jpg') }}" class="img-fluid rounded-circle"
                         style="width: 60px; height: 60px;" alt="">
                     <div class="ms-3">
                         <h5>Admin</h5>
                         <p class="mb-0">October 9, 2025</p>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 
             <div class="blog-item p-4">
                 <div class="blog-img mb-4">
-                    <img src="{{ asset('img/frontend/service-3.jpg') }}" class="img-fluid w-100 rounded"
+                    <img src="{{ asset('img/frontend/services-3.png') }}" class="img-fluid w-100 rounded"
                         alt="">
-                    <div class="blog-title">
+                    {{-- <div class="blog-title">
                         <a href="#" class="btn">Dividend Stocks</a>
-                    </div>
+                    </div> --}}
                 </div>
                 <a href="#" class="h4 d-inline-block mb-3">
                     Impact Stories
@@ -73,12 +73,12 @@
                     Regular updates on how our initiatives are changing lives—meet the farmers whose incomes have improved through our programs.
                 </p>
                 <div class="d-flex align-items-center">
-                    <img src="{{ asset('img/frontend/testimonial-3.jpg') }}" class="img-fluid rounded-circle"
+                    {{-- <img src="{{ asset('img/frontend/testimonial-3.jpg') }}" class="img-fluid rounded-circle"
                         style="width: 60px; height: 60px;" alt="">
                     <div class="ms-3">
                         <h5>Admin</h5>
                         <p class="mb-0">October 9, 2025</p>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 

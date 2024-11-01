@@ -10,7 +10,7 @@
 
     <title>Home - {{ config('app.name') }}</title>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Google Fonts (you can choose similar to the design) -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
@@ -22,23 +22,30 @@
     <div class="container">
         <div class="left-side">
             <div class="content">
-                <h1>Lets Do <span>Business</span></h1>
-                <p>Take an adventure</p>
-                <a href="{{ route('safari') }}" class="button">
-                    Safari Time
-                </a>
+                <div class="text-container">
+                    <h1>Lets Do <span>Business</span></h1>
+                    <p>Take an adventure</p>
+                    <a href="{{ route('safari') }}" class="button">Safari Time</a>
+                </div>
+                <div class="image-container">
+                    <img src="{{ asset('img/corporate.png') }}" alt="Mango Image" class="product-image">
+                </div>
             </div>
-            <img src="{{ asset('img/corporate.png') }}" alt="Mango Image" class="product-image">
         </div>
         <div class="right-side">
             <div class="content">
-                <h1>Visit Our<span> Market place</span></h1>
-                <p>Find out about our products</p>
-                <a href="{{ route('shop') }}" class="button">
-                    Shop
-                </a>
+                <div class="image-container">
+                    <img src="{{ asset('img/frontend.png') }}" alt="Product Image" class="product-image">
+                </div>
+                <div class="text-container">
+                    <h1>Visit Our<span> Market place</span></h1>
+                    <p>Find out about our products</p>
+                    <a href="{{ route('shop') }}" class="button">
+                        Shop
+                    </a>
+                </div>
             </div>
-            <img src="{{ asset('img/frontend.png') }}" alt="Product Image" class="product-image">
+
         </div>
         <div class="logo">
             <a href="" class="custom-logo-link">
