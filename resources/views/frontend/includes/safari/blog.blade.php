@@ -1,108 +1,53 @@
-<div class="container-fluid blog pb-5">
-    <div class="container pb-5">
-        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-            <h4 class="text-primary">Our Blog & News</h4>
-            <h1 class="display-5 mb-4">
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
+            style="max-width: 500px;">
+            <h1 class="display-5 mb-3">
                 Latest Updates from Goshen
             </h1>
-            <p class="mb-0">
+            <p>
                 Stay tuned for exciting developments:
             </p>
         </div>
-        <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay="0.2s">
-            <div class="blog-item p-4">
-                <div class="blog-img mb-4">
-                    <img src="{{ asset('img/frontend/services-1.png') }}" class="img-fluid w-100 rounded"
-                        alt="">
-                    {{-- <div class="blog-title">
-                        <a href="#" class="btn">Dividend Stocks</a>
-                    </div> --}}
-                </div>
-                <a href="#" class="h4 d-inline-block mb-3">
-                    Market Expansion
-                </a>
-                <p class="mb-4">
-                    We are increasing our presence in the local and premium markets to provide our premium products to more customers.
-                </p>
-                <div class="d-flex align-items-center">
-                    {{-- <img src="{{ asset('img/frontend/testimonial-1.jpg') }}" class="img-fluid rounded-circle"
-                        style="width: 60px; height: 60px;" alt="">
-                    <div class="ms-3">
-                        <h5>Admin</h5>
-                        <p class="mb-0">October 9, 2025</p>
-                    </div> --}}
-                </div>
-            </div>
-
-            <div class="blog-item p-4">
-                <div class="blog-img mb-4">
-                    <img src="{{ asset('img/frontend/services-2.png') }}" class="img-fluid w-100 rounded"
-                        alt="">
-                    {{-- <div class="blog-title">
-                        <a href="#" class="btn">Non-Dividend Stocks</a>
-                    </div> --}}
-                </div>
-                <a href="#" class="h4 d-inline-block mb-3">
-                    New Partnerships
-                </a>
-                <p class="mb-4">
-                    We’re collaborating with more local farmers to expand our sourcing network, ensuring our supply chain remains sustainable and scalable.
-                </p>
-                <div class="d-flex align-items-center">
-                    {{-- <img src="{{ asset('img/frontend/testimonial-2.jpg') }}" class="img-fluid rounded-circle"
-                        style="width: 60px; height: 60px;" alt="">
-                    <div class="ms-3">
-                        <h5>Admin</h5>
-                        <p class="mb-0">October 9, 2025</p>
-                    </div> --}}
-                </div>
-            </div>
-
-            <div class="blog-item p-4">
-                <div class="blog-img mb-4">
-                    <img src="{{ asset('img/frontend/services-3.png') }}" class="img-fluid w-100 rounded"
-                        alt="">
-                    {{-- <div class="blog-title">
-                        <a href="#" class="btn">Dividend Stocks</a>
-                    </div> --}}
-                </div>
-                <a href="#" class="h4 d-inline-block mb-3">
-                    Impact Stories
-                </a>
-                <p class="mb-4">
-                    Regular updates on how our initiatives are changing lives—meet the farmers whose incomes have improved through our programs.
-                </p>
-                <div class="d-flex align-items-center">
-                    {{-- <img src="{{ asset('img/frontend/testimonial-3.jpg') }}" class="img-fluid rounded-circle"
-                        style="width: 60px; height: 60px;" alt="">
-                    <div class="ms-3">
-                        <h5>Admin</h5>
-                        <p class="mb-0">October 9, 2025</p>
-                    </div> --}}
-                </div>
-            </div>
-
-            {{-- <div class="blog-item p-4">
-                <div class="blog-img mb-4">
-                    <img src="{{ asset('img/frontend/service-4.jpg') }}" class="img-fluid w-100 rounded"
-                        alt="">
-                    <div class="blog-title">
-                        <a href="#" class="btn">Non-Dividend Stocks</a>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <img class="img-fluid" src="{{ asset('img/frontend/blog-1.png') }}" alt="">
+                <div class="bg-light p-4">
+                    <a class="d-block h5 lh-base mb-4" href="">
+                        New Partnership
+                    </a>
+                    <div class="text-muted border-top pt-4">
+                        <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
+                        <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 Jan, 2045</small>
                     </div>
                 </div>
-                <a href="#" class="h4 d-inline-block mb-3">Options Trading Business?</a>
-                <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore aut aliquam
-                    suscipit error corporis accusamus labore....
-                </p>
-                <div class="d-flex align-items-center">
-                    <img src="{{ asset('img/frontend/testimonial-1.jpg') }}" class="img-fluid rounded-circle"
-                        style="width: 60px; height: 60px;" alt="">
-                    <div class="ms-3">
-                        <h5>Admin</h5>
-                        <p class="mb-0">October 9, 2025</p>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <img class="img-fluid" src="{{ asset('img/frontend/blog-2.jpg') }}" alt="">
+                <div class="bg-light p-4">
+                    <a class="d-block h5 lh-base mb-4" href="">
+                        Impact Stories
+                    </a>
+                    <div class="text-muted border-top pt-4">
+                        <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
+                        <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 Jan, 2045</small>
                     </div>
                 </div>
-            </div> --}}
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <img class="img-fluid" src="{{ asset('img/frontend/blog-3.png') }}" alt="">
+                <div class="bg-light p-4">
+                    <a class="d-block h5 lh-base mb-4" href="">
+                        Market Expansion
+                    </a>
+                    <div class="text-muted border-top pt-4">
+                        <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
+                        <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 Jan, 2045</small>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+
