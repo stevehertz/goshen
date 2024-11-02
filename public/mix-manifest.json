@@ -3,8 +3,9 @@
     "/js/main.js": "/js/main.js",
     "/js/plugin.js": "/js/plugin.js",
     "/css/app.css": "/css/app.css",
-    "/css/shop.css": "/css/shop.css",
+    "/css/safari.css": "/css/safari.css",
     "/css/vendor.css": "/css/vendor.css",
     "/css/styles.css": "/css/styles.css",
-    "/css/main.css": "/css/main.css"
+    "/css/main.css": "/css/main.css",
+    "/css/shop.css": "/css/shop.css"
 }

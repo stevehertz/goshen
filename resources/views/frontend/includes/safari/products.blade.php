@@ -1,114 +1,200 @@
-<div class="container-fluid service pb-5">
-    <div class="container pb-5">
-        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-            <h4 class="text-primary">Our Products</h4>
-            <h1 class="display-5 mb-4">
-                Premium Dried Fruit Snacks & Ingredients
-            </h1>
-            <p class="mb-0">
-                Goshen specializes in contractual production and aggregation of directly sourced produce from smallholder farms. We focus on local tropical varieties to ensure quality and sustainability. Our product line includes
-            </p>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="service-item">
-                    <div class="service-img">
-                        <img src="{{ asset('img/products/product-1.png') }}" class="img-fluid rounded-top w-100"
-                            alt="Image">
-                    </div>
-                    <div class="rounded-bottom p-4">
-                        <a href="#" class="h4 d-inline-block mb-4"> 
-                            Banana Fruit Crisp 
-                        </a>
-                        {{-- <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint?
-                            Excepturi facilis neque nesciunt similique officiis veritatis,
-                        </p> --}}
-                        {{-- <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a> --}}
-                    </div>
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-0 gx-5 align-items-end">
+            <div class="col-lg-6">
+                <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                    <h1 class="display-5 mb-3">
+                        Premium Dried Fruit Snacks & Ingredient
+                    </h1>
+                    <p>
+                        Goshen specializes in contractual production and aggregation of directly sourced produce from
+                        smallholder farms. We focus on local tropical varieties to ensure quality and sustainability.
+                        Our product line includes
+                    </p>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="service-item">
-                    <div class="service-img">
-                        <img src="{{ asset('img/products/product-2.png') }}" class="img-fluid rounded-top w-100"
-                            alt="Image">
-                    </div>
-                    <div class="rounded-bottom p-4">
-                        <a href="#" class="h4 d-inline-block mb-4">
-                            Mango Fruit Snack
-                        </a>
-                        {{-- <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint?
-                            Excepturi facilis neque nesciunt similique officiis veritatis,
-                        </p> --}}
-                        {{-- <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a> --}}
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
-                <div class="service-item">
-                    <div class="service-img">
-                        <img src="{{ asset('img/products/product-3.png') }}" class="img-fluid rounded-top w-100"
-                            alt="Image">
-                    </div>
-                    <div class="rounded-bottom p-4">
-                        <a href="#" class="h4 d-inline-block mb-4">Mixed Fruit Crips</a>
-                        {{-- <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint?
-                            Excepturi facilis neque nesciunt similique officiis veritatis,
-                        </p> --}}
-                        {{-- <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a> --}}
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="service-item">
-                    <div class="service-img">
-                        <img src="{{ asset('img/products/product-4.png') }}" class="img-fluid rounded-top w-100"
-                            alt="Image">
-                    </div>
-                    <div class="rounded-bottom p-4">
-                        <a href="#" class="h4 d-inline-block mb-4">Papaya Fruit Crisp</a>
-                        {{-- <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint?
-                            Excepturi facilis neque nesciunt similique officiis veritatis,
-                        </p> --}}
-                        {{-- <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a> --}}
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="service-item">
-                    <div class="service-img">
-                        <img src="{{ asset('img/products/product-5.png') }}" class="img-fluid rounded-top w-100"
-                            alt="Image">
-                    </div>
-                    <div class="rounded-bottom p-4">
-                        <a href="#" class="h4 d-inline-block mb-4">Pineaple Fruit Crips</a>
-                        {{-- <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint?
-                            Excepturi facilis neque nesciunt similique officiis veritatis,
-                        </p> --}}
-                        {{-- <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a> --}}
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
-                <div class="service-item">
-                    <div class="service-img">
-                        <img src="{{ asset('img/products/product-6.png') }}" class="img-fluid rounded-top w-100"
-                            alt="Image">
-                    </div>
-                    <div class="rounded-bottom p-4">
-                        <a href="#" class="h4 d-inline-block mb-4">Plantain Fruit Crisp</a>
-                        {{-- <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sint?
-                            Excepturi facilis neque nesciunt similique officiis veritatis,
-                        </p> --}}
-                        {{-- <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a> --}}
-                    </div>
-                </div>
+            <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
+                <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
+                    <li class="nav-item me-2">
+                        <a class="btn btn-outline-primary border-2 active" data-bs-toggle="pill"
+                            href="#tab-1">Our Products</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="text-center mx-auto pt-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-            <p class="mb-0">
-                By converting fresh fruits into nutritious snacks, we not only extend shelf life but also create a sustainable income stream for our partner farmers.
-            </p>
+        <div class="tab-content">
+            <div id="tab-1" class="tab-pane fade show p-0 active">
+                <div class="row g-4">
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="product-item">
+                            <div class="position-relative bg-light overflow-hidden">
+                                <img class="img-fluid w-100" src="{{ asset('img/frontend/product-1.jpg') }}"
+                                    alt="">
+                                {{-- <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                    New
+                                </div> --}}
+                            </div>
+                            <div class="text-center p-4">
+                                <a class="d-block h5 mb-2" href="">Dried Mangoes</a>
+                                {{-- <span class="text-primary me-1">$19.00</span>
+                                <span class="text-body text-decoration-line-through">$29.00</span> --}}
+                            </div>
+                            {{-- <div class="d-flex border-top">
+                                <small class="w-50 text-center border-end py-2">
+                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View
+                                        detail</a>
+                                </small>
+                                <small class="w-50 text-center py-2">
+                                    <a class="text-body" href=""><i
+                                            class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                </small>
+                            </div> --}}
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="product-item">
+                            <div class="position-relative bg-light overflow-hidden">
+                                <img class="img-fluid w-100" src="{{ asset('img/frontend/product-3.jpg') }}"
+                                    alt="">
+                                {{-- <div
+                                    class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                    New</div> --}}
+                            </div>
+                            <div class="text-center p-4">
+                                <a class="d-block h5 mb-2" href="">
+                                    Dried Pineapples
+                                </a>
+                                {{-- <span class="text-primary me-1">$19.00</span>
+                                <span class="text-body text-decoration-line-through">$29.00</span> --}}
+                            </div>
+                            {{-- <div class="d-flex border-top">
+                                <small class="w-50 text-center border-end py-2">
+                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View
+                                        detail</a>
+                                </small>
+                                <small class="w-50 text-center py-2">
+                                    <a class="text-body" href=""><i
+                                            class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                </small>
+                            </div> --}}
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="product-item">
+                            <div class="position-relative bg-light overflow-hidden">
+                                <img class="img-fluid w-100" src="{{ asset('img/frontend/product-4.jpg') }}"
+                                    alt="">
+                                {{-- <div
+                                    class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                    New</div> --}}
+                            </div>
+                            <div class="text-center p-4">
+                                <a class="d-block h5 mb-2" href="">
+                                    Dried Bananas
+                                </a>
+                                {{-- <span class="text-primary me-1">$19.00</span>
+                                <span class="text-body text-decoration-line-through">$29.00</span> --}}
+                            </div>
+                            {{-- <div class="d-flex border-top">
+                                <small class="w-50 text-center border-end py-2">
+                                    <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View
+                                        detail</a>
+                                </small>
+                                <small class="w-50 text-center py-2">
+                                    <a class="text-body" href=""><i
+                                            class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                </small>
+                            </div> --}}
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="product-item">
+                            <div class="position-relative bg-light overflow-hidden">
+                                <img class="img-fluid w-100" src="{{ asset('img/frontend/product-6.jpg') }}"
+                                    alt="">
+                                {{-- <div
+                                    class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                    New</div> --}}
+                            </div>
+                            <div class="text-center p-4">
+                                <a class="d-block h5 mb-2" href="">Dried Papayas</a>
+                                {{-- <span class="text-primary me-1">$19.00</span>
+                                <span class="text-body text-decoration-line-through">$29.00</span> --}}
+                            </div>
+                            {{-- <div class="d-flex border-top">
+                                <small class="w-50 text-center border-end py-2">
+                                    <a class="text-body" href=""><i
+                                            class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                </small>
+                                <small class="w-50 text-center py-2">
+                                    <a class="text-body" href=""><i
+                                            class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                </small>
+                            </div> --}}
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="product-item">
+                            <div class="position-relative bg-light overflow-hidden">
+                                <img class="img-fluid w-100" src="{{ asset('img/frontend/product-2.jpg') }}"
+                                    alt="">
+                                {{-- <div
+                                    class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                    New</div> --}}
+                            </div>
+                            <div class="text-center p-4">
+                                <a class="d-block h5 mb-2" href="">
+                                    Dried Chilli
+                                </a>
+                                {{-- <span class="text-primary me-1">$19.00</span>
+                                <span class="text-body text-decoration-line-through">$29.00</span> --}}
+                            </div>
+                            {{-- <div class="d-flex border-top">
+                                <small class="w-50 text-center border-end py-2">
+                                    <a class="text-body" href=""><i
+                                            class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                </small>
+                                <small class="w-50 text-center py-2">
+                                    <a class="text-body" href=""><i
+                                            class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                </small>
+                            </div> --}}
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="product-item">
+                            <div class="position-relative bg-light overflow-hidden">
+                                <img class="img-fluid w-100" src="{{ asset('img/frontend/product-5.jpg') }}"
+                                    alt="">
+                                {{-- <div
+                                    class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                    New</div> --}}
+                            </div>
+                            <div class="text-center p-4">
+                                <a class="d-block h5 mb-2" href="">
+                                    Dried Coconut Crisps
+                                </a>
+                                {{-- <span class="text-primary me-1">$19.00</span>
+                                <span class="text-body text-decoration-line-through">$29.00</span> --}}
+                            </div>
+                            {{-- <div class="d-flex border-top">
+                                <small class="w-50 text-center border-end py-2">
+                                    <a class="text-body" href=""><i
+                                            class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                </small>
+                                <small class="w-50 text-center py-2">
+                                    <a class="text-body" href=""><i
+                                            class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                </small>
+                            </div> --}}
+                        </div>
+                    </div>
+                    <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="{{ route('safari.our.products') }}">Browse More Products</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

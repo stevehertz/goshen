@@ -9616,6 +9616,19 @@ module.exports = Array.isArray || function (arr) {
 
 /***/ }),
 
+/***/ "./resources/sass/shop.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/shop.scss ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -9668,10 +9681,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/shop.scss":
-/*!**********************************!*\
-  !*** ./resources/sass/shop.scss ***!
-  \**********************************/
+/***/ "./resources/sass/safari.scss":
+/*!************************************!*\
+  !*** ./resources/sass/safari.scss ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -14778,10 +14791,11 @@ const asap = typeof queueMicrotask !== 'undefined' ?
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
 /******/ 			"css/app": 0,
-/******/ 			"css/shop": 0,
+/******/ 			"css/safari": 0,
 /******/ 			"css/vendor": 0,
 /******/ 			"css/styles": 0,
-/******/ 			"css/main": 0
+/******/ 			"css/main": 0,
+/******/ 			"css/shop": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -14831,12 +14845,13 @@ const asap = typeof queueMicrotask !== 'undefined' ?
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/shop","css/vendor","css/styles","css/main"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/shop","css/vendor","css/styles","css/main"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/shop","css/vendor","css/styles","css/main"], () => (__webpack_require__("./resources/sass/main.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/shop","css/vendor","css/styles","css/main"], () => (__webpack_require__("./resources/sass/styles.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/shop","css/vendor","css/styles","css/main"], () => (__webpack_require__("./resources/sass/vendor.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/shop","css/vendor","css/styles","css/main"], () => (__webpack_require__("./resources/sass/shop.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/safari","css/vendor","css/styles","css/main","css/shop"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/safari","css/vendor","css/styles","css/main","css/shop"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/safari","css/vendor","css/styles","css/main","css/shop"], () => (__webpack_require__("./resources/sass/main.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/safari","css/vendor","css/styles","css/main","css/shop"], () => (__webpack_require__("./resources/sass/styles.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/safari","css/vendor","css/styles","css/main","css/shop"], () => (__webpack_require__("./resources/sass/vendor.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/safari","css/vendor","css/styles","css/main","css/shop"], () => (__webpack_require__("./resources/sass/safari.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/safari","css/vendor","css/styles","css/main","css/shop"], () => (__webpack_require__("./resources/sass/shop.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

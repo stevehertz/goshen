@@ -18,6 +18,7 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/main.scss', 'public/css')
     .sass('resources/sass/styles.scss', 'public/css')
     .sass('resources/sass/vendor.scss', 'public/css')
+    .sass('resources/sass/safari.scss', 'public/css')
     .sass('resources/sass/shop.scss', 'public/css');
 
 mix.browserSync('127.0.0.1:8000');
