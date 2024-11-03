@@ -7,5 +7,5 @@
     <!-- About Start -->
     @include('frontend.includes.safari.about')
     <!-- About End -->
-    
+
 @endsection

@@ -29,7 +29,7 @@
                         <div class="row justify-content-start">
                             <div class="col-lg-7">
                                 <h1 class="display-2 mb-5 animated slideInDown">
-                                    Kenya’s Premier  Agricircular Tropical Fruits Processor and Exporter
+                                    Kenya’s Leading Tropical Fruit Processor & Exporter
                                 </h1>
                                 <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">
                                     Watch Our Video

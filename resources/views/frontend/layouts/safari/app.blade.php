@@ -11,78 +11,53 @@
 
     <meta content="" name="keywords">
     <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="{{ asset(config('app.favicon')) }}" rel="icon">
+
     @include('frontend.components.safari.styles')
 </head>
 
 <body>
-
     <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status"></div>
     </div>
     <!-- Spinner End -->
 
-    <!-- Topbar Start -->
-    @include('frontend.includes.safari.top-bar')
-    <!-- Topbar End -->
+    <!-- Navbar Start -->
+    <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
+        @include('frontend.includes.safari.top-bar')
 
-    <!-- Navbar & Hero Start -->
-    <div class="container-fluid position-relative p-0">
         @include('frontend.includes.safari.navbar')
-
-        @if (Route::is('safari'))
-            <!-- Carousel Start -->
-            @include('frontend.includes.safari.hero')
-            <!-- Carousel End -->
-        @else
-            <!-- Header Start -->
-            <div class="container-fluid bg-breadcrumb">
-                <div class="container text-center py-5" style="max-width: 900px;">
-                    <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">
-                        {{ \App\Helper\Helper::getPageTitle() }}
-                    </h4>
-                    <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                        <li class="breadcrumb-item">
-                            <a href="{{ route('safari') }}">
-                                Home
-                            </a>
-                        </li>
-                        @php
-                            $breadcrumbs = \App\Helper\Helper::generateBreadcrumb(request());
-                        @endphp
-                        @foreach ($breadcrumbs as $breadcrumb)
-                            @if (!$loop->last)
-                                <li class="breadcrumb-item">
-                                    <a href="{{ $breadcrumb['url'] }}">
-                                        {{ $breadcrumb['label'] }}
-                                    </a>
-                                </li>
-                            @else
-                                <li class="breadcrumb-item active text-primary">
-                                    {{ $breadcrumb['label'] }}
-                                </li>
-                            @endif
-                        @endforeach
-
-                    </ol>
-                </div>
-            </div>
-            <!-- Header End -->
-        @endif
-
-
     </div>
-    <!-- Navbar & Hero End -->
+    <!-- Navbar End -->
+
+    @if (Route::is('safari'))
+        <!-- Carousel Start -->
+        @include('frontend.includes.safari.hero')
+        <!-- Carousel End -->
+    @else
+        <!-- Page Header Start -->
+        @include('frontend.includes.safari.breadcrumb')
+        <!-- Page Header End -->
+    @endif
 
     @yield('content')
 
+
+    <!-- Footer Start -->
     @include('frontend.includes.safari.footer')
+    <!-- Footer End -->
 
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
     @include('frontend.components.safari.scripts')
-
 </body>
 
 </html>

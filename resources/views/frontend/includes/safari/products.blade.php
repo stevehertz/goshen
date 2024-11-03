@@ -16,8 +16,8 @@
             <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
                 <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
                     <li class="nav-item me-2">
-                        <a class="btn btn-outline-primary border-2 active" data-bs-toggle="pill"
-                            href="#tab-1">Our Products</a>
+                        <a class="btn btn-outline-primary border-2 active" data-bs-toggle="pill" href="#tab-1">Our
+                            Products</a>
                     </li>
                 </ul>
             </div>
@@ -190,9 +190,12 @@
                             </div> --}}
                         </div>
                     </div>
-                    <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="{{ route('safari.our.products') }}">Browse More Products</a>
-                    </div>
+                    @if (Route::is('safari'))
+                        <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
+                            <a class="btn btn-primary rounded-pill py-3 px-5"
+                                href="{{ route('safari.our.products') }}">Browse More Products</a>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
