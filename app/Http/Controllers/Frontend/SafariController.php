@@ -33,6 +33,21 @@ class SafariController extends Controller
         return view('frontend.safari.news');
     }
 
+    public function farmers_training()
+    {
+        return view('frontend.safari.blog.farmers-training');
+    }
+
+    public function diversification()
+    {
+        return view('frontend.safari.blog.diversify');
+    }
+
+    public function chilli_mango()
+    {
+        return view('frontend.safari.blog.chilli-mango');
+    }
+
     public function contact()
     {
         return view('frontend.safari.contact');

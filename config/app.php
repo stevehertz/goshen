@@ -109,6 +109,25 @@ return [
     |
     */
 
+
+    'linkedin'       => env('APP_LINKEDIN', ''),
+    'x'       => env('APP_X', ''),
+    'facebook'       => env('APP_FACEBOOK', ''),
+    'youtube'       => env('APP_YOUTUBE', ''),
+    'instagram'       => env('APP_INSTAGRAM', ''),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Debug Mode
+    |--------------------------------------------------------------------------
+    |
+    | When your application is in debug mode, detailed error messages with
+    | stack traces will be shown on every error that occurs within your
+    | application. If disabled, a simple generic error page is shown.
+    |
+    */
+
+
     'debug' => (bool) env('APP_DEBUG', false),
 
     /*

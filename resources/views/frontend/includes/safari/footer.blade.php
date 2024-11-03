@@ -8,25 +8,33 @@
                     dried fruit snacks and food ingredients.
                 </p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
+                    <a class="btn btn-square btn-outline-light rounded-circle me-1" href="{{ config('app.x') }}"><i
                             class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
+                    <a class="btn btn-square btn-outline-light rounded-circle me-1" href="{{ config('app.facebook') }}"><i
                             class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
+                    <a class="btn btn-square btn-outline-light rounded-circle me-1" href="{{ config('app.youtube') }}"><i
                             class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square btn-outline-light rounded-circle me-0" href=""><i
+                    <a class="btn btn-square btn-outline-light rounded-circle me-0" href="{{ config('app.linkedin') }}"><i
                             class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
-                <h4 class="text-light mb-4">Address</h4>
-                <p><i class="fa fa-map-marker-alt me-3"></i>{{ config('app.location') }}</p>
-                <p><i class="fa fa-phone-alt me-3"></i>{{ config('app.phone') }}</p>
-                <p><i class="fa fa-envelope me-3"></i>{{ config('app.email') }}</p>
+                <h4 class="mb-4">Address</h4>
+                <p class="footer-address"><i class="fa fa-map-marker-alt me-3"></i>{{ config('app.location') }}</p>
+                <p>
+                    <a class="btn btn-contact" href="#">
+                        <i class="fa fa-phone-alt me-3"></i>{{ config('app.phone') }}
+                    </a>
+                </p>
+                <p>
+                    <a class="btn btn-contact" href="#">
+                        <i class="fa fa-envelope me-3"></i>{{ config('app.email') }}
+                    </a>
+                </p>
             </div>
             <div class="col-lg-3 col-md-6">
-                <h4 class="text-light mb-4">Quick Links</h4>
-                <a class="btn btn-link" href="{{ route('safari.about') }}">About Us</a>
+                <h4 class="mb-4">Quick Links</h4>
+                <a class="btn btn-link" href="{{ route('safari.about.us') }}">About Us</a>
                 <a class="btn btn-link" href="{{ route('safari.our.products') }}">Our Products</a>
                 <a class="btn btn-link" href="{{ route('safari.sustainability') }}">Sustainability</a>
                 <a class="btn btn-link" href="{{ route('safari.contact') }}">Contact Us</a>
@@ -34,8 +42,8 @@
                 <a class="btn btn-link" href="">Terms & Condition</a>
             </div>
             <div class="col-lg-3 col-md-6">
-                <h4 class="text-light mb-4">Newsletter</h4>
-                <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                <h4 class="mb-4">Newsletter</h4>
+                <p class="footer-address">We are keen on telling our story. Kindly subscribe for the latest updates.</p>
                 <div class="position-relative mx-auto" style="max-width: 400px;">
                     <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
                         placeholder="Your email">

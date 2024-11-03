@@ -1,4 +1,4 @@
-<div class="container-fluid bg-light bg-icon py-6">
+<div class="container-fluid bg-light bg-icon py-6 sustainability">
     <div class="container">
         <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
             <h1 class="display-5 mb-3">
@@ -19,7 +19,7 @@
                         Inclusive sourcing from smallholder farmers 67% are women
                     </p>
                     <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">
-                        Read More
+                        SDG GOAL#17
                     </a>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                     <h4 class="mb-3">Creation of agricultural jobs</h4>
                     <p class="mb-4">Creation of Jobs for rural women and youth </p>
                     <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">
-                        Read More
+                        SDG GOAL#8
                     </a>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                     </h4>
                     <p class="mb-4">Farmer adoption of climate smart practices i.e Agroecology.</p>
                     <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">
-                        Read More
+                        SDG GOAL#13
                     </a>
                 </div>
             </div>
@@ -50,25 +50,27 @@
                 <div class="bg-white text-center h-100 p-4 p-xl-5">
                     <img class="img-fluid mb-4" src="{{ asset('img/frontend/sustainability-4.jpg') }}" alt="">
                     <h4 class="mb-3">
-                        Sustainable Waste Management
+                        Enviromental Restoration
                     </h4>
                     <p class="mb-4">
-                        Restoration using Fruit Trees
+                        Planting of 250k new fruit trees
                     </p>
                     <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">
-                        Read More
+                        SDG GOAL#15
                     </a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="bg-white text-center h-100 p-4 p-xl-5">
                     <img class="img-fluid mb-4" src="{{ asset('img/frontend/sustainability-5.jpg') }}" alt="">
-                    <h4 class="mb-3">Creation of agricultural jobs</h4>
+                    <h4 class="mb-3">
+                        Promoting Sustainable Agriculture
+                    </h4>
                     <p class="mb-4">
-                        Sustainable, scalable and replicable Service Delivery Modelnb
+                        Value addition for zero hunger(improve nutrition and food security).
                     </p>
                     <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">
-                        Read More
+                        SDG GOAL#2
                     </a>
                 </div>
             </div>
@@ -82,7 +84,7 @@
                         Organic waste converted from its processing plant to be recycled to form biogas &Bio-fertilizer
                     </p>
                     <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">
-                        Read More
+                        SDG GOAL#11
                     </a>
                 </div>
             </div>

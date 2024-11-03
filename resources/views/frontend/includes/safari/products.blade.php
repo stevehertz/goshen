@@ -28,7 +28,7 @@
                     <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="product-item">
                             <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="{{ asset('img/frontend/product-1.jpg') }}"
+                                <img class="img-fluid w-100" src="{{ asset('img/products/product-8.png') }}"
                                     alt="">
                                 {{-- <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
                                     New
@@ -82,7 +82,7 @@
                     <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="product-item">
                             <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="{{ asset('img/frontend/product-4.jpg') }}"
+                                <img class="img-fluid w-100" src="{{ asset('img/products/product-9.png') }}"
                                     alt="">
                                 {{-- <div
                                     class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
@@ -90,7 +90,7 @@
                             </div>
                             <div class="text-center p-4">
                                 <a class="d-block h5 mb-2" href="">
-                                    Dried Bananas
+                                    Dried Banana Coins
                                 </a>
                                 {{-- <span class="text-primary me-1">$19.00</span>
                                 <span class="text-body text-decoration-line-through">$29.00</span> --}}
@@ -117,7 +117,7 @@
                                     New</div> --}}
                             </div>
                             <div class="text-center p-4">
-                                <a class="d-block h5 mb-2" href="">Dried Papayas</a>
+                                <a class="d-block h5 mb-2" href="">Dried Papaya</a>
                                 {{-- <span class="text-primary me-1">$19.00</span>
                                 <span class="text-body text-decoration-line-through">$29.00</span> --}}
                             </div>
@@ -165,7 +165,7 @@
                     <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="product-item">
                             <div class="position-relative bg-light overflow-hidden">
-                                <img class="img-fluid w-100" src="{{ asset('img/frontend/product-5.jpg') }}"
+                                <img class="img-fluid w-100" src="{{ asset('img/products/product-7.png') }}"
                                     alt="">
                                 {{-- <div
                                     class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
@@ -173,7 +173,7 @@
                             </div>
                             <div class="text-center p-4">
                                 <a class="d-block h5 mb-2" href="">
-                                    Dried Coconut Crisps
+                                    Dried Coconut
                                 </a>
                                 {{-- <span class="text-primary me-1">$19.00</span>
                                 <span class="text-body text-decoration-line-through">$29.00</span> --}}

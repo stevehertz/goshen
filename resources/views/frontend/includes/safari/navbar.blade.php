@@ -13,7 +13,7 @@
             @endif">
                 Home
             </a>
-            <a href="{{ route('safari.about') }}" class="nav-item nav-link @if(Route::is('safari.about')) active @endif">
+            <a href="{{ route('safari.about.us') }}" class="nav-item nav-link @if(Route::is('safari.about')) active @endif">
                 About Us
             </a>
             <a href="{{ route('safari.our.story') }}" class="nav-item nav-link @if(Route::is('safari.our.story')) active @endif">

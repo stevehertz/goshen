@@ -1,3 +1,4 @@
+@import url(https://fonts.cdnfonts.com/css/tw-cen-mt-std);
 /********** Template CSS **********/
 :root {
   --primary: #3CB815;
@@ -151,6 +152,10 @@
   text-align: start;
   z-index: 1;
 }
+.carousel-caption h1 {
+  color: var(--secondary);
+  font-family: "Tw Cen MT Std", sans-serif;
+}
 
 .carousel-control-prev,
 .carousel-control-next {
@@ -185,6 +190,10 @@
   background: url(/img/frontend/carousel-1.jpg) top right no-repeat;
   background-size: cover;
 }
+.page-header h1 {
+  color: var(--secondary);
+  font-family: "Tw Cen MT Std", sans-serif;
+}
 
 .breadcrumb-item + .breadcrumb-item::before {
   color: #999999;
@@ -194,6 +203,10 @@
 .section-header {
   position: relative;
   padding-top: 25px;
+}
+.section-header h1 {
+  color: var(--primary);
+  font-family: "Tw Cen MT Std", sans-serif;
 }
 
 .section-header::before {
@@ -243,6 +256,32 @@
   z-index: 1;
 }
 
+.about-section h1 {
+  color: var(--primary);
+  font-family: "Tw Cen MT Std", sans-serif;
+}
+.about-section h6 {
+  color: var(--primary);
+  font-family: "Tw Cen MT Std", sans-serif;
+}
+.about-section small {
+  color: var(--secondary);
+}
+
+.our-story-section h1 {
+  color: var(--primary);
+  font-family: "Tw Cen MT Std", sans-serif;
+}
+
+.call-to-action-section h1 {
+  font-family: "Tw Cen MT Std", sans-serif;
+}
+
+.sustainability h4 {
+  font-family: "Tw Cen MT Std", sans-serif;
+  color: var(--secondary);
+}
+
 /*** Product ***/
 .nav-pills .nav-item .btn {
   color: var(--dark);
@@ -271,8 +310,10 @@
 
 /*** Testimonial ***/
 .testimonial-carousel .owl-item .testimonial-item img {
-  width: 60px;
-  height: 60px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 300px;
 }
 
 .testimonial-carousel .owl-item .testimonial-item,
@@ -323,13 +364,45 @@
 .footer {
   color: #999999;
 }
+.footer .footer-address {
+  color: #fff01f;
+}
+.footer h4 {
+  color: var(--primary);
+}
+
+.footer .btn.btn-contact {
+  display: block;
+  margin-bottom: 5px;
+  padding: 0;
+  text-align: left;
+  color: #fff01f;
+  font-weight: normal;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+
+.footer .btn.btn-contact::before {
+  position: relative;
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #fff01f;
+  margin-right: 10px;
+}
+
+.footer .btn.btn-contact:hover {
+  color: #fff01f;
+  letter-spacing: 1px;
+  box-shadow: none;
+}
 
 .footer .btn.btn-link {
   display: block;
   margin-bottom: 5px;
   padding: 0;
   text-align: left;
-  color: #999999;
+  color: var(--secondary);
   font-weight: normal;
   text-transform: capitalize;
   transition: 0.3s;

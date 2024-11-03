@@ -1,9 +1,9 @@
-<div class="container-xxl py-5">
+<div class="container-xxl py-5 about-section">
     <div class="container">
         <div class="row g-5 align-items-center">
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                 <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                    <img class="img-fluid w-100" src="{{ asset('img/frontend/about.png') }}">
+                    <img class="img-fluid w-100" src="{{ asset('img/frontend/about-2.jpg') }}">
                 </div>
             </div>
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
@@ -40,7 +40,7 @@
                 @endif
 
                 @if (Route::is('safari'))
-                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="{{ route('safari.about') }}">
+                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="{{ route('safari.about.us') }}">
                         Read More..
                     </a>
                 @endif
@@ -63,13 +63,13 @@
                         Customers, Producers, Partners, Staff & Shareholders.
                     </p>
                     <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">
-                        Watch out video
+                        Watch our video
                     </a>
                 </div>
 
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                     <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                        <img class="img-fluid w-100" src="{{ asset('img/frontend/about-1.jpg') }}">
+                        <img class="img-fluid w-100" src="{{ asset('img/frontend/about-3.jpg') }}">
                     </div>
                 </div>
             @endif
