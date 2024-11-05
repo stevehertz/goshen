@@ -56,10 +56,10 @@
 
     <footer>
         <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
-            <a href="#"><i class="fas fa-share-alt"></i></a>
+            <a href="{{ config('app.facebook') }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="{{ config('app.x') }}"><i class="fab fa-twitter"></i></a>
+            <a href="{{ config('app.linkedin') }}"><i class="fab fa-linkedin"></i></a>
+            <a href="{{ config('app.youtube') }}"><i class="fas fa-youtube"></i></a>
         </div>
         <div class="captcha">
             <p>Privacy - Terms</p>

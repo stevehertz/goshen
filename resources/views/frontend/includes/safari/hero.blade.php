@@ -2,7 +2,7 @@
     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="w-100" src="{{ asset('img/frontend/carousel-1.jpg') }}" alt="Image">
+                <img class="w-100" src="{{ asset('img/frontend/carousel-1.png') }}" alt="Image">
                 <div class="carousel-caption">
                     <div class="container">
                         <div class="row justify-content-start">
@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="w-100" src="{{ 'img/frontend/carousel-2.jpg' }}" alt="Image">
+                <img class="w-100" src="{{ 'img/frontend/carousel-2.png' }}" alt="Image">
                 <div class="carousel-caption">
                     <div class="container">
                         <div class="row justify-content-start">
