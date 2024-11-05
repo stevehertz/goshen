@@ -22,12 +22,12 @@
                 <h4 class="mb-4">Address</h4>
                 <p class="footer-address"><i class="fa fa-map-marker-alt me-3"></i>{{ config('app.location') }}</p>
                 <p>
-                    <a class="btn btn-contact" href="#">
+                    <a class="btn btn-contact" href="tel:{{ config('app.phone') }}">
                         <i class="fa fa-phone-alt me-3"></i>{{ config('app.phone') }}
                     </a>
                 </p>
                 <p>
-                    <a class="btn btn-contact" href="#">
+                    <a class="btn btn-contact" href="mailto:{{ config('app.email') }}">
                         <i class="fa fa-envelope me-3"></i>{{ config('app.email') }}
                     </a>
                 </p>
