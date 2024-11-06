@@ -18,7 +18,7 @@
                     </a>
                     <div class="border-top pt-4">
                         <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
-                        <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 Jan, 2045</small>
+                        <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 September, 2024</small>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                     </a>
                     <div class="text-muted border-top pt-4">
                         <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
-                        <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 Jan, 2045</small>
+                        <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 October, 2024</small>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                     </a>
                     <div class="text-muted border-top pt-4">
                         <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
-                        <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 Jan, 2045</small>
+                        <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 November, 2024</small>
                     </div>
                 </div>
             </div>
