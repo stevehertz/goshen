@@ -40,7 +40,7 @@
                 <div class="text-container">
                     <h1>Visit Our<span> Market place</span></h1>
                     <p>Find out about our products</p>
-                    <a href="{{ route('shop') }}" class="button">
+                    <a href="{{ route('coming') }}" class="button">
                         Shop
                     </a>
                 </div>

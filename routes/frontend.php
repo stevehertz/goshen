@@ -20,3 +20,5 @@ Route::get('/', [PagesController::class, 'index'])->name('home');
 Route::get('/safari', [PagesController::class, 'safari'])->name('safari');
 
 Route::get('/shop', [PagesController::class, 'shop'])->name('shop');
+
+Route::get('/coming', [PagesController::class, 'coming'])->name('coming');

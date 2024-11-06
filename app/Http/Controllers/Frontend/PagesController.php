@@ -3,23 +3,27 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    //  
-    public function index()  
+    //
+    public function index()
     {
         return view('frontend.index');
     }
 
-    public function safari()  
+    public function safari()
     {
         return view('frontend.safari.index');
     }
 
-    public function shop()  
+    public function shop()
     {
         return view('frontend.shop.index');
+    }
+
+    public function coming()
+    {
+        return view('frontend.coming.index');
     }
 }
