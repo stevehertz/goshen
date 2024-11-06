@@ -58,6 +58,8 @@
 
     <!-- JavaScript Libraries -->
     @include('frontend.components.safari.scripts')
+
+    @stack('scripts')
 </body>
 
 </html>

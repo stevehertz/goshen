@@ -1,6 +1,6 @@
 @extends('frontend.layouts.safari.app')
 
-@section('title', 'Home - '.config('app.name'))
+@section('title', 'Home - ' . config('app.name'))
 
 @section('content')
 
@@ -27,4 +27,14 @@
     <!-- Blog Start -->
     @include('frontend.includes.safari.blog')
     <!-- Blog End -->
+
+    @include('frontend.includes.safari.video-modal')
 @endsection
+
+@push('scripts')
+    <script>
+        $('#videoModal').on('hidden.bs.modal', function() {
+            $(this).find('iframe').attr('src', $(this).find('iframe').attr('src'));
+        });
+    </script>
+@endpush

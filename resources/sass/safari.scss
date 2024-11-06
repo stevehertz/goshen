@@ -406,7 +406,19 @@
     h4{
         color: var(--primary);
     }
+
+    input{
+        color: var(--secondary);
+    }
 }
+
+.text-secondary
+{
+    color: var(--secondary);
+}
+
+
+
 
 .footer .btn.btn-contact {
     display: block;

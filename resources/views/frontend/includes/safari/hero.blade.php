@@ -10,9 +10,9 @@
                                 <h1 class="display-2 mb-5 animated slideInDown">
                                     From African Farms to Global Tables
                                 </h1>
-                                <a href="{{ config('app.youtube') }}" class="btn btn-primary rounded-pill py-sm-3 px-sm-5" target="_blank">
+                                <button  class="btn btn-primary rounded-pill py-sm-3 px-sm-5" data-bs-toggle="modal" data-bs-target="#videoModal">
                                     Watch Our Video
-                                </a>
+                                </button>
                                 <a href="{{ route('safari.contact') }}"
                                     class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">
                                     Contact Us
@@ -31,9 +31,9 @@
                                 <h1 class="display-2 mb-5 animated slideInDown">
                                     Kenya’s Leading Tropical Fruit Processor & Exporter
                                 </h1>
-                                <a href="{{ config('app.youtube') }}" class="btn btn-primary rounded-pill py-sm-3 px-sm-5" target="_blank">
+                                <button type="button" class="btn btn-primary rounded-pill py-sm-3 px-sm-5" data-bs-toggle="modal" data-bs-target="#videoModal">
                                     Watch Our Video
-                                </a>
+                                </button>
                                 <a href=""
                                     class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">
                                     Contact Us

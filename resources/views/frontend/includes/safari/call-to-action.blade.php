@@ -13,7 +13,7 @@
                 </p>
             </div>
             <div class="col-md-5 text-md-end wow fadeIn" data-wow-delay="0.5s">
-                <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5" href="">
+                <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5" href="{{ route('safari.contact') }}">
                     Contact Us Now
                 </a>
             </div>

@@ -370,6 +370,13 @@
 .footer h4 {
   color: var(--primary);
 }
+.footer input {
+  color: var(--secondary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
 
 .footer .btn.btn-contact {
   display: block;

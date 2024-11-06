@@ -39,17 +39,19 @@
                 <a class="btn btn-link" href="{{ route('safari.sustainability') }}">Sustainability</a>
                 <a class="btn btn-link" href="{{ route('safari.contact') }}">Contact Us</a>
 
-                <a class="btn btn-link" href="">Terms & Condition</a>
+                {{-- <a class="btn btn-link" href="">Terms & Condition</a> --}}
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="mb-4">Newsletter</h4>
-                <p class="footer-address">We are keen on telling our story. Kindly subscribe for the latest updates.</p>
-                <div class="position-relative mx-auto" style="max-width: 400px;">
-                    <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
-                        placeholder="Your email">
-                    <button type="button"
-                        class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                <p class="footer-address">
+                    We are keen on telling our story. Kindly subscribe for the latest updates.
+                </p>
+                <div class="position-relative mx-auto" style="max-width: 400px; margin-bottom:10px;">
+                    <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5 text-secondary" type="text" placeholder="Your email">
                 </div>
+                <button type="button" class="btn btn-primary py-2">
+                    SignUp
+                </button>
             </div>
         </div>
     </div>
