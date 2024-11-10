@@ -13,7 +13,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ ('img/backend/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}">
+                <img src="{{ asset('img/backend/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}">
             </div>
             <div class="info">
                 <a href="#" class="d-block">
@@ -39,8 +39,8 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
-                <li class="nav-item menu-open">
-                    <a href="{{ route('dashboard') }}" class="nav-link active">
+                <li class="nav-item">
+                    <a href="{{ route('dashboard') }}" class="nav-link @if (Route::is('dashboard')) active @endif">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -48,8 +48,8 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="nav-item @if (Route::is('category.index')) menu-open @endif">
+                    <a href="#" class="nav-link @if (Route::is('category.index')) active @endif">
                         <i class="nav-icon fas fa-box"></i>
                         <p>
                             Products
@@ -70,7 +70,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/boxed.html" class="nav-link">
+                            <a href="{{ route('category.index') }}" class="nav-link @if (Route::is('category.index')) active @endif">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Category List</p>
                             </a>

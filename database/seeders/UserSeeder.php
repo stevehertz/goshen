@@ -24,6 +24,7 @@ class UserSeeder extends Seeder
                 [
                     'first_name' => 'Stephen',
                     'last_name' => 'Kamau',
+                    'profile' => 'noimage.png',
                     'phone' => '0715356718',
                     'email' => 'stevekamahertz@gmail.com',
                     'password' => bcrypt('stevekama'),
