@@ -14,6 +14,8 @@ Route::prefix('category')->name('category.')->group(function(){
 
     Route::post('/store', [CategoryController::class, 'store'])->name('store');
 
+    Route::get('/{id}/show', [CategoryController::class, 'show'])->name('show');
+
     Route::delete('/{category}/delete', [CategoryController::class, 'destroy'])->name('delete');
 
 });

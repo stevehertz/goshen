@@ -20,6 +20,7 @@ class CategoryRepository
             'slug' => Str::slug(data_get($attributes, 'title')),
             'image' => 'img/categories/noimage.png',
             'description' => data_get($attributes, 'description'),
+            'status' => data_get($attributes, 'status'),
             'created_by' => data_get($attributes, 'user_id'),
             'updated_by' => data_get($attributes, 'user_id')
         ]);
@@ -34,12 +35,12 @@ class CategoryRepository
     }
 
 
-    public function show($id)  
+    public function show($id)
     {
         return Category::findOrFail($id);
     }
 
-    public function destroyCategory(Category $category)  
+    public function destroyCategory(Category $category)
     {
         return $category->delete();
     }

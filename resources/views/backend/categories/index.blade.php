@@ -33,7 +33,11 @@
                                         @foreach ($data as $category)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $category->title }}</td>
+                                                <td>
+                                                    <a href="javascript:void(0)" data-id="{{ $category->id }}" class="viewCategoryBtn">
+                                                        {{ $category->title }}
+                                                    </a>
+                                                </td>
                                                 <td></td>
                                                 <td></td>
                                                 <td>
@@ -63,6 +67,7 @@
             </div>
             <!-- /.row -->
         </div><!-- /.container-fluid -->
+        @include('backend.categories.modal')
     </section>
     <!-- /.content -->
 @endsection

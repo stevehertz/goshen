@@ -46,7 +46,14 @@ class CategoryController extends Controller
     {
         //
         $data = $request->except("_token");
-        $category = $this->categoryRepository->storeCategory($data);
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+        } else {
+            $image = null;
+        }
+
+        $category = $this->categoryRepository->storeCategory($data, $image);
         if($category)
         {
             return response()->json([
@@ -59,9 +66,13 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Category $category)
+    public function show($id)
     {
         //
+        return response()->json([
+            'status' => true,
+            'data' => $this->categoryRepository->show($id)
+        ]);
     }
 
     /**

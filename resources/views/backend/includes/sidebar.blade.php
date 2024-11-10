@@ -48,8 +48,8 @@
                     </a>
                 </li>
 
-                <li class="nav-item @if (Route::is('category.index')) menu-open @endif">
-                    <a href="#" class="nav-link @if (Route::is('category.index')) active @endif">
+                <li class="nav-item @if (Route::is('category.index')) menu-open @endif @if (Route::is('category.create')) menu-open @endif">
+                    <a href="#" class="nav-link @if (Route::is('category.index')) active @endif  @if (Route::is('category.create')) active @endif">
                         <i class="nav-icon fas fa-box"></i>
                         <p>
                             Products
@@ -70,7 +70,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('category.index') }}" class="nav-link @if (Route::is('category.index')) active @endif">
+                            <a href="{{ route('category.index') }}" class="nav-link @if (Route::is('category.index')) active @endif @if (Route::is('category.create')) active @endif">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Category List</p>
                             </a>

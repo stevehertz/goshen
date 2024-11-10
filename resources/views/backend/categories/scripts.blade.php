@@ -1,6 +1,6 @@
 <script>
     $(document).ready(function() {
-
+        const assetBaseUrl = '{{ asset('') }}';
         @if (Route::is('category.index'))
 
             $(document).on('click', '.deleteCategoryBtn', function(e) {
@@ -24,7 +24,7 @@
                             data: {
                                 _token: token
                             },
-                            dataType: "json",   
+                            dataType: "json",
                             success: function(data) {
                                 if (data['status']) {
                                     toastr.success(data['message']);
@@ -39,6 +39,30 @@
                     }
                 });
             });
+
+            $(document).on('click', '.viewCategoryBtn', function(e){
+                e.preventDefault();
+                let category_id = $(this).data('id');
+                let path = '{{ route('category.show', ':id') }}';
+                path = path.replace(':id', category_id);
+                $.ajax({
+                    type: "GET",
+                    url: path,
+                    dataType: "json",
+                    success: function (data) {
+                        if(data['status'])
+                        {
+                            $('#viewCategoryModal').modal('show');
+                            console.log(assetBaseUrl);
+                            $('#viewCategoryImage').html('<img class="attachment-img" src="'  + assetBaseUrl + data['data']['image'] +  '" alt="Attachment Image" style="width:100%;">');
+                            $('#viewCategoryName').html(data['data']['title']);
+                            $('#viewCategorySlug').html(data['data']['slug']);
+                            $('#viewCategoryDescription').html(data['data']['description']);
+                        }
+                    }
+                });
+            });
+
         @endif
 
         @if (Route::is('category.create'))
