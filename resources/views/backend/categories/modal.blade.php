@@ -22,6 +22,10 @@
                                         <th>Description</th>
                                         <td id="viewCategoryDescription"></td>
                                     </tr>
+                                    <tr>
+                                        <th>Status</th>
+                                        <td id="viewCategoryStatus"></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

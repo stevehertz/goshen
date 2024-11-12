@@ -48,8 +48,8 @@
                     </a>
                 </li>
 
-                <li class="nav-item @if (Route::is('category.index')) menu-open @endif @if (Route::is('category.create')) menu-open @endif">
-                    <a href="#" class="nav-link @if (Route::is('category.index')) active @endif  @if (Route::is('category.create')) active @endif">
+                <li class="nav-item @if (Route::is('category.index')) menu-open @endif @if (Route::is('category.create')) menu-open @endif @if (Route::is('products.index')) menu-open @endif @if (Route::is('products.create')) menu-open @endif">
+                    <a href="#" class="nav-link @if (Route::is('category.index')) active @endif  @if (Route::is('category.create')) active @endif @if (Route::is('products.index')) active @endif @if (Route::is('products.create')) active @endif">
                         <i class="nav-icon fas fa-box"></i>
                         <p>
                             Products
@@ -58,13 +58,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
+                            <a href="{{ route('products.index') }}" class="nav-link @if (Route::is('products.index')) active @endif">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Product Lists</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                            <a href="{{ route('products.create') }}" class="nav-link @if (Route::is('products.create')) active @endif">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add Product</p>
                             </a>

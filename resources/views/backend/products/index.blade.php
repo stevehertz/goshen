@@ -1,9 +1,10 @@
 @extends('backend.layouts.app')
 
-@section('title', 'Categories | ' . config('app.name'))
+@section('title', 'Products | ' . config('app.name'))
 
 
 @section('content')
+
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
@@ -12,8 +13,8 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-tools">
-                                <a href="{{ route('category.create') }}" class="btn btn-sm btn-outline-success">
-                                    <i class="fas fa-plus"></i> New Category
+                                <a href="{{ route('products.create') }}" class="btn btn-sm btn-outline-success">
+                                    <i class="fas fa-plus"></i> New Product
                                 </a>
                             </div>
                         </div>
@@ -23,33 +24,42 @@
                                     <thead>
                                         <tr>
                                             <th style="width: 10px">#</th>
+                                            <th>Product</th>
+                                            <th>Description</th>
                                             <th>Category</th>
-                                            <th>Total Products</th>
-                                            <th>Total Earnings</th>
+                                            <th>Stock</th>
+                                            <th>QTY</th>
                                             <th style="width: 40px">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($data as $category)
+                                        @foreach ($data as $product)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>
-                                                    <a href="javascript:void(0)" data-id="{{ $category->id }}" class="viewCategoryBtn">
-                                                        {{ $category->title }}
+                                                    <a href="javascript:void(0)" data-id="{{ $product->id }}"
+                                                        class="viewProductBtn">
+                                                        {{ $product->title }}
                                                     </a>
                                                 </td>
                                                 <td>
-                                                    {{ $category->products()->count() }}
+                                                    {{ Str::limit($product->description, 100, '...') }}
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    @if (!$category->deleted_at)
-                                                        <a href="{{ route('category.edit', $category->id) }}"
-                                                            class="btn btn-warning btn-sm">
+                                                    {{ $product->in_stock }}
+                                                </td>
+                                                <td>
+                                                    {{ $product->quantity }}
+                                                </td>
+                                                <td>
+                                                    @if (!$product->deleted_at)
+                                                        <a href="#" class="btn btn-warning btn-sm">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
-                                                        <button type="button" class="btn btn-danger btn-sm deleteCategoryBtn"
-                                                            data-id="{{ $category->id }}">
+                                                        <button type="button"
+                                                            class="btn btn-danger btn-sm deleteProductBtn"
+                                                            data-id="{{ $product->id }}">
                                                             <i class="fas fa-trash"></i>
                                                         </button>
                                                     @endif
@@ -75,5 +85,5 @@
 @endsection
 
 @push('scripts')
-    @include('backend.categories.scripts')
+    @include('backend.products.scripts')
 @endpush

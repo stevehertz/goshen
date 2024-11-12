@@ -8,17 +8,19 @@
                         <span>All categories</span>
                     </div>
                     <ul>
-                        <li><a href="#">Fresh Meat</a></li>
-                        <li><a href="#">Vegetables</a></li>
-                        <li><a href="#">Fruit & Nut Gifts</a></li>
-                        <li><a href="#">Fresh Berries</a></li>
-                        <li><a href="#">Ocean Foods</a></li>
-                        <li><a href="#">Butter & Eggs</a></li>
-                        <li><a href="#">Fastfood</a></li>
-                        <li><a href="#">Fresh Onion</a></li>
-                        <li><a href="#">Papayaya & Crisps</a></li>
-                        <li><a href="#">Oatmeal</a></li>
-                        <li><a href="#">Fresh Bananas</a></li>
+                        @forelse ($categories as $category)
+                            <li>
+                                <a href="#">
+                                    {{ $category->title }}
+                                </a>
+                            </li>
+                        @empty
+                            <li>
+                                <a href="#">
+                                    No Category Found!
+                                </a>
+                            </li>
+                        @endforelse
                     </ul>
                 </div>
             </div>

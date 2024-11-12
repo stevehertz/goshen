@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Enums\Status;
 use App\Models\Category;
 use App\Http\Controllers\Controller;
+use App\Repositories\CategoryRepository;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
-use App\Repositories\CategoryRepository;
 
 class CategoryController extends Controller
 {
@@ -69,18 +70,25 @@ class CategoryController extends Controller
     public function show($id)
     {
         //
+        $category = $this->categoryRepository->show($id);
+        $status = Status::getName($category->status);
         return response()->json([
             'status' => true,
-            'data' => $this->categoryRepository->show($id)
+            'data' => $category,
+            'status' => $status
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
         //
+        $data = $this->categoryRepository->show($id);
+        return view('backend.categories.edit', [
+            'data' => $data
+        ]);
     }
 
     /**
@@ -89,6 +97,20 @@ class CategoryController extends Controller
     public function update(UpdateCategoryRequest $request, Category $category)
     {
         //
+        $data = $request->except("_token");
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+        } else {
+            $image = null;
+        }
+        $category = $this->categoryRepository->update($data, $category, $image);
+        if($category)
+        {
+            return response()->json([
+                'status' => true,
+                'message' => 'Successfully updated category'
+            ]);
+        }
     }
 
     /**

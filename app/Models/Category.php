@@ -15,8 +15,14 @@ class Category extends Model
         'slug',
         'image',
         'description',
+        'status',
         'created_by',
         'updated_by',
         'deleted_by'
     ];
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'category_product');
+    }
 }

@@ -16,6 +16,7 @@
                             @isset($data) id="updateCategoryForm" @else id="newCategoryForm" @endisset>
                             <div class="card-body">
                                 @csrf
+                                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                                 @isset($data)
                                     @method('PUT')
                                 @endisset
@@ -52,11 +53,7 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label for="description">{{ __('form.description') }}</label>
-                                            <textarea name="description" class="form-control" rows="3" placeholder="{{ __('form.description') }}">
-@isset($data)
-{{ $data->description }}
-@endisset
-</textarea>
+                                            <textarea name="description" class="form-control" rows="3" placeholder="{{ __('form.description') }}">@isset($data) {{ $data->description }} @endisset </textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -66,15 +63,13 @@
                                         <div class="form-group">
                                             <label>{{ __('form.status') }}</label>
                                             <select name="status" class="form-control select2" style="width: 100%;">
-                                                <option selected="selected">{{ __('form.status') }}</option>
+                                                <option selected="selected" disabled="disabled">
+                                                    {{ __('form.status') }}
+                                                </option>
                                                 @foreach (Status::toArray() as $key => $value)
-                                                    <option value="{{ $key }}"
-                                                        @isset($data)
-                                                        @if ($data->status == $key)
-                                                            selected="selected"
-                                                        @endif
-                                                    @endisset>
-                                                        {{ $value }}</option>
+                                                    <option value="{{ $key }}" @isset($data) @if ($data->status == $key) selected="selected" @endif @endisset>
+                                                        {{ $value }}
+                                                    </option>
                                                 @endforeach
                                             </select>
                                         </div>

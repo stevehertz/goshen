@@ -19,5 +19,12 @@
  <!-- Toastr -->
  <link rel="stylesheet" href="{{ asset('plugins/toastr/toastr.min.css') }}">
 
+ <!-- Bootstrap4 Duallistbox -->
+ <link rel="stylesheet" href="{{ asset('plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css') }}">
+ <!-- BS Stepper -->
+ <link rel="stylesheet" href="{{ asset('plugins/bs-stepper/css/bs-stepper.min.css') }}">
+ <!-- dropzonejs -->
+ <link rel="stylesheet" href="{{ asset('plugins/dropzone/min/dropzone.min.css') }}">
+
  <!-- Theme style -->
  <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
