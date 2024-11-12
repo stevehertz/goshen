@@ -27,6 +27,16 @@ class ShopsController extends Controller
         ]);
     }
 
+    public function bulkPurchase()  
+    {
+        $categories = $this->categoryRepository->getAllActiveCategories();
+        $products = $this->productRepository->getAllActiveProducts();
+        return view('frontend.shop.bulk-purchase', [
+            'categories' => $categories,
+            'products' => $products
+        ]);
+    }
+
     //
     public function contact()
     {

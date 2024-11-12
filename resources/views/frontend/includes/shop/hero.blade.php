@@ -51,12 +51,12 @@
                     </div>
                 </div>
                 @if (Route::is('shop'))
-                    <div class="hero__item set-bg" data-setbg="{{ asset('img/shop/hero/banner.jpg') }}">
+                    <div class="hero__item set-bg" data-setbg="{{ asset('img/shop/hero/banner-2.jpg') }}">
                         <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br />100% Organic</h2>
+                            <span>FRUITEE SNACKS</span>
+                            <h2 style="color:#fff;">Vegetable <br />100% Organic</h2>
                             <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
+                            <a href="{{ route('shop.store') }}" class="primary-btn">SHOP NOW</a>
                         </div>
                     </div>
                 @endif

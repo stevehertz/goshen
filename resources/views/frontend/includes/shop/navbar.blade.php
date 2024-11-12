@@ -9,8 +9,8 @@
             {{ __('nav.our_store') }}
         </a>
     </li>
-    <li @if (Route::is('shop.store')) class="active" @endif>
-        <a href="#">
+    <li @if (Route::is('shop.bulk.purchase')) class="active" @endif>
+        <a href="{{  route('shop.bulk.purchase')  }}">
             {{ __('nav.bulk_purchase') }}
         </a>
     </li>
