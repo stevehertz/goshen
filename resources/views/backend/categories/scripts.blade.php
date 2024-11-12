@@ -140,7 +140,7 @@
                             'Submit'
                         );
                         form.find('button[type=submit]').attr('disabled', false);
-                    },
+                    }, 
                     success: function(data) {
                         // console.log(data);
                         if (data['status']) {

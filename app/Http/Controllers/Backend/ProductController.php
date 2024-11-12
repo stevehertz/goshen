@@ -6,15 +6,18 @@ use App\Models\Product;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Http\Requests\UpdateProductStockRequest;
+use App\Repositories\CategoryRepository;
 use App\Repositories\ProductRepository;
 
 class ProductController extends Controller
 {
-    private $productRepository;
-    public function __construct(ProductRepository $productRepository)
+    private $productRepository, $categoryRepository;
+    public function __construct(ProductRepository $productRepository, CategoryRepository $categoryRepository)
     {
         $this->middleware('auth');
         $this->productRepository = $productRepository;
+        $this->categoryRepository = $categoryRepository;
     }
     /**
      * Display a listing of the resource.
@@ -34,7 +37,10 @@ class ProductController extends Controller
     public function create()
     {
         //
-        return view('backend.products.edit');
+        $categories = $this->categoryRepository->getAllActiveCategories();
+        return view('backend.products.edit', [
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -81,8 +87,10 @@ class ProductController extends Controller
     {
         //
         $data = $this->productRepository->show($id);
+        $categories = $this->categoryRepository->getAllActiveCategories();
         return view('backend.products.edit', [
-            'data' => $data
+            'data' => $data,
+            'categories' => $categories
         ]);
     }
 
@@ -92,6 +100,37 @@ class ProductController extends Controller
     public function update(UpdateProductRequest $request, Product $product)
     {
         //
+        $data = $request->except("_token");
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+        } else {
+            $image = null;
+        }
+        $product = $this->productRepository->updateProduct($data, $product, $image);
+        if($product)
+        {
+            return response()->json([
+                'status' => true,
+                'message' => 'Successfully updated product'
+            ]);
+        }
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function updateStock(UpdateProductStockRequest $request, Product $product)  
+    {
+        $data = $request->except("_token");
+        $product = $this->productRepository->updateStock($data, $product);
+        if($product)
+        {
+            return response()->json([
+                'status' => true,
+                'message' => 'Stock successfully updated'
+            ]);
+        }
     }
 
     /**

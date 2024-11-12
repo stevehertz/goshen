@@ -22,7 +22,7 @@
                                     @method('PUT')
                                 @endisset
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-12 col-md-6">
                                         <div class="form-group">
                                             <label for="title">
                                                 Name
@@ -31,6 +31,24 @@
                                                 placeholder="Product Title"
                                                 value="@isset($data) {{ $data->title }} @endisset">
                                         </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="category_id">Category</label>
+                                            <select id="category_id" name="category_id" class="form-control select2" style="width: 100%;">
+                                                <option selected="selected" disabled="disabled">
+                                                    Choose Category
+                                                </option>
+                                                @foreach ($categories as $category)
+                                                    <option value="{{ $category->id }}" @isset($data)
+                                                        {{ $data->categories->contains($category->id) ? 'selected' : '' }}
+                                                    @endisset>
+                                                        {{ $category->title }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <!-- /.form-group -->
                                     </div>
                                 </div>
 
@@ -97,7 +115,7 @@
                                             </label>
                                             <input type="number" name="quantity" class="form-control" id="quantity"
                                                 placeholder="Quantity"
-                                                value="@isset($data) {{ $data->quantity }} @endisset">
+                                                value="{{ old('quantity', isset($data) ? $data->quantity : '') }}">
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">
@@ -107,7 +125,11 @@
                                             </label>
                                             <br>
                                             <input type="hidden" name="in_stock" value="0">
-                                            <input type="checkbox" name="in_stock" value="1" checked
+                                            <input type="checkbox" name="in_stock" value="1" @isset($data)
+                                            {{ $data->in_stock ? 'checked' : '' }}
+                                            @else
+                                            checked
+                                            @endisset
                                                 data-bootstrap-switch data-off-color="danger" data-on-color="success">
 
                                         </div>
@@ -143,7 +165,7 @@
                                             </label>
                                             <input type="number" name="price" class="form-control" id="price"
                                                 placeholder="Price"
-                                                value="@isset($data) {{ $data->price }} @endisset">
+                                                value="{{ old('price', isset($data) ? $data->price : '') }}">
                                         </div>
                                     </div>
                                 </div>

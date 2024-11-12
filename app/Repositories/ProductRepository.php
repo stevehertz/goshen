@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\UploadedFile;
 
@@ -28,6 +29,9 @@ class ProductRepository
             'created_by' => data_get($attributes, 'user_id'),
             'updated_by' => data_get($attributes, 'user_id'),
         ]);
+
+        $category = Category::findOrFail(data_get($attributes, 'category_id'));
+        $category->products()->attach($product->id);
 
         // upload featured image
         if ($image) {
@@ -57,6 +61,9 @@ class ProductRepository
             'updated_by' => data_get($attributes, 'user_id'),
         ]);
 
+        $category = Category::findOrFail(data_get($attributes, 'category_id'));
+        $category->products()->attach($product->id);
+
          // upload featured image
          if ($image) {
             $path = $image->store('img/products', 'public');
@@ -64,6 +71,13 @@ class ProductRepository
         }
 
         return $product;
+    }
+
+    public function updateStock(array $attributes, Product $product)  
+    {
+        return $product->update([
+            'in_stock' => data_get($attributes, 'in_stock') 
+        ]);
     }
 
 

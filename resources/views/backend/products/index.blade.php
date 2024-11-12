@@ -27,7 +27,7 @@
                                             <th>Product</th>
                                             <th>Description</th>
                                             <th>Category</th>
-                                            <th>Stock</th>
+                                            <th>In Stock</th>
                                             <th>QTY</th>
                                             <th style="width: 40px">Actions</th>
                                         </tr>
@@ -45,16 +45,27 @@
                                                 <td>
                                                     {{ Str::limit($product->description, 100, '...') }}
                                                 </td>
-                                                <td></td>
                                                 <td>
-                                                    {{ $product->in_stock }}
+                                                    @if (!$product->categories->isEmpty())
+                                                        @foreach ($product->categories as $category)
+                                                            <span>
+                                                                {{ $category->title }}
+                                                            </span>
+                                                        @endforeach
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <input type="checkbox" name="in_stock" data-bootstrap-switch
+                                                        data-off-color="danger" data-on-color="success"
+                                                        {{ $product->in_stock ? 'checked' : '' }}
+                                                        data-product-id="{{ $product->id }}">
                                                 </td>
                                                 <td>
                                                     {{ $product->quantity }}
                                                 </td>
                                                 <td>
                                                     @if (!$product->deleted_at)
-                                                        <a href="#" class="btn btn-warning btn-sm">
+                                                        <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning btn-sm">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
                                                         <button type="button"
