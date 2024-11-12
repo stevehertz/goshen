@@ -20,16 +20,16 @@
                     <div class="contact__widget">
                         <span class="fas fa-map-marker-alt"></span>
                         <h4>Address</h4>
-                        <p>60-49 Road 11378 New York</p>
+                        <p>{{  config('app.location')  }}</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 text-center">
+                {{-- <div class="col-lg-3 col-md-3 col-sm-6 text-center">
                     <div class="contact__widget">
                         <span class="fas fa-clock"></span>
                         <h4>Open time</h4>
                         <p>10:00 am to 23:00 pm</p>
                     </div>
-                </div>
+                </div> --}}
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">
                     <div class="contact__widget">
                         <span class="fas fa-envelope"></span>
@@ -53,7 +53,7 @@
                 <h4>Nairobi</h4>
                 <ul>
                     <li>Phone: {{ config('app.phone') }}</li>
-                    <li>Add: 16 Creek Ave. Farmingdale, NY</li>
+                    <li>Add: {{ config('app.location') }}</li>
                 </ul>
             </div>
         </div>

@@ -220,7 +220,7 @@ ol {
   Header
 -----------------------*/
 .header__top {
-  background: #f5f5f5;
+  background: #2b2c40;
 }
 
 .header__top__left {
@@ -228,7 +228,7 @@ ol {
 }
 .header__top__left ul li {
   font-size: 14px;
-  color: #1c1c1c;
+  color: #ffffff;
   display: inline-block;
   margin-right: 45px;
   position: relative;
@@ -239,7 +239,7 @@ ol {
   top: 1px;
   height: 20px;
   width: 1px;
-  background: #000000;
+  background: #ffffff;
   opacity: 0.1;
   content: "";
 }
@@ -250,7 +250,7 @@ ol {
   display: none;
 }
 .header__top__left ul li i {
-  color: #252525;
+  color: #ffffff;
   margin-right: 5px;
 }
 
@@ -270,14 +270,14 @@ ol {
   top: 1px;
   height: 20px;
   width: 1px;
-  background: #000000;
+  background: #ffffff;
   opacity: 0.1;
   content: "";
 }
 .header__top__right__social a {
   font-size: 14px;
   display: inline-block;
-  color: #1c1c1c;
+  color: #ffffff;
   margin-right: 20px;
 }
 .header__top__right__social a:last-child {
@@ -310,13 +310,13 @@ ol {
 }
 .header__top__right__language div {
   font-size: 14px;
-  color: #1c1c1c;
+  color: #ffffff;
   display: inline-block;
   margin-right: 4px;
 }
 .header__top__right__language span {
   font-size: 14px;
-  color: #1c1c1c;
+  color: #ffffff;
   position: relative;
   top: 2px;
 }
@@ -348,7 +348,7 @@ ol {
 .header__top__right__auth a {
   display: block;
   font-size: 14px;
-  color: #1c1c1c;
+  color: #ffffff;
 }
 .header__top__right__auth a i {
   margin-right: 6px;
@@ -369,6 +369,7 @@ ol {
   display: inline-block;
   margin-right: 50px;
   position: relative;
+  color: #222222;
 }
 .header__menu ul li .header__menu__dropdown {
   position: absolute;
@@ -625,6 +626,12 @@ ol {
   color: #1c1c1c;
   font-weight: 700;
   margin-bottom: 5px;
+}
+.hero__search__phone__text h5 a {
+  color: #1c1c1c;
+}
+.hero__search__phone__text h5 a:hover {
+  color: #7fad39;
 }
 .hero__search__phone__text span {
   font-size: 14px;
@@ -1071,7 +1078,7 @@ ol {
   color: #6f6f6f;
   display: inline-block;
   padding: 8px 25px 6px;
-  background: #f5f5f5;
+  background: #222233;
   cursor: pointer;
   margin-bottom: 0;
 }
@@ -1461,7 +1468,7 @@ ol {
   font-size: 16px;
   color: #6f6f6f;
   padding: 13px 16px 13px;
-  background: #f5f5f5;
+  background: #222233;
 }
 .product__details__text ul {
   border-top: 1px solid #ebebeb;
@@ -1506,7 +1513,7 @@ ol {
   display: inline-block;
   position: relative;
   text-align: center;
-  background: #f5f5f5;
+  background: #222233;
   margin-bottom: 5px;
 }
 .pro-qty input {
@@ -1516,7 +1523,7 @@ ol {
   color: #6f6f6f;
   width: 50px;
   border: none;
-  background: #f5f5f5;
+  background: #222233;
   text-align: center;
 }
 .pro-qty .qtybtn {
@@ -1679,7 +1686,7 @@ ol {
 .primary-btn.cart-btn {
   color: #6f6f6f;
   padding: 14px 30px 12px;
-  background: #f5f5f5;
+  background: #222233;
 }
 .primary-btn.cart-btn span {
   font-size: 14px;
@@ -1721,7 +1728,7 @@ ol {
 }
 
 .shoping__checkout {
-  background: #f5f5f5;
+  background: #222233;
   padding: 30px;
   padding-top: 20px;
   margin-top: 50px;
@@ -1770,7 +1777,7 @@ ol {
 .checkout h6 {
   color: #999999;
   text-align: center;
-  background: #f5f5f5;
+  background: #222233;
   border-top: 1px solid #6AB963;
   padding: 12px 0 12px;
   margin-bottom: 75px;
@@ -1871,7 +1878,7 @@ ol {
 }
 
 .checkout__order {
-  background: #f5f5f5;
+  background: #222233;
   padding: 40px;
   padding-top: 30px;
 }
@@ -2104,7 +2111,7 @@ ol {
 .blog__sidebar__item__tags a {
   font-size: 16px;
   color: #6f6f6f;
-  background: #f5f5f5;
+  background: #222233;
   display: inline-block;
   padding: 7px 26px 5px;
   margin-right: 6px;
@@ -2238,7 +2245,7 @@ ol {
   Footer
 -----------------------*/
 .footer {
-  background: #F3F6FA;
+  background: #2b2c40;
   padding-top: 70px;
   padding-bottom: 0;
 }
@@ -2248,7 +2255,7 @@ ol {
 }
 .footer__about ul li {
   font-size: 16px;
-  color: #1c1c1c;
+  color: #ffffff;
   line-height: 36px;
   list-style: none;
 }
@@ -2265,7 +2272,7 @@ ol {
   overflow: hidden;
 }
 .footer__widget h6 {
-  color: #1c1c1c;
+  color: #ffffff;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -2277,13 +2284,13 @@ ol {
   list-style: none;
 }
 .footer__widget ul li a {
-  color: #1c1c1c;
+  color: #ffffff;
   font-size: 14px;
   line-height: 32px;
 }
 .footer__widget p {
   font-size: 14px;
-  color: #1c1c1c;
+  color: #ffffff;
   margin-bottom: 30px;
 }
 .footer__widget form {

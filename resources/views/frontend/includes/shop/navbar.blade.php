@@ -1,17 +1,22 @@
 <ul>
     <li @if (Route::is('shop')) class="active" @endif>
         <a href="{{ route('shop') }}">
-            Home
+            {{ __('nav.home') }}
         </a>
     </li>
-    <li @if (Route::is('shop.shop')) class="active" @endif>
-        <a href="{{ route('shop.shop') }}">
-            Shop
+    <li @if (Route::is('shop.store')) class="active" @endif>
+        <a href="{{ route('shop.store') }}">
+            {{ __('nav.our_store') }}
+        </a>
+    </li>
+    <li @if (Route::is('shop.store')) class="active" @endif>
+        <a href="#">
+            {{ __('nav.bulk_purchase') }}
         </a>
     </li>
     <li @if (Route::is('shop.contact')) class="active" @endif>
         <a href="{{ route('shop.contact') }}">
-            Contact
+            {{ __('nav.contact_us') }}
         </a>
     </li>
 </ul>

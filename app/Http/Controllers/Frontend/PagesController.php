@@ -31,8 +31,10 @@ class PagesController extends Controller
     public function shop()
     {
         $categories = $this->categoryRepository->getAllActiveCategories();
+        $products = $this->productRepository->getAllActiveProducts();
         return view('frontend.shop.index',[
-            'categories' => $categories
+            'categories' => $categories,
+            'products' => $products
         ]);
     }
 

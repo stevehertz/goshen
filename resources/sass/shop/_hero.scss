@@ -149,7 +149,7 @@
     color: $primary-color;
     height: 50px;
     width: 50px;
-    background: $background;
+    background: #f5f5f5;
     line-height: 50px;
     text-align: center;
     border-radius: 50%;
@@ -164,6 +164,12 @@
         color: $normal-color;
         font-weight: 700;
         margin-bottom: 5px;
+        a{
+            color:  $normal-color;
+            &:hover{
+                color: $primary-color;
+            }
+        }
     }
 
     span {

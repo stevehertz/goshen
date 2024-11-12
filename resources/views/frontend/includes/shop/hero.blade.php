@@ -10,7 +10,7 @@
                     <ul>
                         @forelse ($categories as $category)
                             <li>
-                                <a href="#">
+                                <a href="{{ route('shop.store') }}">
                                     {{ $category->title }}
                                 </a>
                             </li>
@@ -26,7 +26,7 @@
             </div>
             <div class="col-lg-9">
                 <div class="hero__search">
-                    <div class="hero__search__form">
+                    {{-- <div class="hero__search__form">
                         <form action="#">
                             <div class="hero__search__categories">
                                 All Categories
@@ -35,13 +35,17 @@
                             <input type="text" placeholder="What do yo u need?">
                             <button type="submit" class="site-btn">SEARCH</button>
                         </form>
-                    </div>
+                    </div> --}}
                     <div class="hero__search__phone">
                         <div class="hero__search__phone__icon">
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div class="hero__search__phone__text">
-                            <h5>{{ config('app.phone') }}</h5>
+                            <h5>
+                                <a href="tel:{{ config('app.phone') }}">
+                                    {{ config('app.phone') }}
+                                </a>
+                            </h5>
                             <span>support 24/7 time</span>
                         </div>
                     </div>

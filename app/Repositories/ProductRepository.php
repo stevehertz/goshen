@@ -14,6 +14,11 @@ class ProductRepository
         return Product::latest()->get();
     }
 
+    public function getAllActiveProducts()  
+    {
+        return Product::with(['categories'])->latest()->get();    
+    }
+
     public function storeProduct(array $attributes, ?UploadedFile $image = null)
     {
         $product = Product::create([

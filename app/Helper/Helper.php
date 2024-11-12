@@ -19,6 +19,9 @@ class Helper
         // Remove the word 'Safari' from the route name if it exists
         $currentRouteName = str_replace('safari', '', $currentRouteName);
 
+        // Remove the word 'Safari' from the route name if it exists
+        $currentRouteName = str_replace('shop', '', $currentRouteName);
+
         // Convert the route name to a readable format
         $currentRouteName = ucwords(str_replace('.', ' ', $currentRouteName));
 

@@ -20,14 +20,21 @@ class ShopsController extends Controller
     public function shop()
     {
         $categories = $this->categoryRepository->getAllActiveCategories();
+        $products = $this->productRepository->getAllActiveProducts();
         return view('frontend.shop.shop', [
-            'categories' => $categories
+            'categories' => $categories,
+            'products' => $products
         ]);
     }
 
     //
     public function contact()
     {
-        return view('frontend.shop.contact');
+        $categories = $this->categoryRepository->getAllActiveCategories();
+        $products = $this->productRepository->getAllActiveProducts();
+        return view('frontend.shop.contact', [
+            'categories' => $categories,
+            'products' => $products
+        ]);
     }
 }

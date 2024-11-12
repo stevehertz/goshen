@@ -15,10 +15,10 @@
     <!-- Banner End -->
 
     <!-- Latest Product Section Begin -->
-    @include('frontend.includes.shop.products')
+    {{-- @include('frontend.includes.shop.products') --}}
     <!-- Latest Product Section End -->
 
     <!-- Blog Section Begin -->
-    @include('frontend.includes.shop.blog')
+    {{-- @include('frontend.includes.shop.blog') --}}
     <!-- Blog Section End -->
 @endsection

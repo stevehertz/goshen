@@ -32,32 +32,34 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="header__logo">
-                    <a href="{{ route('home') }}">
-                        <img src="{{ asset(config('app.logo')) }}" alt="">
-                    </a>
+    <div class="header__nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="{{ route('home') }}">
+                            <img src="{{ asset(config('app.logo')) }}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        @include('frontend.includes.shop.navbar')
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li><a href="#"><i class="fas fa-heart"></i> <span>1</span></a></li>
+                            <li><a href="#"><i class="fas fa-shopping-bag"></i> <span>3</span></a></li>
+                        </ul>
+                        <div class="header__cart__price">item: <span>$150.00</span></div>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <nav class="header__menu">
-                    @include('frontend.includes.shop.navbar')
-                </nav>
+            <div class="humberger__open">
+                <i class="fas fa-bars"></i>
             </div>
-            <div class="col-lg-3">
-                <div class="header__cart">
-                    <ul>
-                        <li><a href="#"><i class="fas fa-heart"></i> <span>1</span></a></li>
-                        <li><a href="#"><i class="fas fa-shopping-bag"></i> <span>3</span></a></li>
-                    </ul>
-                    <div class="header__cart__price">item: <span>$150.00</span></div>
-                </div>
-            </div>
-        </div>
-        <div class="humberger__open">
-            <i class="fas fa-bars"></i>
         </div>
     </div>
 </header>
