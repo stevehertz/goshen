@@ -6,7 +6,7 @@
                     <div class="header__top__left">
                         <ul>
                             <li><i class="fas fa-envelope"></i> {{  config('app.email')  }}</li>
-                            <li>Free Shipping for all Order of $99</li>
+                            {{-- <li>Free Shipping for all Order of $99</li> --}}
                         </ul>
                     </div>
                 </div>

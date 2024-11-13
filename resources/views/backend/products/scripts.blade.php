@@ -4,6 +4,27 @@
 
         @if (Route::is('products.index'))
 
+            $(document).on('click', '.viewProductBtn', function(e) {
+                e.preventDefault();
+                let product_id = $(this).data('id');
+                let path = '{{ route('products.show', ':id') }}';
+                path = path.replace(':id', product_id);
+                $.ajax({
+                    type: "GET",
+                    url: path,
+                    dataType: "json",
+                    success: function(data) {
+                        if (data['status']) {
+                            let viewPath = '{{ route('products.view', ':id') }}'
+                            viewPath = viewPath.replace(':id', data['data']['id']);
+                            setTimeout(() => {
+                                window.location.href = viewPath;
+                            }, 1000);
+                        }
+                    }
+                });
+            });
+
             $(document).on('click', '.deleteProductBtn', function(e) {
                 e.preventDefault();
                 let product_id = $(this).data('id');
@@ -163,6 +184,53 @@
                         });
                         errorsHtml += '</ul>';
                         toastr.error(errorsHtml);
+                    }
+                });
+            });
+        @endif
+
+        @if (Route::is('products.view'))
+
+            $(document).on('click', '.addExtraImagesBtn', function(e) {
+                e.preventDefault();
+                $('#addExtraImagesModal').modal('show');
+            });
+
+            $('#addExtraImagesForm').on('submit', function(e) {
+                e.preventDefault(); // Prevent default form submission
+                let form = $(this);
+                let formData = new FormData(form[0]); // Create FormData object with the form content
+                let path = '{{ route('products.update.extra.images', $data->id) }}';
+                $.ajax({
+                    url: path, // Form action URL
+                    type: 'POST',
+                    data: formData,
+                    contentType: false, // Prevent jQuery from processing the data
+                    processData: false, // Prevent jQuery from setting content-type header
+                    beforeSend: function() {
+                        form.find('button[type=submit]').html(
+                            '<i class="fa fa-spinner fa-spin"></i>'
+                        );
+                        form.find('button[type=submit]').attr('disabled', true);
+                    },
+                    complete: function() {
+                        form.find('button[type=submit]').html(
+                            'Save'
+                        );
+                        form.find('button[type=submit]').attr('disabled', false);
+                    },
+                    success: function(data) {
+                        if (data['status']) {
+                            toastr.success(data['message']);
+                            $('#productForm').trigger('reset');
+                            $('#addExtraImagesModal').modal('hide');
+                            setTimeout(() => {
+                                location.reload();
+                            }, 1000);
+                        }
+                    },
+                    error: function(xhr) {
+                        alert('Error: ' + xhr.responseText); // Display error message
                     }
                 });
             });

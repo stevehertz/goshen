@@ -2,8 +2,9 @@
 
 namespace App\Repositories;
 
-use App\Models\Category;
 use App\Models\Product;
+use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Http\UploadedFile;
 
 class ProductRepository
@@ -14,15 +15,16 @@ class ProductRepository
         return Product::latest()->get();
     }
 
-    public function getAllActiveProducts()  
+    public function getAllActiveProducts()
     {
-        return Product::with(['categories'])->latest()->get();    
+        return Product::with(['categories'])->latest()->get();
     }
 
     public function storeProduct(array $attributes, ?UploadedFile $image = null)
     {
         $product = Product::create([
             'title' => data_get($attributes, 'title'),
+            'slug' => Str::slug(data_get($attributes, 'title')),
             'sku' => data_get($attributes, 'sku'),
             'barcode' => data_get($attributes, 'barcode'),
             'description' => data_get($attributes, 'description'),
@@ -36,7 +38,7 @@ class ProductRepository
         ]);
 
         $category = Category::findOrFail(data_get($attributes, 'category_id'));
-        $category->products()->attach($product->id);
+        $category->products()->syncWithoutDetaching([$product->id]);
 
         // upload featured image
         if ($image) {
@@ -56,6 +58,7 @@ class ProductRepository
     {
         $product->update([
             'title' => data_get($attributes, 'title'),
+            'slug' => Str::slug(data_get($attributes, 'title')),
             'sku' => data_get($attributes, 'sku'),
             'barcode' => data_get($attributes, 'barcode'),
             'description' => data_get($attributes, 'description'),
@@ -78,10 +81,10 @@ class ProductRepository
         return $product;
     }
 
-    public function updateStock(array $attributes, Product $product)  
+    public function updateStock(array $attributes, Product $product)
     {
         return $product->update([
-            'in_stock' => data_get($attributes, 'in_stock') 
+            'in_stock' => data_get($attributes, 'in_stock')
         ]);
     }
 

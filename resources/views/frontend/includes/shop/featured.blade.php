@@ -34,7 +34,7 @@
                         </div>
                         <div class="featured__item__text">
                             <h6>
-                                <a href="#">
+                                <a href="{{ route('shop.view.product', $product->id) }}">
                                     {{ $product->title }}
                                 </a>
                             </h6>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\InStock;
 use App\Enums\Status;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
@@ -270,7 +271,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
-        'Status' => Status::class
+        'Status' => Status::class,
+        'InStock' => InStock::class,
     ])->toArray(),
 
 ];

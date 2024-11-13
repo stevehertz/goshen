@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 @if (Route::is('shop'))
-                    <div class="hero__item set-bg" data-setbg="{{ asset('img/shop/hero/banner-2.jpg') }}">
+                    <div class="hero__item set-bg" data-setbg="{{ asset('img/shop/hero/banner-3.jpg') }}">
                         <div class="hero__text">
                             <span>FRUITEE SNACKS</span>
                             <h2 style="color:#fff;">Vegetable <br />100% Organic</h2>

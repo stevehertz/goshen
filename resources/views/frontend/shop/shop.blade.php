@@ -331,14 +331,14 @@
                                     <div class="product__item__pic set-bg"
                                         data-setbg="{{ asset($product->image) }}">
                                         <ul class="product__item__pic__hover">
-                                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                            <li><a href="{{ route('shop.view.product', $product->id) }}"><i class="fas fa-heart"></i></a></li>
                                             {{-- <li><a href="#"><i class="fas fa-retweet"></i></a></li> --}}
-                                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                            <li><a href="{{ route('shop.view.product', $product->id) }}"><i class="fas fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <div class="product__item__text">
                                         <h6>
-                                            <a href="#">
+                                            <a href="{{ route('shop.view.product', $product->id) }}">
                                                 {{ $product->title }}
                                             </a>
                                         </h6>

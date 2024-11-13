@@ -34,11 +34,15 @@ Route::prefix('products')->name('products.')->group(function(){
 
     Route::get('/{id}/show', [ProductController::class, 'show'])->name('show');
 
+    Route::get('/{id}/view', [ProductController::class, 'view'])->name('view');
+
     Route::get('/{id}/edit', [ProductController::class, 'edit'])->name('edit');
 
     Route::put('/{product}/update', [ProductController::class, 'update'])->name('update');
 
     Route::post('/{product}/update/stock', [ProductController::class, 'updateStock'])->name('update.stock');
+
+    Route::put('/{product}/update/extra/images', [ProductController::class, 'updatextraImages'])->name('update.extra.images');
 
     Route::delete('/{product}/delete', [ProductController::class, 'destroy'])->name('delete');
 });

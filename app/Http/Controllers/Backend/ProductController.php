@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Models\Product;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Repositories\ProductRepository;
+use App\Repositories\CategoryRepository;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Http\Requests\UpdateProductStockRequest;
-use App\Repositories\CategoryRepository;
-use App\Repositories\ProductRepository;
 
 class ProductController extends Controller
 {
@@ -68,6 +69,35 @@ class ProductController extends Controller
         }
     }
 
+     /**
+     * Store a newly created resource in storage.
+     */
+    public function updatextraImages(Request $request, Product $product)
+    {
+        $request->validate([
+            'extra_images.*' => 'image|mimes:jpeg,png,jpg,gif',
+        ]);
+
+        $extraImages = [];
+
+        if($request->hasFile('extra_images')) {
+            foreach ($request->file('extra_images') as $file) {
+                $path = $file->store('img/products', 'public');
+                $extraImages[] = $path;
+            }
+        }
+
+        $product->update([
+            'extra_images' => json_encode($extraImages), // Store as JSON
+        ]);
+
+        return response()->json([
+            'status' => true,
+            'message' => 'You have successfully stored images'
+        ]);
+
+    }
+
     /**
      * Display the specified resource.
      */
@@ -77,6 +107,17 @@ class ProductController extends Controller
         return response()->json([
             'status' => true,
             'data' => $this->productRepository->show($id)
+        ]);
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function view($id)
+    {
+        $data = $this->productRepository->show($id);
+        return view('backend.products.view', [
+            'data' => $data
         ]);
     }
 
@@ -120,7 +161,7 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function updateStock(UpdateProductStockRequest $request, Product $product)  
+    public function updateStock(UpdateProductStockRequest $request, Product $product)
     {
         $data = $request->except("_token");
         $product = $this->productRepository->updateStock($data, $product);

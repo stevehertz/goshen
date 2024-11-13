@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use App\Repositories\CategoryRepository;
 use App\Repositories\ProductRepository;
 
@@ -27,7 +28,19 @@ class ShopsController extends Controller
         ]);
     }
 
-    public function bulkPurchase()  
+    public function viewProduct($id)
+    {
+        $categories = $this->categoryRepository->getAllActiveCategories();
+        $product = $this->productRepository->show($id);
+        $allProducts = Product::where('id', '!=', $product->id)->latest()->get();
+        return view('frontend.shop.viewProduct', [
+            'data' => $product,
+            'categories' => $categories,
+            'relatedProducts' => $allProducts
+        ]);
+    }
+
+    public function bulkPurchase()
     {
         $categories = $this->categoryRepository->getAllActiveCategories();
         $products = $this->productRepository->getAllActiveProducts();

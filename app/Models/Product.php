@@ -11,6 +11,7 @@ class Product extends Model
 
     protected $fillable = [
         'title',
+        'slug',
         'sku',
         'barcode',
         'description',
@@ -19,6 +20,9 @@ class Product extends Model
         'in_stock',
         'status',
         'price',
+        'minimum_purchase',
+        'extra_images',
+        'rating',
         'created_by',
         'updated_by',
         'deleted_by'
