@@ -54,8 +54,8 @@
                     <div class="hero__item set-bg" data-setbg="{{ asset('img/shop/hero/banner-3.jpg') }}">
                         <div class="hero__text">
                             <span>FRUITEE SNACKS</span>
-                            <h2 style="color:#fff;">Vegetable <br />100% Organic</h2>
-                            <p>Free Pickup and Delivery Available</p>
+                            {{-- <h2 style="color:#fff;">Vegetable <br />100% Organic</h2>
+                            <p>Free Pickup and Delivery Available</p> --}}
                             <a href="{{ route('shop.store') }}" class="primary-btn">SHOP NOW</a>
                         </div>
                     </div>

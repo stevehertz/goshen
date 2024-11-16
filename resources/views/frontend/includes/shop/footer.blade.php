@@ -23,7 +23,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{ route('shop.bulk.purchase') }}">
                                 {{ __('nav.bulk_purchase') }}
                             </a>
                         </li>

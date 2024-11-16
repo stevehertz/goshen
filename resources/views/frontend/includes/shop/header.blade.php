@@ -5,7 +5,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__left">
                         <ul>
-                            <li><i class="fas fa-envelope"></i> {{  config('app.email')  }}</li>
+                            <li><i class="fas fa-envelope"></i> {{ config('app.email') }}</li>
                             {{-- <li>Free Shipping for all Order of $99</li> --}}
                         </ul>
                     </div>
@@ -15,7 +15,7 @@
                         <div class="header__top__right__social">
                             @include('frontend.includes.shop.social')
                         </div>
-                        <div class="header__top__right__language">
+                        {{-- <div class="header__top__right__language">
                             <img src="{{ asset('img/shop/language.png') }}" alt="">
                             <div>English</div>
                             <span class="arrow_carrot-down"></span>
@@ -23,9 +23,11 @@
                                 <li><a href="#">Spanis</a></li>
                                 <li><a href="#">English</a></li>
                             </ul>
-                        </div>
+                        </div> --}}
                         <div class="header__top__right__auth">
-                            <a href="#"><i class="fas fa-user-alt"></i> Login</a>
+                            <a href="#">
+                                <i class="fas fa-user-alt"></i> Login
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -50,10 +52,22 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="#"><i class="fas fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fas fa-shopping-bag"></i> <span>3</span></a></li>
+                            <li>
+                                <a href="{{ route('shop.wishlist') }}">
+                                    <i class="fas fa-heart"></i> @auth <span>1</span> @endauth
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-shopping-bag"></i>
+                                    @auth
+                                        <span>3</span>
+                                    @endauth
+
+                                </a>
+                            </li>
                         </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
+                        @auth <div class="header__cart__price">item: <span>$150.00</span></div> @endauth
                     </div>
                 </div>
             </div>

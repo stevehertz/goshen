@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Frontend\ShopsController;
+use App\Http\Controllers\Frontend\WishlistController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('shop')->name('shop.')->group(function(){
@@ -12,5 +13,9 @@ Route::prefix('shop')->name('shop.')->group(function(){
     Route::get('/bulk/purchase', [ShopsController::class, 'bulkPurchase'])->name('bulk.purchase');
 
     Route::get('/contact', [ShopsController::class, 'contact'])->name('contact');
+
+    Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist');
+
+    Route::get('/wishlist/store', [WishlistController::class, 'store'])->name('wishlist.store');
 
 });
