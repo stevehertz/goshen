@@ -25,9 +25,13 @@
                             </ul>
                         </div> --}}
                         <div class="header__top__right__auth">
-                            <a href="#">
-                                <i class="fas fa-user-alt"></i> Login
-                            </a>
+                            @auth
+                            @else
+                                <a href="{{ route('login') }}">
+                                    <i class="fas fa-user-alt"></i> Login
+                                </a>
+                            @endauth
+
                         </div>
                     </div>
                 </div>
@@ -54,20 +58,30 @@
                         <ul>
                             <li>
                                 <a href="{{ route('shop.wishlist') }}">
-                                    <i class="fas fa-heart"></i> @auth <span>1</span> @endauth
+                                    <i class="fas fa-heart"></i> @auth <span>
+                                        {{ \App\Models\Wishlist::countWishlist(Auth::user()->id) }}</span> @endauth
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{ route('shop.cart.index') }}">
                                     <i class="fas fa-shopping-bag"></i>
                                     @auth
-                                        <span>3</span>
+                                        <span>
+                                            {{ \App\Models\Cart::countCart(Auth::user()->id) }}
+                                        </span>
                                     @endauth
 
                                 </a>
                             </li>
                         </ul>
-                        @auth <div class="header__cart__price">item: <span>$150.00</span></div> @endauth
+
+                        @auth
+                            <div class="header__cart__price">
+                                item: <span>
+                                    Kshs.{{ \App\Models\Cart::countTotalPrice(Auth::user()->id) }}
+                                </span>
+                            </div>
+                        @endauth
                     </div>
                 </div>
             </div>

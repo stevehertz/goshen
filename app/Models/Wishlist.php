@@ -21,4 +21,9 @@ class Wishlist extends Model
      {
          return $this->belongsTo(Product::class);
      }
+
+     public static function countWishlist($user_id)  
+     {
+        return self::where('user_id', $user_id)->count();
+     }
 }

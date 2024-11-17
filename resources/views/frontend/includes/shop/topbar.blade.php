@@ -7,7 +7,7 @@
 <div class="humberger__menu__overlay"></div>
 <div class="humberger__menu__wrapper">
     <div class="humberger__menu__logo">
-        <a href="#">
+        <a href="{{ route('home') }}">
             <img src="{{ asset(config('app.logo')) }}" alt="">
         </a>
     </div>
@@ -15,12 +15,29 @@
         <ul>
             <li>
                 <a href="{{ route('shop.wishlist') }}">
-                    <i class="fa fa-heart"></i> <span>1</span>
+                    <i class="fa fa-heart"></i> 
+                    @auth
+                        <span>{{ \App\Models\Wishlist::countWishlist(Auth::user()->id) }}</span>
+                    @endauth
+                    
                 </a>
             </li>
-            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-shopping-bag"></i> 
+                    @auth
+                        <span>
+                            {{ \App\Models\Cart::countCart(Auth::user()->id) }}
+                        </span>
+                    @endauth
+                    
+                </a>
+            </li>
         </ul>
-        <div class="header__cart__price">item: <span>$150.00</span></div>
+        @auth
+            <div class="header__cart__price">item: <span>$150.00</span></div>
+        @endauth
+        
     </div>
     <div class="humberger__menu__widget">
         {{-- <div class="header__top__right__language">
@@ -33,9 +50,14 @@
             </ul>
         </div> --}}
         <div class="header__top__right__auth">
-            <a href="#">
-                <i class="fa fa-user"></i> Login
-            </a>
+            @auth
+            
+            @else
+                <a href="#">
+                    <i class="fa fa-user"></i> Login
+                </a>
+            @endauth
+            
         </div>
     </div>
     <nav class="humberger__menu__nav mobile-menu">

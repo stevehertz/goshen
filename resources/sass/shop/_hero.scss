@@ -188,16 +188,18 @@
 .hero__text {
 
     span {
-        font-size: 14px;
+        font-size: 18px;
         text-transform: uppercase;
         font-weight: 700;
         letter-spacing: 4px;
         color: $primary-color;
+        // color:#fff300;
     }
 
     h2 {
         font-size: 46px;
-        color: $heading-color-2;
+        // color: $heading-color-2;
+        color: #fff300;
         line-height: 52px;
         font-weight: 700;
         margin: 10px 0;

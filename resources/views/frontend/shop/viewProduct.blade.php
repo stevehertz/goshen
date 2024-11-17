@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <a href="#" class="primary-btn">
-                            ADD TO CARD
+                            ADD TO CART
                         </a>
                         <a href="#" class="heart-icon">
                             <span class="fas fa-heart"></span>
