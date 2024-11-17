@@ -29,7 +29,7 @@
                                     </a>
                                 </li>
                                 {{-- <li><a href="#"><i class="fas fa-retweet"></i></a></li> --}}
-                                <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                                <li><a href="{{ route('shop.view.product', $product->id) }}"><i class="fas fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">

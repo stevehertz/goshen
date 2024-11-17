@@ -37,4 +37,20 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
         $this->middleware('auth')->only('logout');
     }
+
+     /**
+     * Handle redirection after login based on user role.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\User $user
+     * @return \Illuminate\Http\Response
+     */
+    protected function authenticated($request, $user)
+    {
+        if ($user->hasRole('admin')) {
+            return redirect('/dashboard'); // Redirect admin to /dashboard
+        }
+
+        return redirect('/'); // Redirect other users to /
+    }
 }

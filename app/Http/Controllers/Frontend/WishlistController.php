@@ -2,17 +2,24 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\Wishlist;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreWishlistRequest;
 use App\Http\Requests\UpdateWishlistRequest;
+use App\Models\Wishlist;
+use App\Repositories\CategoryRepository;
+use App\Repositories\ProductRepository;
+use Illuminate\Support\Facades\Auth;
 
 class WishlistController extends Controller
 {
-    public function __construct()
+
+    private $categoryRepository, $productRepository;
+
+    public function __construct(CategoryRepository $categoryRepository, ProductRepository $productRepository)
     {
         $this->middleware('auth');
+        $this->categoryRepository = $categoryRepository;
+        $this->productRepository = $productRepository;
     }
     /**
      * Display a listing of the resource.
@@ -20,8 +27,14 @@ class WishlistController extends Controller
     public function index()
     {
         //
+        $categories = $this->categoryRepository->getAllActiveCategories();
+        $products = $this->productRepository->getAllActiveProducts();
         $wishlist = Wishlist::where('user_id', Auth::id())->with('product')->get();
-        return view('frontend.wishlist.index', compact('wishlist'));
+        return view('frontend.wishlist.index', [
+            'wishlist' => $wishlist,
+            'categories' => $categories,
+            'products' => $products
+        ]);
     }
 
 

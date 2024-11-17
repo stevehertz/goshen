@@ -291,7 +291,7 @@
                 <li class="nav-header">USER MANAGEMENT</li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('users.index') }}" class="nav-link @if (Route::is('users.index')) active @endif">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Users
@@ -299,8 +299,8 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="nav-item @if (Route::is('roles.index') || Route::is('roles.create')) menu-open @endif">
+                    <a href="#" class="nav-link @if (Route::is('roles.index') || Route::is('roles.create')) active @endif">
                         <i class="nav-icon fas fa-user-shield"></i>
                         <p>
                             Roles & Permissions
@@ -309,7 +309,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('roles.index') }}" class="nav-link @if (Route::is('roles.index') || Route::is('roles.create')) active @endif">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Roles</p>
                             </a>

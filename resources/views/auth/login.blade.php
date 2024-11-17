@@ -72,6 +72,13 @@
             </a>
         </p>
     @endif
-    {{-- <p class="mb-0">
-    <a href="register.html" class="text-center">Register a new membership</a></p> --}}
+
+    @if (Route::has('register'))
+        <p class="mb-0">
+            <a href="{{ route('register') }}" class="text-center">
+                Create Account
+            </a>
+        </p>
+    @endif
+
 @endsection
