@@ -24,7 +24,7 @@
                         <div class="featured__item__pic set-bg" data-setbg="{{ asset($product->image) }}">
                             <ul class="featured__item__pic__hover">
                                 <li>
-                                    <a href="#">
+                                    <a href="javascript:void(0)" data-product="{{ $product->id }}" class="addToWishListBtn">
                                         <i class="fas fa-heart"></i>
                                     </a>
                                 </li>

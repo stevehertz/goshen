@@ -17,12 +17,14 @@ Route::prefix('shop')->name('shop.')->group(function(){
 
     Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist');
 
-    Route::get('/wishlist/store', [WishlistController::class, 'store'])->name('wishlist.store');
+    Route::post('/wishlist/store', [WishlistController::class, 'store'])->name('wishlist.store');
+
+    Route::delete('/wishlist/{id}/delete', [WishlistController::class, 'destroy'])->name('wishlist.delete');
 
     Route::prefix('cart')->name('cart.')->group(function(){
 
         Route::get('/', [CartController::class, 'index'])->name('index');
-        
+
         Route::post('/store', [CartController::class, 'store'])->name('store');
     });
 

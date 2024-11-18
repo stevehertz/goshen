@@ -328,12 +328,16 @@
                         @foreach ($products as $product)
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg"
-                                        data-setbg="{{ asset($product->image) }}">
+                                    <div class="product__item__pic set-bg" data-setbg="{{ asset($product->image) }}">
                                         <ul class="product__item__pic__hover">
-                                            <li><a href="{{ route('shop.view.product', $product->id) }}"><i class="fas fa-heart"></i></a></li>
+                                            <li>
+                                                <a href="javascript:void(0)" data-product="{{ $product->id }}" class="addToWishListBtn">
+                                                    <i class="fas fa-heart"></i>
+                                                </a>
+                                            </li>
                                             {{-- <li><a href="#"><i class="fas fa-retweet"></i></a></li> --}}
-                                            <li><a href="{{ route('shop.view.product', $product->id) }}"><i class="fas fa-shopping-cart"></i></a></li>
+                                            <li><a href="{{ route('shop.view.product', $product->id) }}"><i
+                                                        class="fas fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <div class="product__item__text">
@@ -362,3 +366,7 @@
     </section>
     <!-- Product Section End -->
 @endsection
+
+@push('scripts')
+    @include('frontend.shop.scripts')
+@endpush

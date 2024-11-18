@@ -1638,6 +1638,7 @@ ol {
 .shoping__cart__table table tbody tr td.shoping__cart__item img {
   display: inline-block;
   margin-right: 25px;
+  width: 10% !important;
 }
 .shoping__cart__table table tbody tr td.shoping__cart__item h5 {
   color: #1c1c1c;

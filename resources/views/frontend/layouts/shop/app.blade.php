@@ -39,6 +39,8 @@
     <!-- Footer Section End -->
 
     @include('frontend.components.shop.scripts')
+
+    @stack('scripts')
 </body>
 
 </html>

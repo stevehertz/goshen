@@ -1,7 +1,6 @@
 @extends('frontend.layouts.shop.app')
 
 @section('content')
-
     <!-- Categories Section Begin -->
     {{-- @include('frontend.includes.shop.categories') --}}
     <!-- Categories Section End -->
@@ -22,3 +21,7 @@
     {{-- @include('frontend.includes.shop.blog') --}}
     <!-- Blog Section End -->
 @endsection
+
+@push('scripts')
+    @include('frontend.shop.scripts')
+@endpush

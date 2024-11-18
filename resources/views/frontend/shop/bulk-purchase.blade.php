@@ -39,8 +39,8 @@
                         <span class="fas fa-envelope"></span>
                         <h4>Email</h4>
                         <p>
-                            <a href="mailto:{{ config('app.email') }}" style="color:#000;">
-                                {{ config('app.email') }}
+                            <a href="mailto:sales@goshen.co.ke" style="color:#000;">
+                                sales@goshen.co.ke
                             </a>
                         </p>
                     </div>

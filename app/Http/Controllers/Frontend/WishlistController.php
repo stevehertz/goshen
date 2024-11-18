@@ -30,7 +30,7 @@ class WishlistController extends Controller
         $categories = $this->categoryRepository->getAllActiveCategories();
         $products = $this->productRepository->getAllActiveProducts();
         $wishlist = Wishlist::where('user_id', Auth::id())->with('product')->get();
-        return view('frontend.wishlist.index', [
+        return view('frontend.shop.wishlist', [
             'wishlist' => $wishlist,
             'categories' => $categories,
             'products' => $products
@@ -53,7 +53,7 @@ class WishlistController extends Controller
     {
         //
         $wishlist = Wishlist::firstOrCreate([
-            'user_id' => Auth::id(),
+            'user_id' => Auth::user()->id,
             'product_id' => $request->product_id,
         ]);
 
