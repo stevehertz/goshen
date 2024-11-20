@@ -16,13 +16,11 @@ class RedirectBasedOnRole
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth()->check() && auth()->user()->role === 'admin'){
-            return redirect()->route('dashboard');
-        }
-
-        if(auth()->check() && auth()->user()->role === 'user'){
-            return redirect()->route('shop');
-        }
+        // if(auth()->check() && auth()->user()->hasRole('admin')){
+        //     return redirect()->route('dashboard');
+        // } else {
+        //     return redirect()->route('shop');
+        // }
         return $next($request);
     }
 }

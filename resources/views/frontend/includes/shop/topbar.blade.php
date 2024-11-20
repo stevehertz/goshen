@@ -15,29 +15,29 @@
         <ul>
             <li>
                 <a href="{{ route('shop.wishlist') }}">
-                    <i class="fa fa-heart"></i> 
+                    <i class="fa fa-heart"></i>
                     @auth
                         <span>{{ \App\Models\Wishlist::countWishlist(Auth::user()->id) }}</span>
                     @endauth
-                    
+
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class="fa fa-shopping-bag"></i> 
+                    <i class="fa fa-shopping-bag"></i>
                     @auth
                         <span>
                             {{ \App\Models\Cart::countCart(Auth::user()->id) }}
                         </span>
                     @endauth
-                    
+
                 </a>
             </li>
         </ul>
         @auth
-            <div class="header__cart__price">item: <span>$150.00</span></div>
+            <div class="header__cart__price">item: <span>Kshs.{{ \App\Models\Cart::countTotalPrice(Auth::user()->id) }}</span></div>
         @endauth
-        
+
     </div>
     <div class="humberger__menu__widget">
         {{-- <div class="header__top__right__language">
@@ -51,13 +51,20 @@
         </div> --}}
         <div class="header__top__right__auth">
             @auth
-            
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
             @else
                 <a href="#">
                     <i class="fa fa-user"></i> Login
                 </a>
             @endauth
-            
+
         </div>
     </div>
     <nav class="humberger__menu__nav mobile-menu">

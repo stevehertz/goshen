@@ -26,6 +26,14 @@
                         </div> --}}
                         <div class="header__top__right__auth">
                             @auth
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    <i class="fas fa-sign-out-alt"></i> Logout
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             @else
                                 <a href="{{ route('login') }}">
                                     <i class="fas fa-user-alt"></i> Login
