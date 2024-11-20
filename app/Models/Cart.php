@@ -9,7 +9,7 @@ class Cart extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'product_id', 'quantity'];
+    protected $fillable = ['user_id', 'product_id', 'quantity', 'total_price'];
 
     public function product()
     {
@@ -21,7 +21,7 @@ class Cart extends Model
         return $this->belongsTo(User::class);
     }
 
-    public static function countCart($user_id) 
+    public static function countCart($user_id)
     {
         return self::where('user_id', $user_id)->sum('quantity');
     }

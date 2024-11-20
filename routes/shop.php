@@ -15,17 +15,25 @@ Route::prefix('shop')->name('shop.')->group(function(){
 
     Route::get('/contact', [ShopsController::class, 'contact'])->name('contact');
 
-    Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist');
+    Route::middleware('auth')->group(function(){
 
-    Route::post('/wishlist/store', [WishlistController::class, 'store'])->name('wishlist.store');
+        Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist');
 
-    Route::delete('/wishlist/{id}/delete', [WishlistController::class, 'destroy'])->name('wishlist.delete');
+        Route::post('/wishlist/store', [WishlistController::class, 'store'])->name('wishlist.store');
 
-    Route::prefix('cart')->name('cart.')->group(function(){
+        Route::delete('/wishlist/{id}/delete', [WishlistController::class, 'destroy'])->name('wishlist.delete');
+    });
+
+    Route::prefix('cart')->middleware('auth')->name('cart.')->group(function(){
 
         Route::get('/', [CartController::class, 'index'])->name('index');
 
         Route::post('/store', [CartController::class, 'store'])->name('store');
+
+        Route::post('/{cart}/update', [CartController::class, 'update'])->name('update');
+
+        Route::delete('/{cart}/delete', [CartController::class, 'destroy'])->name('delete');
+
     });
 
 });

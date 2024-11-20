@@ -88,10 +88,12 @@
                             height: 40px;
 
                             input {
-                                color: $normal-color;
+                                // color: $normal-color;
+                                color: #fff;
 
                                 &::placeholder {
-                                    color: $normal-color;
+                                    // color: $normal-color;
+                                    color: #fff;
                                 }
                             }
 
@@ -127,7 +129,8 @@
 
     h5 {
         font-size: 20px;
-        color: $normal-color;
+        // color: $normal-color;
+        color: #fff;
         font-weight: 700;
         margin-bottom: 25px;
     }
@@ -140,12 +143,14 @@
             border: 1px solid #cccccc;
             font-size: 16px;
             color: #b2b2b2;
+            // color: #fff;
             text-align: center;
             display: inline-block;
             margin-right: 15px;
 
             &::placeholder {
                 color: #b2b2b2;
+                // color: #fff;
             }
         }
 
@@ -165,7 +170,8 @@
     margin-top: 50px;
 
     h5 {
-        color: $normal-color;
+        // color: $normal-color;
+        color: #fff;
         font-weight: 700;
         font-size: 20px;
         margin-bottom: 28px;
@@ -176,7 +182,8 @@
 
         li {
             font-size: 16px;
-            color: $normal-color;
+            // color: $normal-color;
+            color: #fff;
             font-weight: 700;
             list-style: none;
             overflow: hidden;

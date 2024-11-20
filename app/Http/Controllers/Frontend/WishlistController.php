@@ -52,6 +52,14 @@ class WishlistController extends Controller
     public function store(StoreWishlistRequest $request)
     {
         //
+        if (!auth()->check()) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Unauthorized',
+                'redirect' => route('login'),
+            ], 401);
+        }
+
         $wishlist = Wishlist::firstOrCreate([
             'user_id' => Auth::user()->id,
             'product_id' => $request->product_id,

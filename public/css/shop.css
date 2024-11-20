@@ -1672,13 +1672,13 @@ ol {
   height: 40px;
 }
 .shoping__cart__table table tbody tr td.shoping__cart__quantity .pro-qty input {
-  color: #1c1c1c;
+  color: #fff;
 }
 .shoping__cart__table table tbody tr td.shoping__cart__quantity .pro-qty input::-moz-placeholder {
-  color: #1c1c1c;
+  color: #fff;
 }
 .shoping__cart__table table tbody tr td.shoping__cart__quantity .pro-qty input::placeholder {
-  color: #1c1c1c;
+  color: #fff;
 }
 .shoping__cart__table table tbody tr td.shoping__cart__quantity .pro-qty .qtybtn {
   width: 15px;
@@ -1701,7 +1701,7 @@ ol {
 }
 .shoping__discount h5 {
   font-size: 20px;
-  color: #1c1c1c;
+  color: #fff;
   font-weight: 700;
   margin-bottom: 25px;
 }
@@ -1735,7 +1735,7 @@ ol {
   margin-top: 50px;
 }
 .shoping__checkout h5 {
-  color: #1c1c1c;
+  color: #fff;
   font-weight: 700;
   font-size: 20px;
   margin-bottom: 28px;
@@ -1745,7 +1745,7 @@ ol {
 }
 .shoping__checkout ul li {
   font-size: 16px;
-  color: #1c1c1c;
+  color: #fff;
   font-weight: 700;
   list-style: none;
   overflow: hidden;

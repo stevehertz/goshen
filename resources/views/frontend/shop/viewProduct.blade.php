@@ -44,18 +44,23 @@
                         <div class="product__details__quantity">
                             <div class="quantity">
                                 <div class="pro-qty">
-                                    <input type="text" value="{{ $data->minimum_purchase }}">
+                                    <input type="text" id="quantity" value="{{ $data->minimum_purchase }}">
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="primary-btn">
+                        <a href="javascript:void(0)" class="primary-btn addToCartBtn" data-id="{{ $data->id }}">
                             ADD TO CART
                         </a>
-                        <a href="#" class="heart-icon">
+                        <a href="javascript:void(0)" class="heart-icon addToWishListBtn" data-product="{{ $data->id }}">
                             <span class="fas fa-heart"></span>
                         </a>
                         <ul>
-                            <li><b>Availability</b> <span>{{ \InStock::getName($data->in_stock) }}</span></li>
+                            <li>
+                                <b>Availability</b>
+                                <span>
+                                    {{ \InStock::getName($data->in_stock) }}
+                                </span>
+                            </li>
                             {{-- <li><b>Weight</b> <span>0.5 kg</span></li> --}}
                             {{-- <li><b>Share on</b>
                                 <div class="share">
@@ -75,25 +80,24 @@
                                 <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"
                                     aria-selected="true">Description</a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab"
                                     aria-selected="false">Information</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab"
                                     aria-selected="false">Reviews <span>(1)</span></a>
-                            </li>
+                            </li> --}}
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <div class="product__details__tab__desc">
-                                    <h6>Products Infomation</h6>
                                     <p>
                                         {{ $data->description }}
                                     </p>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                            {{-- <div class="tab-pane" id="tabs-2" role="tabpanel">
                                 <div class="product__details__tab__desc">
                                     <h6>Products Infomation</h6>
                                     <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
@@ -129,7 +133,7 @@
                                         Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
                                         Proin eget tortor risus.</p>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -154,8 +158,16 @@
                         <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="{{ asset($relProd->image) }}">
                                 <ul class="product__item__pic__hover">
-                                    <li><a href="{{ route('shop.view.product', $relProd->id) }}"><i class="fas fa-heart"></i></a></li>
-                                    <li><a href="{{ route('shop.view.product', $relProd->id) }}"><i class="fas fa-shopping-cart"></i></a></li>
+                                    <li>
+                                        <a href="javascript:void(0)" class="addToWishListBtn" data-product="{{ $relProd->id }}">
+                                            <i class="fas fa-heart"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('shop.view.product', $relProd->id) }}">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="product__item__text">
@@ -174,3 +186,7 @@
     </section>
     <!-- Related Product Section End -->
 @endsection
+
+@push('scripts')
+    @include('frontend.shop.scripts')
+@endpush

@@ -51,6 +51,6 @@ class LoginController extends Controller
             return redirect('/dashboard'); // Redirect admin to /dashboard
         }
 
-        return redirect('/'); // Redirect other users to /
+        return redirect()->route('shop'); // Redirect other users to /
     }
 }

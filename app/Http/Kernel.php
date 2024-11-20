@@ -36,6 +36,9 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+
+            // Add your middleware here for web routes
+            \App\Http\Middleware\RedirectBasedOnRole::class,
         ],
 
         'api' => [
@@ -64,5 +67,8 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        // Add your custom middleware
+        'redirectBasedOnRole' => \App\Http\Middleware\RedirectBasedOnRole::class,
+        'check.admin' => \App\Http\Middleware\CheckAdminRole::class,
     ];
 }
