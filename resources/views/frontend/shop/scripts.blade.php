@@ -1,6 +1,71 @@
 <script>
     $(document).ready(function() {
 
+        /*-------------------
+		Quantity change --------------------- */
+        var proQty = $('.pro-qty');
+
+        proQty.prepend('<span class="dec qtybtn">-</span>');
+        proQty.append('<span class="inc qtybtn">+</span>');
+
+        proQty.on('click', '.qtybtn', function() {
+            var $button = $(this);
+            var $input = $button.parent().find('input');
+            var oldValue = $button.parent().find('input').val();
+            var cartId = $input.data('cart-id'); // Cart ID from input's data attribute
+            var token = '{{ csrf_token() }}'; // CSRF token
+            var path = '{{ route('shop.cart.update', ':cart') }}'; // Update route
+            path = path.replace(':cart', cartId); // Replace placeholder with cart ID
+            var newVal;
+
+            if ($button.hasClass('inc')) {
+                newVal = parseFloat(oldValue) + 1;
+            } else {
+                // Don't allow decrementing below zero
+                if (oldValue > 24) {
+                    newVal = parseFloat(oldValue) - 1;
+                } else {
+                    newVal = 24;
+                }
+            }
+
+            // Update input value
+            $input.val(newVal);
+
+            // Send AJAX request to update quantity in database
+            $.ajax({
+                type: 'POST',
+                url: path,
+                data: {
+                    quantity: newVal,
+                    _token: token
+                },
+                dataType: 'json',
+                success: function(response) {
+                    if (response.status) {
+                        // Update the product total in the UI
+                        $button.parent()
+                            .closest('tr')
+                            .find('.shoping__cart__total')
+                            .text(`Kshs${response.updated_total_price}`);
+
+                        // Update the grand total in the UI
+                        $('#grand-total').text(response.grand_total);
+                        setTimeout(() => {
+                            location.reload();
+                        }, 500);
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function(xhr) {
+                    alert('An error occurred while updating the cart.');
+                }
+            });
+        });
+
+
+
         $(document).on('click', '.addToWishListBtn', function(e) {
             e.preventDefault();
             let product_id = $(this).data('product');
@@ -76,7 +141,8 @@
                 success: function(data) {
                     if (data['status']) {
                         setTimeout(() => {
-                            window.location.href = '{{ route('shop.cart.index') }}';
+                            window.location.href =
+                            '{{ route('shop.cart.index') }}';
                         }, 500);
                     }
                 },
@@ -87,42 +153,6 @@
                     } else {
                         alert(xhr.responseJSON.message || 'An error occurred.');
                     }
-                }
-            });
-        });
-
-        $(document).on('input', '.quantity-input', function () {
-            e.preventDefault();
-            let cartId = $(this).data('cart-id');
-            let productPrice = $(this).data('product-price');
-            let newQuantity = $(this).val();
-            let token = '{{ csrf_token() }}';
-            let path = '{{ route('shop.cart.update', ':cart') }}';
-            path = path.replace(':cart', cartId);
-            $.ajax({
-                type: "POST",
-                url: path,
-                data: {
-                    quantity: newQuantity,
-                    _token: token
-                },
-                dataType: 'json',
-                success: function(response) {
-                    if (response.status) {
-                        // Update the product total
-                        $(`input[data-cart-id="${cartId}"]`)
-                            .closest('tr')
-                            .find('.shoping__cart__total')
-                            .text(`Kshs${response.updated_total_price}`);
-
-                        // Update the grand total
-                        $('#grand-total').text(response.grand_total);
-                    } else {
-                        alert(response.message);
-                    }
-                },
-                error: function(xhr) {
-                    alert('An error occurred while updating the cart.');
                 }
             });
         });
