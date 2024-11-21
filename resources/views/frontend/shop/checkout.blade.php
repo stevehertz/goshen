@@ -10,7 +10,8 @@
         <div class="container">
             <div class="checkout__form">
                 <h4>Billing Details</h4>
-                <form action="#">
+                <form action="{{ route('shop.payments.checkout', $order->id) }}" method="POST">
+                    @csrf
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <div class="row">
@@ -33,9 +34,12 @@
                                     <div class="checkout__input">
                                         <p>Country<span>*</span></p>
                                         <select name="country" class="form-control" style="width: 100%;">
-                                            <option value="">Select Country</option>
+                                            <option disabled selected>Select Country</option>
                                             @foreach ($countries as $key => $country)
-                                                <option value="{{ $key }}">{{ $country }}</option>
+                                                <option value="{{ $key }}"
+                                                    @if (Auth::user()->country == $key) selected @endif>
+                                                    {{ $country }}
+                                                </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -44,15 +48,18 @@
                                 <div class="col-lg-4">
                                     <div class="checkout__input">
                                         <p>Address<span>*</span></p>
-                                        <input type="text" name="address" placeholder="Street Address" class="checkout__input__add">
-                                        <input type="text" name="apartment" placeholder="Apartment, suite, unite ect (optinal)">
+                                        <input type="text" value="{{ Auth::user()->address }}" name="address"
+                                            placeholder="Street Address" class="checkout__input__add">
+                                        <input type="text" value="{{ Auth::user()->apartment }}" name="apartment"
+                                            placeholder="Apartment, suite, unite ect (optinal)">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-4">
                                     <div class="checkout__input">
                                         <p>Town/City<span>*</span></p>
-                                        <input type="text">
+                                        <input type="text" name="town" value="{{ Auth::user()->town }}"
+                                            placeholder="Town/City">
                                     </div>
                                 </div>
                             </div>
@@ -84,24 +91,31 @@
                                         </li>
                                     @endforeach
                                 </ul>
-                                <div class="checkout__order__subtotal">Subtotal <span>Kshs.{{ $order->total_amount }}</span></div>
-                                <div class="checkout__order__total">Total <span>Kshs.{{ $order->total_amount }}</span></div>
+                                <div class="checkout__order__subtotal">Subtotal
+                                    <span>Kshs.{{ $order->total_amount }}</span>
+                                </div>
+                                <div class="checkout__order__total">
+                                    Total <span>Kshs.{{ $order->total_amount }}</span>
+                                </div>
 
-                                <div class="checkout__input__checkbox">
-                                    <label for="payment">
-                                        Check Payment
-                                        <input type="checkbox" id="payment">
+                                {{-- <div class="checkout__input__checkbox">
+                                    <label for="card">
+                                        Credit Card
+                                        <input type="radio" name="payment_method" value="credit_card" id="card">
                                         <span class="checkmark"></span>
                                     </label>
-                                </div>
-                                <div class="checkout__input__checkbox">
-                                    <label for="paypal">
-                                        Paypal
-                                        <input type="checkbox" id="paypal">
+                                </div> --}}
+
+                                {{-- <div class="checkout__input__checkbox">
+                                    <label for="mpesa">
+                                        M-Pesa
+                                        <input type="radio" name="payment_method" value="mpesa" id="mpesa">
                                         <span class="checkmark"></span>
                                     </label>
-                                </div>
-                                <button type="submit" class="site-btn">PLACE ORDER</button>
+                                </div> --}}
+                                <button type="submit" class="site-btn">
+                                    PLACE ORDER
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -111,3 +125,7 @@
     </section>
     <!-- Checkout Section End -->
 @endsection
+
+@push('scripts')
+
+@endpush

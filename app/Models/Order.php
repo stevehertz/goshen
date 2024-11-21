@@ -9,7 +9,11 @@ class Order extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'total_amount', 'status'];
+    protected $fillable = [
+        'user_id', 
+        'total_amount', 
+        'status'
+    ];
 
     protected $dates = ['deleted_at'];
 
@@ -21,5 +25,10 @@ class Order extends Model
     public function items()
     {
         return $this->hasMany(OrderItem::class);
+    }
+
+    public function payment()  
+    {
+        return $this->hasMany(Payment::class);    
     }
 }

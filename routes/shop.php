@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\Frontend\CartController;
-use App\Http\Controllers\Frontend\CheckoutController;
-use App\Http\Controllers\Frontend\ShopsController;
-use App\Http\Controllers\Frontend\WishlistController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\ShopsController;
+use App\Http\Controllers\Frontend\PaymentController;
+use App\Http\Controllers\Frontend\CheckoutController;
+use App\Http\Controllers\Frontend\WishlistController;
 
 Route::prefix('shop')->name('shop.')->group(function(){
 
@@ -43,6 +44,14 @@ Route::prefix('shop')->name('shop.')->group(function(){
         Route::post('/', [CheckoutController::class, 'checkout'])->name('checkout');
 
         Route::get('/{order}', [CheckoutController::class, 'index'])->name('index');
+
+    });
+
+    Route::prefix('payments')->name('payments.')->group(function(){
+
+        Route::get('/callback', [PaymentController::class, 'callback'])->name('callback');
+
+        Route::post('/{order}/checkout', [PaymentController::class, 'store'])->name('checkout');
 
     });
 

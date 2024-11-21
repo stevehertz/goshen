@@ -1,7 +1,10 @@
 <?php
 
-use App\Enums\InStock;
 use App\Enums\Status;
+use App\Enums\InStock;
+use App\Enums\OrderStatus;
+use App\Enums\PaymentStatus;
+use App\Providers\AppServiceProvider;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
@@ -256,6 +259,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Knox\Pesapal\PesapalServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -273,6 +277,9 @@ return [
         // 'Example' => App\Facades\Example::class,
         'Status' => Status::class,
         'InStock' => InStock::class,
+        'Pesapal' => Knox\Pesapal\Facades\Pesapal::class,
+        'OrderStatus' => OrderStatus::class,
+        'PaymentStatus' => PaymentStatus::class,
     ])->toArray(),
 
 ];
