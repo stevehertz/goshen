@@ -32,7 +32,7 @@
                                             Kshs{{ $cart->product->price }}
                                         </td>
                                         <td class="shoping__cart__quantity">
-                                            <div class="quantity">
+                                            {{-- <div class="quantity">
                                                 <div class="pro-qty">
                                                     <input type="text"
                                                     class="quantity-input"
@@ -40,13 +40,16 @@
                                                     data-cart-id="{{ $cart->id }}"
                                                     value="{{ $cart->quantity }}">
                                                 </div>
-                                            </div>
+                                            </div> --}}
+                                            {{ $cart->quantity }}
                                         </td>
                                         <td class="shoping__cart__total">
                                             Kshs{{ $cart->total_price }}
                                         </td>
                                         <td class="shoping__cart__item__close">
-                                            <i class="fas fa-close"></i>
+                                            <a href="javascript:void(0)" data-id="{{ $cart->id }}" class="removeCartBtn">
+                                                <i class="fas fa-close"></i>
+                                            </a>
                                         </td>
                                     </tr>
                                 @empty
@@ -89,7 +92,7 @@
                             <li>Subtotal <span>Kshs{{ $grandTotal }}</span></li>
                             <li>Total <span>Kshs{{ $grandTotal }}</span></li>
                         </ul>
-                        <a href="#" class="primary-btn">PROCEED TO CHECKOUT</a>
+                        <a href="javascript:void(0)" class="primary-btn proceedToCheckoutBtn">PROCEED TO CHECKOUT</a>
                     </div>
                 </div>
             </div>

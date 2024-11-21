@@ -134,4 +134,18 @@ class Helper
         // If no paragraphs are found, return null or an empty string
         return null;
     }
+
+    public static function getCountries()
+    {
+        return [
+            'Kenya' => 'Kenya',
+            'Uganda' => 'Uganda',
+            'Tanzania' => 'Tanzania',
+            'South Africa' => 'South Africa',
+            'Nigeria' => 'Nigeria',
+            'United States' => 'United States',
+            'United Kingdom' => 'United Kingdom',
+            'India' => 'India',
+        ];
+    }
 }

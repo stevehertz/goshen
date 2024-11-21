@@ -1884,7 +1884,7 @@ ol {
   padding-top: 30px;
 }
 .checkout__order h4 {
-  color: #1c1c1c;
+  color: #fff;
   font-weight: 700;
   border-bottom: 1px solid #e1e1e1;
   padding-bottom: 20px;
@@ -1892,8 +1892,8 @@ ol {
 }
 .checkout__order .checkout__order__products {
   font-size: 18px;
-  color: #1c1c1c;
-  font-weight: 700;
+  color: #fff;
+  font-weight: 500;
   margin-bottom: 10px;
 }
 .checkout__order .checkout__order__products span {
@@ -1903,8 +1903,8 @@ ol {
   margin-bottom: 12px;
 }
 .checkout__order ul li {
-  font-size: 16px;
-  color: #6f6f6f;
+  font-size: 13px;
+  color: #fff;
   line-height: 40px;
   list-style: none;
 }
@@ -1914,7 +1914,7 @@ ol {
 }
 .checkout__order .checkout__order__subtotal {
   font-size: 18px;
-  color: #1c1c1c;
+  color: #fff;
   font-weight: 700;
   border-bottom: 1px solid #e1e1e1;
   border-top: 1px solid #e1e1e1;
@@ -1927,10 +1927,11 @@ ol {
 }
 .checkout__order .checkout__input__checkbox label {
   padding-left: 20px;
+  color: #fff;
 }
 .checkout__order .checkout__order__total {
   font-size: 18px;
-  color: #1c1c1c;
+  color: #fff;
   font-weight: 700;
   border-bottom: 1px solid #e1e1e1;
   padding-bottom: 15px;

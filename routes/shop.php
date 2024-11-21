@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\ShopsController;
 use App\Http\Controllers\Frontend\WishlistController;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +34,15 @@ Route::prefix('shop')->name('shop.')->group(function(){
         Route::post('/{cart}/update', [CartController::class, 'update'])->name('update');
 
         Route::delete('/{cart}/delete', [CartController::class, 'destroy'])->name('delete');
+
+    });
+
+
+    Route::prefix('checkout')->name('checkout.')->group(function(){
+
+        Route::post('/', [CheckoutController::class, 'checkout'])->name('checkout');
+
+        Route::get('/{order}', [CheckoutController::class, 'index'])->name('index');
 
     });
 
