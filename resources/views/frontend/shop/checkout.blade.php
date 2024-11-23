@@ -10,7 +10,7 @@
         <div class="container">
             <div class="checkout__form">
                 <h4>Billing Details</h4>
-                <form action="{{ route('shop.payments.checkout', $order->id) }}" method="POST">
+                <form action="{{ route('payments.checkout', $order->id) }}" method="POST">
                     @csrf
                     <div class="row">
                         <div class="col-lg-8 col-md-6">

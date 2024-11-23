@@ -9,6 +9,7 @@ use App\Enums\OrderStatus;
 use App\Enums\PaymentStatus;
 use Illuminate\Http\Request;
 use Knox\Pesapal\Facades\Pesapal;
+use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StorePaymentRequest;
@@ -16,11 +17,6 @@ use App\Http\Requests\UpdatePaymentRequest;
 
 class PaymentController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Display a listing of the resource.
@@ -38,13 +34,29 @@ class PaymentController extends Controller
         //
     }
 
+    private function formatKenyanPhoneNumber($phone)
+    {
+        // Remove spaces and non-numeric characters
+        $phone = preg_replace('/\D/', '', $phone);
+
+        // Handle different cases
+        if (str_starts_with($phone, '0')) {
+            // Replace leading 0 with 254
+            $phone = '254' . substr($phone, 1);
+        } elseif (str_starts_with($phone, '+')) {
+            // Remove the + symbol
+            $phone = substr($phone, 1);
+        }
+
+        return $phone;
+    }
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(StorePaymentRequest $request, Order $order)
     {
         //
-
         $user = User::findOrFail(Auth::user()->id);
 
         $user->update([
@@ -62,54 +74,54 @@ class PaymentController extends Controller
             'status' => PaymentStatus::PENDING
         ]);
 
-        // Payment details
-        $details = [
-            'amount' => $order->total_amount,
-            'description' => "Order #{$order->id}",
-            'type' => 'MERCHANT',
-            'reference' => $payment->id, // Unique reference
-            'first_name' => auth()->user()->first_name,
-            'last_name' => auth()->user()->last_name,
-            'email' => auth()->user()->email,
-        ];
+        $phone = $this->formatKenyanPhoneNumber($user->phone);
 
-        // Generate payment URL
-        $iframeSrc = Pesapal::makePayment($details, route('shop.payments.callback'));
+        $mpesa= new \Safaricom\Mpesa\Mpesa();
 
-        return view('frontend.shop.pesapal', compact('iframeSrc'));
+        $BusinessShortCode = '174379';
+        $LipaNaMpesaPasskey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
+        $TransactionType = 'CustomerPayBillOnline';
+        $Amount = '1';
+        $PartyA = $phone;
+        $PartyB = '174379';
+        $PhoneNumber = $phone;
+        $CallBackURL = 'https://goshen.co.ke/mpesa/confirmation';
+        $AccountReference = 'AccountReference';
+        $TransactionDesc = 'TransactionDesc';
+        $Remarks = 'Remarks';
+
+        $stkPushSimulation=$mpesa->STKPushSimulation(
+            $BusinessShortCode,
+            $LipaNaMpesaPasskey,
+            $TransactionType,
+            $Amount,
+            $PartyA,
+            $PartyB,
+            $PhoneNumber,
+            $CallBackURL,
+            $AccountReference,
+            $TransactionDesc,
+            $Remarks
+        );
+
+        dd($stkPushSimulation);
+
     }
 
     public function callback(Request $request)
     {
-        $paymentId = $request->input('pesapal_transaction_tracking_id');
-        $reference = $request->input('pesapal_merchant_reference');
-        // Get payment status
-        $status = Pesapal::getTransactionStatus($paymentId);
-        // Find the payment record
-        $payment = Payment::find($reference);
 
-        if (!$payment) {
-            return redirect()->route('shop.checkout.index')->withErrors('Invalid payment reference.');
-        }
+    }
 
-        // Update payment and order status
-        if ($status['status'] === 'COMPLETED') {
-            $payment->update([
-                'status' => PaymentStatus::PAID,
-            ]);
 
-            $payment->order->update([
-                'status' => OrderStatus::COMPLETE,
-            ]);
+    public function mpesa_confirmation()
+    {
 
-            return redirect()->route('shop')->with('success', 'Payment successful!');
-        } else {
-            $payment->update([
-                'status' => PaymentStatus::FAILED,
-            ]);
+    }
 
-            return redirect()->route('shop.checkout.index')->withErrors('Payment failed.');
-        }
+    public function FunctionName()
+    {
+
     }
 
     /**

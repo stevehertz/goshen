@@ -89,6 +89,13 @@
     margin-right: 40px;
     cursor: pointer;
 
+    a{
+        color: $white-color;
+        &:hover{
+            color: blue;
+        }
+    }
+
     &:hover {
 
         ul {

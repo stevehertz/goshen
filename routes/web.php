@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\PaymentController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact');
 
+Route::prefix('payments')->name('payments.')->group(function(){
+
+    Route::get('/callback', [PaymentController::class, 'callback'])->name('callback');
+
+    Route::post('/{order}/checkout', [PaymentController::class, 'store'])->name('checkout');
+
+});
+
+Route::prefix('mpesa')->name('mpesa.')->group(function(){
+
+    Route::get('/confirmation', [PaymentController::class, 'mpesa_confirmation'])->name('confirmation');
+
+});

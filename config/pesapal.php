@@ -12,7 +12,7 @@ return [
     'consumer_secret' => env('PESAPAL_CONSUMER_SECRET'),
 
     /*
-     * ISO code for the currency    
+     * ISO code for the currency
      */
     'currency'        => env('PESAPAL_CURRENCY', 'KES'),
 

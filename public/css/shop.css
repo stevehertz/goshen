@@ -290,6 +290,12 @@ ol {
   margin-right: 40px;
   cursor: pointer;
 }
+.header__top__right__language a {
+  color: #ffffff;
+}
+.header__top__right__language a:hover {
+  color: blue;
+}
 .header__top__right__language:hover ul {
   top: 23px;
   opacity: 1;

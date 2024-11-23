@@ -260,6 +260,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Knox\Pesapal\PesapalServiceProvider::class,
+        \Safaricom\Mpesa\MpesaServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -280,6 +281,7 @@ return [
         'Pesapal' => Knox\Pesapal\Facades\Pesapal::class,
         'OrderStatus' => OrderStatus::class,
         'PaymentStatus' => PaymentStatus::class,
+        'Mpesa'=> \Safaricom\Mpesa\MpesaServiceProvider::class,
     ])->toArray(),
 
 ];

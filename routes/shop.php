@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Frontend\ShopsController;
 use App\Http\Controllers\Frontend\PaymentController;
 use App\Http\Controllers\Frontend\CheckoutController;
@@ -47,12 +48,9 @@ Route::prefix('shop')->name('shop.')->group(function(){
 
     });
 
-    Route::prefix('payments')->name('payments.')->group(function(){
+    Route::prefix('orders')->name('orders.')->group(function(){
 
-        Route::get('/callback', [PaymentController::class, 'callback'])->name('callback');
-
-        Route::post('/{order}/checkout', [PaymentController::class, 'store'])->name('checkout');
+        Route::get('/', [OrderController::class, 'index'])->name('index');
 
     });
-
 });

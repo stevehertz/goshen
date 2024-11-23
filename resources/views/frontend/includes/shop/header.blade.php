@@ -15,15 +15,14 @@
                         <div class="header__top__right__social">
                             @include('frontend.includes.shop.social')
                         </div>
-                        {{-- <div class="header__top__right__language">
-                            <img src="{{ asset('img/shop/language.png') }}" alt="">
-                            <div>English</div>
-                            <span class="arrow_carrot-down"></span>
-                            <ul>
-                                <li><a href="#">Spanis</a></li>
-                                <li><a href="#">English</a></li>
-                            </ul>
-                        </div> --}}
+                        @auth
+                            <div class="header__top__right__language">
+                                <a href="{{ route('shop.orders.index') }}">
+                                    <i class="fas fa-box"></i> My Orders
+                                </a>
+                            </div>
+                        @endauth
+
                         <div class="header__top__right__auth">
                             @auth
                                 <a href="{{ route('logout') }}"
