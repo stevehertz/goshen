@@ -46,6 +46,8 @@ Route::prefix('shop')->name('shop.')->group(function(){
 
         Route::get('/{order}', [CheckoutController::class, 'index'])->name('index');
 
+        Route::get('/{order}/success', [PaymentController::class, 'success'])->name('success');
+
     });
 
     Route::prefix('orders')->name('orders.')->group(function(){

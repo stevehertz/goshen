@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="hero__categories">
-                    <div class="hero__categories__all">
+                    <div class="hero__cat_all">
                         <i class="fas fa-bars"></i>
                         <span>All categories</span>
                     </div>
@@ -24,6 +24,7 @@
                     </ul>
                 </div>
             </div>
+
             <div class="col-lg-9">
                 <div class="hero__search">
                     {{-- <div class="hero__search__form">

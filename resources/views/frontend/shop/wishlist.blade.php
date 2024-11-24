@@ -22,17 +22,16 @@
                                 @forelse ($wishlist as $list)
                                     <tr>
                                         <td class="shoping__cart__item">
-                                            <img src="{{ asset($list->product->image) }}" alt="{{ $list->product->title  }}">
+                                            <img src="{{ asset($list->product->image) }}" alt="{{ $list->product->title }}">
                                             <h5>{{ $list->product->title }}</h5>
                                         </td>
                                         <td class="shoping__cart__price">
                                             Kshs{{ $list->product->price }}
                                         </td>
                                         <td class="shoping__cart__item__close">
-                                            <a href="javascript:void(0)" data-id="{{ $list->id }}" class="removeProductBtn">
-                                                <span class="icon_close">
-                                                    <i class="fas fa-close"></i>
-                                                </span>
+                                            <a href="javascript:void(0)" data-id="{{ $list->id }}"
+                                                class="removeProductBtn">
+                                                <i class="fas fa-close"></i>
                                             </a>
                                         </td>
                                     </tr>

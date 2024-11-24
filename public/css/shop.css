@@ -508,6 +508,32 @@ ol {
   margin-bottom: 0;
 }
 
+.hero__cat_all {
+  background: #7fad39;
+  position: relative;
+  padding: 10px 25px 10px 40px;
+  cursor: pointer;
+}
+.hero__cat_all i {
+  font-size: 16px;
+  color: #ffffff;
+  margin-right: 10px;
+}
+.hero__cat_all span {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.hero__cat_all:after {
+  position: absolute;
+  right: 18px;
+  top: 9px;
+  content: "";
+  font-family: "ElegantIcons";
+  font-size: 18px;
+  color: #ffffff;
+}
+
 .hero__categories__all {
   background: #7fad39;
   position: relative;

@@ -15,19 +15,20 @@ class Payment extends Model
         'method',
         'amount',
         'status',
+        'transactionId'
     ];
 
     protected $dates = [
         'deleted_at'
     ];
 
-    public function user()  
+    public function user()
     {
-        $this->belongsTo(User::class);    
+        $this->belongsTo(User::class);
     }
 
-    public function order()  
+    public function order()
     {
-        return $this->belongsTo(Order::class);    
+        return $this->belongsTo(Order::class);
     }
 }

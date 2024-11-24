@@ -28,12 +28,12 @@
                     <div class="product__details__text">
                         <h3>{{ $data->title }}</h3>
                         <div class="product__details__rating">
-                            <i class="fas fa-star"></i>
+                            {{-- <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star-half-o"></i>
-                            <span>(18 reviews)</span>
+                            <span>(18 reviews)</span> --}}
                         </div>
                         <div class="product__details__price">
                             Kshs{{ $data->price }}

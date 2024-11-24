@@ -10,6 +10,11 @@
         <div class="container">
             <div class="checkout__form">
                 <h4>Billing Details</h4>
+                @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 <form action="{{ route('payments.checkout', $order->id) }}" method="POST">
                     @csrf
                     <div class="row">
@@ -127,5 +132,4 @@
 @endsection
 
 @push('scripts')
-
 @endpush

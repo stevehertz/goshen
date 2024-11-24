@@ -2,21 +2,34 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\User;
-use App\Models\Order;
-use App\Models\Payment;
 use App\Enums\OrderStatus;
 use App\Enums\PaymentStatus;
-use Illuminate\Http\Request;
-use Knox\Pesapal\Facades\Pesapal;
-use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StorePaymentRequest;
 use App\Http\Requests\UpdatePaymentRequest;
+use App\Models\Order;
+use App\Models\Payment;
+use App\Models\User;
+use App\Repositories\CategoryRepository;
+use App\Repositories\ProductRepository;
+use App\Services\DarajaService;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Knox\Pesapal\Facades\Pesapal;
+use Safaricom\Mpesa\Mpesa;
+
 
 class PaymentController extends Controller
 {
+    private $darajaService;
+    private $categoryRepository, $productRepository;
+    public function __construct(DarajaService $darajaService, CategoryRepository $categoryRepository, ProductRepository $productRepository)
+    {
+        $this->darajaService = $darajaService;
+        $this->categoryRepository = $categoryRepository;
+        $this->productRepository = $productRepository;
+    }
 
     /**
      * Display a listing of the resource.
@@ -75,54 +88,89 @@ class PaymentController extends Controller
         ]);
 
         $phone = $this->formatKenyanPhoneNumber($user->phone);
+        $amount = $payment->amount;
+        $shortcode = env('MPESA_SHORTCODE');
+        $lipaNaMpesaPasskey = env('MPESA_PASSKEY');
 
-        $mpesa= new \Safaricom\Mpesa\Mpesa();
-
-        $BusinessShortCode = '174379';
-        $LipaNaMpesaPasskey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';
-        $TransactionType = 'CustomerPayBillOnline';
-        $Amount = '1';
-        $PartyA = $phone;
-        $PartyB = '174379';
-        $PhoneNumber = $phone;
-        $CallBackURL = 'https://goshen.co.ke/mpesa/confirmation';
-        $AccountReference = 'AccountReference';
-        $TransactionDesc = 'TransactionDesc';
-        $Remarks = 'Remarks';
-
-        $stkPushSimulation=$mpesa->STKPushSimulation(
-            $BusinessShortCode,
-            $LipaNaMpesaPasskey,
-            $TransactionType,
-            $Amount,
-            $PartyA,
-            $PartyB,
-            $PhoneNumber,
-            $CallBackURL,
-            $AccountReference,
-            $TransactionDesc,
-            $Remarks
+        $response = $this->darajaService->stkPush(
+            $phone,
+            $amount,
+            'TestAccount',
+            'Payment for goods'
         );
 
-        dd($stkPushSimulation);
+        $responseBody = json_decode($response->getBody()->getContents(), true);
 
+        if (isset($responseBody['ResponseCode']) && $responseBody['ResponseCode'] === '0') {
+            $order->update([
+                'status' => OrderStatus::COMPLETE
+            ]);
+
+            $payment->update([
+                'status' => PaymentStatus::PAID
+            ]);
+            // STK Push was successfully sent
+            return redirect()->route('shop.checkout.success', ['order' => $order->id]);
+        }
+
+        // STK Push failed
+        return redirect()->route('shop.checkout.index', $order->id)
+            ->with('error', 'Payment initiation failed. Please try again.');
     }
 
-    public function callback(Request $request)
+
+    public function success(Order $order)
     {
-
+        $categories = $this->categoryRepository->getAllActiveCategories();
+        $products = $this->productRepository->getAllActiveProducts();
+        return view('frontend.shop.success', [
+            'order' => $order,
+            'categories' => $categories,
+            'products' => $products,
+        ]);
     }
 
+    public function callback(Request $request) {}
 
-    public function mpesa_confirmation()
+
+    public function mpesa_confirmation(Request $request)
     {
+        $data = $request->all();
 
+        // Log incoming request (optional)
+        Log::info('M-Pesa Confirmation: ', $data);
+
+        // Extract necessary information
+        $transactionId = $data['TransID'] ?? null;
+        $orderReference = $data['BillRefNumber'] ?? null;
+        $amount = $data['TransAmount'] ?? null;
+        $resultCode = $data['ResultCode'] ?? null;
+        if ($transactionId && $orderReference) {
+            // Find the payment by the reference (e.g., payment ID)
+            $payment = Payment::find($orderReference);
+
+            if ($payment) {
+                if ($resultCode === '0') {
+                    // Payment was successful
+                    $payment->update([
+                        'status' => PaymentStatus::PAID, // Example status constant
+                    ]);
+
+                    // Update the associated order
+                    $payment->order->update([
+                        'status' => OrderStatus::COMPLETE,
+                    ]);
+                } else {
+                    // Payment failed
+                    $payment->update([
+                        'status' => PaymentStatus::FAILED,
+                    ]);
+                }
+            }
+        }
     }
 
-    public function FunctionName()
-    {
-
-    }
+    public function FunctionName() {}
 
     /**
      * Display the specified resource.

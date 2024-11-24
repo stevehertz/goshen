@@ -26,6 +26,36 @@
     }
 }
 
+
+.hero__cat_all{
+    background: $primary-color;
+    position: relative;
+    padding: 10px 25px 10px 40px;
+    cursor: pointer;
+
+    i {
+        font-size: 16px;
+        color: $white-color;
+        margin-right: 10px;
+    }
+
+    span {
+        font-size: 18px;
+        font-weight: 700;
+        color: $white-color;
+    }
+
+    &:after {
+        position: absolute;
+        right: 18px;
+        top: 9px;
+        content: '';
+        font-family: 'ElegantIcons';
+        font-size: 18px;
+        color: $white-color;
+    }
+}
+
 .hero__categories__all {
     background: $primary-color;
     position: relative;
