@@ -15,6 +15,12 @@ class ProductRepository
         return Product::latest()->get();
     }
 
+
+    public function getAll10ActiveProducts()
+    {
+        return Product::with(['categories'])->limit(10)->get();
+    }
+
     public function getAllActiveProducts()
     {
         return Product::with(['categories'])->latest()->get();
@@ -38,7 +44,7 @@ class ProductRepository
         ]);
 
         $category = Category::findOrFail(data_get($attributes, 'category_id'));
-        $category->products()->syncWithoutDetaching([$product->id]);
+        $category->products()->sync([$product->id]);
 
         // upload featured image
         if ($image) {

@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\CustomersController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\OrdersController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\RolesController;
 use App\Http\Controllers\Backend\UsersController;
@@ -49,6 +51,18 @@ Route::middleware(['auth', 'redirectBasedOnRole', 'check.admin'])->group(functio
         Route::put('/{product}/update/extra/images', [ProductController::class, 'updatextraImages'])->name('update.extra.images');
 
         Route::delete('/{product}/delete', [ProductController::class, 'destroy'])->name('delete');
+    });
+
+    Route::prefix('orders')->name('orders.')->group(function(){
+
+        Route::get('/', [OrdersController::class, 'index'])->name('index');
+
+    });
+
+    Route::prefix('customers')->name('customers.')->group(function(){
+
+        Route::get('/', [CustomersController::class, 'index'])->name('index');
+
     });
 
     Route::prefix('users')->name('users.')->group(function(){
