@@ -3,16 +3,27 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\CustomersRepository;
 use Illuminate\Http\Request;
 
 class CustomersController extends Controller
 {
+    private $customersRepository;
+    public function __construct(CustomersRepository $customersRepository)
+    {
+        $this->middleware('auth');
+        $this->customersRepository = $customersRepository;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         //
+        $data = $this->customersRepository->getAllCustomers();
+        return view('backend.customers.index', [
+            'data' => $data
+        ]);
     }
 
     /**

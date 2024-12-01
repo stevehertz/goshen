@@ -96,8 +96,8 @@
                     </ul>
                 </li>
 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="nav-item @if (Route::is('customers.index')) menu-open @endif">
+                    <a href="#" class="nav-link @if (Route::is('customers.index')) active @endif">
                         <i class="nav-icon fas fa-user-friends"></i>
                         <p>
                             Customers
@@ -106,7 +106,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
+                            <a href="{{ route('customers.index') }}" class="nav-link @if (Route::is('customers.index')) active @endif">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>All Customers</p>
                             </a>
