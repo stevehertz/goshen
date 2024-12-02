@@ -57,6 +57,12 @@ Route::middleware(['auth', 'redirectBasedOnRole', 'check.admin'])->group(functio
 
         Route::get('/', [OrdersController::class, 'index'])->name('index');
 
+        Route::get('/{id}/show', [OrdersController::class, 'show'])->name('show');
+
+        Route::get('/{id}/view', [OrdersController::class, 'view'])->name('view');
+
+        Route::delete('/{order}/delete', [OrdersController::class, 'destroy'])->name('delete');
+
     });
 
     Route::prefix('customers')->name('customers.')->group(function(){

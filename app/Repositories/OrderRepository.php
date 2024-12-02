@@ -16,4 +16,14 @@ class OrderRepository
     {
         return Order::latest()->get();
     }
+
+    public function showOrder($id)
+    {
+        return Order::with(['items', 'payment', 'user'])->findOrFail($id);
+    }
+
+    public function destroyOrder(Order $order)
+    {
+        return $order->delete();
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use App\Repositories\OrderRepository;
 use Illuminate\Http\Request;
 
@@ -33,7 +34,25 @@ class OrdersController extends Controller
     public function show(string $id)
     {
         //
+        return response()->json([
+            'status' => true,
+            'data' => $this->orderRepository->showOrder($id)
+        ]);
     }
+
+
+    /**
+     * View the specified resource.
+     */
+
+    public function view($id)
+    {
+        $data = $this->orderRepository->showOrder($id);
+        return view('backend.orders.view', [
+            'data' => $data
+        ]);
+    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -54,8 +73,16 @@ class OrdersController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Order $order)
     {
         //
+        $order = $this->orderRepository->destroyOrder($order);
+        if($order)
+        {
+            return response()->json([
+                'status' => true,
+                'message' => 'Order has been successfully removed'
+            ]);
+        }
     }
 }

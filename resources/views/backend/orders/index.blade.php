@@ -29,8 +29,16 @@
                                         @forelse ($data as $order)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $order->id }}</td>
-                                                <td>{{ $order->user->first_name }} {{ $order->user->last_name }}</td>
+                                                <td>
+                                                    <a href="{{ route('orders.view', $order->id) }}">
+                                                        {{ $order->id }}
+                                                    </a>
+                                                </td>
+
+                                                <td>
+                                                    {{ $order->user->first_name }} {{ $order->user->last_name }}
+                                                </td>
+
                                                 <td>{{ $order->total_amount }}</td>
                                                 <td>{{ \OrderStatus::getName($order->status) }}</td>
                                                 <td></td>
