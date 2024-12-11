@@ -148,7 +148,8 @@ class PaymentController extends Controller
         $amount = $data['TransAmount'] ?? null;
         $resultCode = $data['ResultCode'] ?? null;
 
-        if ($transactionId && $paymentId) {
+        if ($transactionId && $paymentId)
+        {
             $payment = Payment::find($paymentId);
 
             if ($payment) {
