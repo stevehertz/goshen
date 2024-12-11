@@ -2,9 +2,7 @@
 
 @section('title', 'Orders | ' . config('app.name'))
 
-
 @section('content')
-
 
     <!-- Main content -->
     <section class="content">
@@ -63,7 +61,5 @@
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
-
-
 
 @endsection

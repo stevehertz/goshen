@@ -11,8 +11,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="product__details__tab">
-                        <h1>Payment Successful</h1>
-                        <p>Thank you for your payment. Your order has been processed.</p>
+                        <h1>Processing Payment</h1>
+                        <p>Please wait while we confirm your payment...</p>
                         <a href="{{ route('shop') }}" class="btn btn-primary">Continue Shopping</a>
                     </div>
                 </div>

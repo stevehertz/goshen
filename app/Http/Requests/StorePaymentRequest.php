@@ -23,6 +23,7 @@ class StorePaymentRequest extends FormRequest
     {
         return [
             //
+            'phone' => ['required', 'numeric', 'digits:10', 'regex:/^\d{10}$/']
         ];
     }
 }

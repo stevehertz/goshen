@@ -87,35 +87,37 @@ class PaymentController extends Controller
             'status' => PaymentStatus::PENDING
         ]);
 
-        $phone = $this->formatKenyanPhoneNumber($user->phone);
-        $amount = $payment->amount;
+        $phone = $this->formatKenyanPhoneNumber($request->input('phone'));
+        // $amount = intval($payment->amount);
+        $amount = 1;
         $shortcode = env('MPESA_SHORTCODE');
         $lipaNaMpesaPasskey = env('MPESA_PASSKEY');
 
         $response = $this->darajaService->stkPush(
             $phone,
             $amount,
-            'TestAccount',
+            'Goshen Farm Exporters LTD',
             'Payment for goods'
         );
 
         $responseBody = json_decode($response->getBody()->getContents(), true);
 
         if (isset($responseBody['ResponseCode']) && $responseBody['ResponseCode'] === '0') {
-            $order->update([
-                'status' => OrderStatus::COMPLETE
-            ]);
-
-            $payment->update([
-                'status' => PaymentStatus::PAID
-            ]);
             // STK Push was successfully sent
-            return redirect()->route('shop.checkout.success', ['order' => $order->id]);
+            return redirect()->route('payments.waiting', ['order' => $order->id]);
         }
-
         // STK Push failed
-        return redirect()->route('shop.checkout.index', $order->id)
+        return redirect()
+            ->route('shop.checkout.index', $order->id)
             ->with('error', 'Payment initiation failed. Please try again.');
+    }
+
+
+    public function waiting(Order $order)
+    {
+        return view('frontend.shop.wait', [
+            'order' => $order
+        ]);
     }
 
 
@@ -136,41 +138,78 @@ class PaymentController extends Controller
     public function mpesa_confirmation(Request $request)
     {
         $data = $request->all();
+        // Log incoming reques
 
         // Log incoming request (optional)
         Log::info('M-Pesa Confirmation: ', $data);
 
-        // Extract necessary information
         $transactionId = $data['TransID'] ?? null;
-        $orderReference = $data['BillRefNumber'] ?? null;
+        $paymentId = $data['BillRefNumber'] ?? null; // Use a unique identifier passed during STK Push
         $amount = $data['TransAmount'] ?? null;
         $resultCode = $data['ResultCode'] ?? null;
-        if ($transactionId && $orderReference) {
-            // Find the payment by the reference (e.g., payment ID)
-            $payment = Payment::find($orderReference);
+
+        if ($transactionId && $paymentId) {
+            $payment = Payment::find($paymentId);
 
             if ($payment) {
                 if ($resultCode === '0') {
                     // Payment was successful
                     $payment->update([
-                        'status' => PaymentStatus::PAID, // Example status constant
+                        'status' => PaymentStatus::PAID,
                     ]);
 
-                    // Update the associated order
                     $payment->order->update([
                         'status' => OrderStatus::COMPLETE,
                     ]);
+
+                    return redirect()->route('shop.checkout.success', ['order' => $payment->order_id]);
                 } else {
                     // Payment failed
                     $payment->update([
                         'status' => PaymentStatus::FAILED,
                     ]);
+
+                    return redirect()
+                        ->route('shop.checkout.index', $payment->order_id)
+                        ->with('error', 'Payment failed. Please try again.');
                 }
             }
         }
+
+        return response()->json(['error' => 'Invalid payment confirmation'], 400);
     }
 
-    public function FunctionName() {}
+    public function registerMpesaUrls(Request $request) {
+
+        try {
+            // Use the DarajaService to register the URLs
+            $response = $this->darajaService->registerUrl();
+
+            // Return the response for API testing with Postman
+            return response()->json([
+                'success' => true,
+                'message' => 'URLs registered successfully.',
+                'data' => $response
+            ], 200);
+
+        } catch (\Exception $e) {
+            // Log the error for debugging
+            Log::error('Error registering M-Pesa URLs: ', ['error' => $e->getMessage()]);
+
+            // Return a failure response
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to register URLs.',
+                'error' => $e->getMessage()
+            ], 500);
+        }
+
+    }
+
+    public function mpesa_validation()
+    {
+
+    }
 
     /**
      * Display the specified resource.

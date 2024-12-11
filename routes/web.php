@@ -25,10 +25,10 @@ Route::prefix('payments')->name('payments.')->group(function(){
 
     Route::post('/{order}/checkout', [PaymentController::class, 'store'])->name('checkout');
 
+    Route::get('/{order}/waiting', [PaymentController::class, 'waiting'])->name('waiting');
 });
 
-Route::prefix('mpesa')->name('mpesa.')->group(function(){
+Route::get('/confirmation', [PaymentController::class, 'mpesa_confirmation'])->name('confirmation');
 
-    Route::get('/confirmation', [PaymentController::class, 'mpesa_confirmation'])->name('confirmation');
+Route::get('/validation', [PaymentController::class, 'mpesa_validation'])->name('validation');
 
-});
