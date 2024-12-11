@@ -56,7 +56,7 @@ class DarajaService
             'TransactionType' => 'CustomerBuyGoodsOnline',
             'Amount' => $amount,
             'PartyA' => $phoneNumber,
-            'PartyB' => config('services.safaricom.shortcode'),
+            'PartyB' => '606472',
             'PhoneNumber' => $phoneNumber,
             'CallBackURL' => config('services.safaricom.callback_url'),
             'AccountReference' => $accountReference,

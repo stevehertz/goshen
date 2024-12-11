@@ -132,7 +132,13 @@ class PaymentController extends Controller
         ]);
     }
 
-    public function callback(Request $request) {}
+    public function callback(Request $request) {
+
+        $data = $request->all();
+
+        Log::info('M-Pesa Callback: ', $data);
+
+    }
 
 
     public function mpesa_confirmation(Request $request)
